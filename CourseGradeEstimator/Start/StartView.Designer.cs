@@ -1,6 +1,6 @@
-﻿namespace CourseGradeEstimator
+﻿namespace CourseGradeEstimator.Start
 {
-    partial class Form1
+    partial class StartView
     {
         /// <summary>
         /// Required designer variable.
