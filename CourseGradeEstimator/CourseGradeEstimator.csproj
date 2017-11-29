@@ -48,6 +48,7 @@
     <Compile Include="core\ViewController.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="CourseGradeEstimatorInit.cs" />
+    <Compile Include="Start\StartController.cs" />
     <Compile Include="Start\StartView.cs">
       <SubType>Form</SubType>
     </Compile>
