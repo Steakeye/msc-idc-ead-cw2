@@ -19,11 +19,9 @@ namespace CourseGradeEstimator.Start
         public StartView()
         {
             InitializeComponent();
-
-            //setupBindings();
         }
 
-        public void BindDelegates() {
+        public override void BindDelegates() {
             button1.Click += makeBinding(StartViewBindings.Create);
         }
     }

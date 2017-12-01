@@ -21,7 +21,6 @@ namespace CourseGradeEstimator
             router.navTo(Routings.Start);
 
             Application.Run(router);
-            //Application.Run(new Start());
         }
 
         private ApplicationContext appContext;

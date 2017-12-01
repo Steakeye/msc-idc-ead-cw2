@@ -16,6 +16,8 @@ namespace CourseGradeEstimator.core
         protected View() {
         }
 
+        public virtual void BindDelegates() { }
+
         public Hashtable EventBindings => eventBindings;
 
         protected System.EventHandler makeBinding<A>(A eventKey) {
