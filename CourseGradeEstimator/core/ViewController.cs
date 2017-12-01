@@ -7,8 +7,13 @@ using System.Windows.Forms;
 
 namespace CourseGradeEstimator.core
 {
-    abstract public class ViewController<V>
-//        where V : core.View<Enum>
+    interface IViewController<out V> {
+        void tearDown();
+        V View { get; }
+    }
+
+    abstract public class ViewController<V>: IViewController<V>
+    //        where V : core.View<Enum>
     {
 
         public void tearDown()

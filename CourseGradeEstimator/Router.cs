@@ -30,8 +30,8 @@ namespace CourseGradeEstimator
             {
             }
 
-            currentRoute = (core.ViewController<core.View>)Activator.CreateInstance(routes[route]);
-            Form view = currentRoute.View;
+            currentRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route]);
+            core.View view = currentRoute.View;
             MainForm = view;
 
             view.Show();
@@ -45,7 +45,8 @@ namespace CourseGradeEstimator
 
         private Dictionary<Routings, Type> routes = new Dictionary<Routings, Type>();
 
-        private core.ViewController<core.View> currentRoute;
+        //private core.ViewController<core.View> currentRoute;
+        private core.IViewController<core.View> currentRoute;
         private Stack<core.ViewController<core.View>> routeHistory = new Stack<core.ViewController<core.View>>();
 
     }

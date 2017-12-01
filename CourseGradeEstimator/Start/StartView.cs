@@ -38,7 +38,5 @@ namespace CourseGradeEstimator.Start
             }*/
 
         }
-
-
     }
 }
