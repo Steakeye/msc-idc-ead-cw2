@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.Start
 {
-    class StartController : core.ViewController
+    class StartController : core.ViewController<StartView>
     {
         public StartController() {
             view = new StartView();
+            Dictionary<core.IEnumLike, Action<object>> eventMap = view.EventBindings;
         }
     }
 }

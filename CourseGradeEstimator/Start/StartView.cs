@@ -10,11 +10,35 @@ using System.Windows.Forms;
 
 namespace CourseGradeEstimator.Start
 {
-    public partial class StartView : Form
+    public enum StartViewBindings {
+        Create
+    }
+
+    //public partial class StartView : core.View<StartViewBindings>
+    public partial class StartView : core.View
     {
         public StartView()
         {
             InitializeComponent();
+
+            setupBindings();
         }
+
+        private void setupBindings() {
+           // eventEnum = StartViewBindings;
+        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*Action<object> callBack = eventBindings[StartViewBindings.Create];
+            if ()
+            {
+                
+            }*/
+
+        }
+
+
     }
 }

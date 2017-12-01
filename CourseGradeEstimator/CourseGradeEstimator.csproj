@@ -45,9 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\View.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="core\ViewController.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="CourseGradeEstimatorInit.cs" />
+    <Compile Include="Create\CreateController.cs" />
+    <Compile Include="Create\CreateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create\CreateView.Designer.cs">
+      <DependentUpon>CreateView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start\StartController.cs" />
     <Compile Include="Start\StartView.cs">
       <SubType>Form</SubType>

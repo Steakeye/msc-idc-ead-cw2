@@ -7,14 +7,15 @@ using System.Windows.Forms;
 
 namespace CourseGradeEstimator.core
 {
-    public class ViewController
+    abstract public class ViewController<V>
+//        where V : core.View<Enum>
     {
 
         public void tearDown()
         {
         }
 
-        Form View => view;
+        public V View => view;
 
         /*
          * Privates
@@ -22,6 +23,6 @@ namespace CourseGradeEstimator.core
         /*
          * Private Members
          */
-        protected Form view;
+        protected V view;
     }
 }
