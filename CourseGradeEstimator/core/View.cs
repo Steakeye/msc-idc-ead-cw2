@@ -5,45 +5,30 @@ using System.Windows.Forms;
 
 namespace CourseGradeEstimator.core
 {
+    public delegate void VoidDelegate();
     public interface IEnumLike : IComparable, IFormattable, IConvertible { }
     public interface IView {
     }
 
-    //    public abstract class View<A> : Form
-    public abstract class View : Form, IView
-    //where A : struct, IEnumLike
+    //should be `public abstract class View : Form, IView` but VS forms preview fails if this is applied
+    public class View : Form, IView 
     {
         protected View() {
-            //eventEnum = actions;
         }
 
         public Hashtable EventBindings => eventBindings;
-        //public Dictionary<IEnumLike, Action<object>> EventBindings => eventBindings;
-        //public Dictionary<T, Action<object>> EventBindings<T> => new Dictionary<T, Action<object>>();
-        //public Dictionary<T, Action<object>> EventBindings<T> { get { new Dictionary<T, Action<object>>(); } }
-        /*public Dictionary<T, Action<object>> EventBindings<T>()
-            where T : Type
-        {
-            //return new Dictionary<T, Action<object>>();
-            Dictionary <T, Action < object >> dic = new Dictionary<T, Action<object>>();
-            //eventBindings = (Dictionary<Type, Action<object>>)dic;
-            eventBindings = dic;
 
-            return dic;
-        }*/
+        protected System.EventHandler makeBinding<A>(A eventKey) {
+            VoidDelegate cb = (VoidDelegate)eventBindings[eventKey];
 
+            return new System.EventHandler((object sender, EventArgs e) => Invoke(cb));
+        }
         protected void FindFuncAndCall<A>(A eventKey)
         {
-            /*if (!typeof(A).IsEnum)
-                throw new ArgumentException("Not an enum");
-            int ID = Convert.ToInt32(eventKey);
-            //Action<object> callBack = eventBindings[ID];
-            */
+            VoidDelegate cb = (VoidDelegate)eventBindings[eventKey];
+            Invoke(cb);
         }
 
-        //protected A eventEnum;
-        //protected Dictionary<IEnumLike, Action<object>> eventBindings = new Dictionary<IEnumLike, Action<object>>();
-        //protected Dictionary<Type, Action<object>> eventBindings;
         protected Hashtable eventBindings = new Hashtable();
 
     }

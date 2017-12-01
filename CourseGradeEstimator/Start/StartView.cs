@@ -14,29 +14,17 @@ namespace CourseGradeEstimator.Start
         Create
     }
 
-    //public partial class StartView : core.View<StartViewBindings>
     public partial class StartView : core.View
     {
         public StartView()
         {
             InitializeComponent();
 
-            setupBindings();
+            //setupBindings();
         }
 
-        private void setupBindings() {
-           // eventEnum = StartViewBindings;
-        
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            /*Action<object> callBack = eventBindings[StartViewBindings.Create];
-            if ()
-            {
-                
-            }*/
-
+        public void BindDelegates() {
+            button1.Click += makeBinding(StartViewBindings.Create);
         }
     }
 }

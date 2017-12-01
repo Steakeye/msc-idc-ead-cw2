@@ -13,7 +13,6 @@ namespace CourseGradeEstimator.core
     }
 
     abstract public class ViewController<V>: IViewController<V>
-    //        where V : core.View<Enum>
     {
 
         public void tearDown()

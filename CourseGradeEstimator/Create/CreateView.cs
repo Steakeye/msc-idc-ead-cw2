@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CourseGradeEstimator.Create
 {
-    public partial class CreateView : Form
+    public partial class CreateView : core.View
     {
         public CreateView()
         {

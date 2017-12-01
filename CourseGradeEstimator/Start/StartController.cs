@@ -15,7 +15,9 @@ namespace CourseGradeEstimator.Start
             Hashtable eventMap = view.EventBindings;
 
             //eventMap.Add(StartViewBindings.Create, (obj) => { });
-            eventMap.Add(StartViewBindings.Create, new NavToCreate(navToCreate));
+            eventMap.Add(StartViewBindings.Create, new core.VoidDelegate(navToCreate));
+
+            view.BindDelegates();
         }
 
         protected void navToCreate() {
