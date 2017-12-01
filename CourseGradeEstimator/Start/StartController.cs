@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CourseGradeEstimator;
 
 namespace CourseGradeEstimator.Start
 {
     delegate void NavToCreate();
     class StartController : core.ViewController<StartView>
     {
-        public StartController() {
+        public StartController(Router r) : base(r) {
             view = new StartView();
             Hashtable eventMap = view.EventBindings;
 
-            //eventMap.Add(StartViewBindings.Create, (obj) => { });
             eventMap.Add(StartViewBindings.Create, new core.VoidDelegate(navToCreate));
 
             view.BindDelegates();
@@ -22,6 +22,7 @@ namespace CourseGradeEstimator.Start
 
         protected void navToCreate() {
             System.Console.WriteLine("NavToCreate!!");
+            router.navTo(Routings.Create);
         }
     }
 }

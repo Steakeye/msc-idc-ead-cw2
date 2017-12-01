@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using CourseGradeEstimator.Start;
 using System.Windows.Forms;
+using CourseGradeEstimator.Create;
 
 namespace CourseGradeEstimator
 {
-    enum Routings {
-        Start
+    public enum Routings {
+        Start,
+        Create
     }
-    class Router : ApplicationContext
+    public class Router : ApplicationContext
     {
         public Router() {
             registerRoutes();
@@ -30,17 +32,18 @@ namespace CourseGradeEstimator
             {
             }
 
-            currentRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route]);
+            currentRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route], this);
+
             core.View view = currentRoute.View;
             MainForm = view;
 
             view.Show();
 
-
         }
 
         private void registerRoutes() {
             routes.Add(Routings.Start, typeof(StartController));
+            routes.Add(Routings.Create, typeof(CreateController));
         }
 
         private Dictionary<Routings, Type> routes = new Dictionary<Routings, Type>();

@@ -15,6 +15,10 @@ namespace CourseGradeEstimator.core
     abstract public class ViewController<V>: IViewController<V>
     {
 
+        protected ViewController(Router r) {
+            router = r;
+        }
+
         public void tearDown()
         {
         }
@@ -27,6 +31,8 @@ namespace CourseGradeEstimator.core
         /*
          * Private Members
          */
+        protected Router router;
         protected V view;
+
     }
 }

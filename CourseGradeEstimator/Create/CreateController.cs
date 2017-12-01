@@ -8,7 +8,7 @@ namespace CourseGradeEstimator.Create
 {
     class CreateController : core.ViewController<CreateView>
     {
-        public CreateController() {
+        public CreateController(Router r): base(r) {
             view = new CreateView();
         }
     }
