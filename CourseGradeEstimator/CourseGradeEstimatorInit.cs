@@ -18,7 +18,9 @@ namespace CourseGradeEstimator
 
             Course courseData = dataLayer.LoadCourseData();
 
-            router.navTo(Routings.Start);
+            Routings initRoute = courseData != null ? Routings.CourseSummary: Routings.Start;
+
+            router.navTo(initRoute, courseData);
 
             Application.Run(router);
         }

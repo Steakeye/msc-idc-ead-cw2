@@ -12,7 +12,8 @@ namespace CourseGradeEstimator
 {
     public enum Routings {
         Start,
-        Create
+        Create,
+        CourseSummary
     }
     public class Router : ApplicationContext
     {
@@ -22,7 +23,7 @@ namespace CourseGradeEstimator
             
         }
 
-        public void navTo(Routings route) {
+        public void navTo(Routings route, object data = null) {
             core.View oldView = null;
             Point? pos = null;
             //core.View view;
