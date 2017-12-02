@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CourseGradeEstimator.Start;
+
+using CourseGradeEstimator.core.data;
 
 namespace CourseGradeEstimator
 {
@@ -14,16 +15,15 @@ namespace CourseGradeEstimator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            appContext = new ApplicationContext();
-
-            router = new Router();
-
+            //appContext = new ApplicationContext();
+            
             router.navTo(Routings.Start);
 
             Application.Run(router);
         }
 
-        private ApplicationContext appContext;
-        private Router router;
+        //private ApplicationContext appContext;
+        private Router router = new Router();
+        private Data dataLayer = new Data();
     }
 }
