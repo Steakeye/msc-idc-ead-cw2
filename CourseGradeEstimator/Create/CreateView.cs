@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator
+namespace CourseGradeEstimator.Create
 {
-    public partial class Form1 : Form
+    public partial class CreateView : core.View
     {
-        public Form1()
+        public CreateView()
         {
             InitializeComponent();
         }
