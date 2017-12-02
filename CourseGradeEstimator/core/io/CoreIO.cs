@@ -7,14 +7,21 @@ using System.Threading.Tasks;
 namespace CourseGradeEstimator.core.io
 {
     public class CoreIO<D, F, S>
+        where D : new()
+        where F : FS<D>
     {
-        public CoreIO(string user) { }
+        public CoreIO(string user, F fs) { }
 
-        public virtual void loadData() {
-            loadDataFromFile();
+        public CoreIO()
+        {
         }
-        public virtual void loadDataFromFile() {
 
+        public virtual D LoadData() {
+            return loadDataFromFile();
+        }
+        public virtual D loadDataFromFile() {
+            //return new D();
+            return fs.LoadData(userName);
         }
         public virtual void loadDataFromDB() { }
 

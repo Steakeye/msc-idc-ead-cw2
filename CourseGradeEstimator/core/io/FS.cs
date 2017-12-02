@@ -8,16 +8,21 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.core.io
 {
-    class FS
+    public class FS<D>
+        where D: new()
     {
-        public void Something()
+        public FS() { }
+
+        public D LoadData(string path)
         {
             IsolatedStorageFile isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
 
-            if (isoStore.FileExists("TestStore.txt"))
+            D data = new D();
+
+            if (isoStore.FileExists(path))
             {
-                Console.WriteLine("The file already exists!");
-                using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream("TestStore.txt", FileMode.Open, isoStore))
+                Console.WriteLine("File exists!");
+                using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(path, FileMode.Open, isoStore))
                 {
                     using (StreamReader reader = new StreamReader(isoStream))
                     {
@@ -37,6 +42,8 @@ namespace CourseGradeEstimator.core.io
                     }
                 }
             }
+
+            return data;
         }
     }
 }

@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\io\CourseDB .cs" />
+    <Compile Include="core\io\CourseFS .cs" />
+    <Compile Include="models\Item.cs" />
     <Compile Include="core\data\Data.cs" />
     <Compile Include="core\io\CoreIO.cs" />
     <Compile Include="core\io\CourseIO.cs" />
@@ -54,6 +57,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="core\ViewController.cs" />
+    <Compile Include="models\CourseItem.cs" />
+    <Compile Include="models\Course.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="CourseGradeEstimatorInit.cs" />
     <Compile Include="Create\CreateController.cs" />

@@ -1,4 +1,5 @@
 ﻿using CourseGradeEstimator.core.io;
+using CourseGradeEstimator.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,8 @@ namespace CourseGradeEstimator.core.data
         public Data() {
             courseIO = new CourseIO(userName);
         }
-        public void loadCourseData() {
-            courseIO.loadData();
+        public Course LoadCourseData() {
+            return courseIO.LoadData();
         }
 
         private string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
