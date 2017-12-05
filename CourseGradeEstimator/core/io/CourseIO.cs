@@ -20,7 +20,8 @@ namespace CourseGradeEstimator.core.io
 
             if (rawData != null)
             {
-                return new Course();
+                //return new Course();
+                return Course.GetInstanceFromJson<Course>(rawData);
             }
 
             return null;
