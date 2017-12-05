@@ -50,6 +50,11 @@
   <ItemGroup>
     <Compile Include="core\io\CourseDB .cs" />
     <Compile Include="core\io\CourseFS .cs" />
+    <Compile Include="models\CourseGrade.cs" />
+    <Compile Include="models\Assignment.cs" />
+    <Compile Include="models\AssignmentGrade.cs" />
+    <Compile Include="models\GradeItem.cs" />
+    <Compile Include="models\ModuleGrade.cs" />
     <Compile Include="models\Module.cs" />
     <Compile Include="models\Item.cs" />
     <Compile Include="core\data\Data.cs" />
