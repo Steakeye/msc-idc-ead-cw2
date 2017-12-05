@@ -8,19 +8,19 @@ using CourseGradeEstimator.models;
 
 namespace CourseGradeEstimator.core.io
 {
-    public class CourseIO : CoreIO<Course, CourseFS, CourseDB>, IConcreteIO<Course>
+    public class GradeIO : CoreIO<CourseGrade, GradeFS, CourseDB>, IConcreteIO<CourseGrade>
     {
-        public CourseIO(string user) : base(user, new CourseFS()) {
+        public GradeIO(string user) : base(user, new GradeFS()) {
             resourceType = Properties.Resources.AppResourceTypeCourse;
         }
 
-        public override Course LoadData()
+        public override CourseGrade LoadData()
         {
             string rawData = LoadRawData();
 
             if (rawData != null)
             {
-                return Course.GetInstanceFromJson<Course>(rawData);
+                return CourseGrade.GetInstanceFromJson<CourseGrade>(rawData);
             }
 
             return null;
