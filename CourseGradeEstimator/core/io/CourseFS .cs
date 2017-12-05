@@ -10,7 +10,7 @@ using CourseGradeEstimator.models;
 
 namespace CourseGradeEstimator.core.io
 {
-    public class CourseFS : FS<Course>
+    public class CourseFS : FS
     {
     }
 }

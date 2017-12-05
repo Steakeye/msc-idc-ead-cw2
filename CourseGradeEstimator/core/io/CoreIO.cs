@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.core.io
 {
-    public class CoreIO<D, F, S>
-        where D : new()
-        where F : FS<D>
+    public interface IConcreteIO<D>
+    {
+        D LoadData();
+    }
+
+    abstract public class CoreIO<D, F, S>
+        where F : FS
     {
         public CoreIO(string user, F fsFacade) {
             userName = user;
@@ -19,11 +23,12 @@ namespace CourseGradeEstimator.core.io
         {
         }
 
-        public virtual D LoadData() {
+        public abstract D LoadData();
+
+        protected virtual string LoadRawData() {
             return loadDataFromFile();
         }
-        public virtual D loadDataFromFile() {
-            //return new D();
+        public virtual string loadDataFromFile() {
             return fs.LoadData(resourceType);
         }
         public virtual void loadDataFromDB() { }

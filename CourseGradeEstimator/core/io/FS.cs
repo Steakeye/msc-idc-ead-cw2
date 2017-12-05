@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.core.io
 {
-    public class FS<D>
-        where D: new()
+    public class FS
     {
         public FS() { }
 
-        public D LoadData(string path)
+        public string LoadData(string path)
         {
-            IsolatedStorageFile isoStore = getStore();
+            string data = null;
 
-            D data = new D();
+            IsolatedStorageFile isoStore = getStore();
 
             string filePath = getPath(path);
 
@@ -29,7 +28,7 @@ namespace CourseGradeEstimator.core.io
                     using (StreamReader reader = new StreamReader(isoStream))
                     {
                         Console.WriteLine("Reading contents:");
-                        Console.WriteLine(reader.ReadToEnd());
+                        data = reader.ReadToEnd();
                     }
                 }
             }
