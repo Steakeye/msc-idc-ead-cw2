@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourseGradeEstimator.Create
+namespace CourseGradeEstimator.routes.Create
 {
     class CreateController : core.ViewController<CreateView>
     {

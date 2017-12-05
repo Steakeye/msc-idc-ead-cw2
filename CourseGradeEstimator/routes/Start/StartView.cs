@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.Start
+namespace CourseGradeEstimator.routes.Start
 {
     public enum StartViewBindings {
         Create

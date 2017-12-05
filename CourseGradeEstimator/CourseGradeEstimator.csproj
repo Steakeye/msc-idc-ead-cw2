@@ -61,18 +61,25 @@
     <Compile Include="models\Course.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="CourseGradeEstimatorInit.cs" />
-    <Compile Include="Create\CreateController.cs" />
-    <Compile Include="Create\CreateView.cs">
+    <Compile Include="routes\CourseSummary\CourseSummaryController.cs" />
+    <Compile Include="routes\CourseSummary\CourseSummaryView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Create\CreateView.Designer.cs">
+    <Compile Include="routes\CourseSummary\CourseSummaryView.Designer.cs">
+      <DependentUpon>CourseSummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\Create\CreateController.cs" />
+    <Compile Include="routes\Create\CreateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="routes\Create\CreateView.Designer.cs">
       <DependentUpon>CreateView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Start\StartController.cs" />
-    <Compile Include="Start\StartView.cs">
+    <Compile Include="routes\Start\StartController.cs" />
+    <Compile Include="routes\Start\StartView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Start\StartView.Designer.cs">
+    <Compile Include="routes\Start\StartView.Designer.cs">
       <DependentUpon>StartView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

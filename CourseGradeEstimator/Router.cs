@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CourseGradeEstimator.Start;
 using System.Windows.Forms;
-using CourseGradeEstimator.Create;
+using CourseGradeEstimator.routes.Start;
+using CourseGradeEstimator.routes.Create;
+using CourseGradeEstimator.routes.CourseSummary;
 using System.Drawing;
 
 namespace CourseGradeEstimator
@@ -67,6 +68,7 @@ namespace CourseGradeEstimator
         private void registerRoutes() {
             routes.Add(Routings.Start, typeof(StartController));
             routes.Add(Routings.Create, typeof(CreateController));
+            routes.Add(Routings.CourseSummary, typeof(CourseSummaryController));
         }
 
         private Dictionary<Routings, Type> routes = new Dictionary<Routings, Type>();

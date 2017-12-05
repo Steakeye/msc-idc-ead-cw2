@@ -10,7 +10,10 @@ namespace CourseGradeEstimator.core.io
         where D : new()
         where F : FS<D>
     {
-        public CoreIO(string user, F fs) { }
+        public CoreIO(string user, F fsFacade) {
+            userName = user;
+            fs = fsFacade;
+        }
 
         public CoreIO()
         {
