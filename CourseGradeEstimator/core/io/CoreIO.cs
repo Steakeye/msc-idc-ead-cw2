@@ -24,11 +24,12 @@ namespace CourseGradeEstimator.core.io
         }
         public virtual D loadDataFromFile() {
             //return new D();
-            return fs.LoadData(userName);
+            return fs.LoadData(resourceType);
         }
         public virtual void loadDataFromDB() { }
 
         protected string userName;
+        protected string resourceType;
 
         protected F fs;
         protected S db;

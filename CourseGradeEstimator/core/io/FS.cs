@@ -15,14 +15,16 @@ namespace CourseGradeEstimator.core.io
 
         public D LoadData(string path)
         {
-            IsolatedStorageFile isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
+            IsolatedStorageFile isoStore = getStore();
 
             D data = new D();
 
-            if (isoStore.FileExists(path))
+            string filePath = getPath(path);
+
+            if (isoStore.FileExists(filePath))
             {
                 Console.WriteLine("File exists!");
-                using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(path, FileMode.Open, isoStore))
+                using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Open, isoStore))
                 {
                     using (StreamReader reader = new StreamReader(isoStream))
                     {
@@ -31,19 +33,34 @@ namespace CourseGradeEstimator.core.io
                     }
                 }
             }
-            else
-            {
-                using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream("TestStore.txt", FileMode.CreateNew, isoStore))
-                {
-                    using (StreamWriter writer = new StreamWriter(isoStream))
-                    {
-                        writer.WriteLine("Hello Isolated Storage");
-                        Console.WriteLine("You have written to the file.");
-                    }
-                }
-            }
 
             return data;
+        }
+
+        public void saveData(string path, char[] data)
+        {
+            IsolatedStorageFile isoStore = getStore();
+
+            string filePath = getPath(path);
+
+            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream("TestStore.txt", FileMode.CreateNew, isoStore))
+            {
+                using (StreamWriter writer = new StreamWriter(isoStream))
+                {
+                    //writer.Write("");
+                    writer.WriteLine(data);
+                    //Console.WriteLine("You have written to the file.");
+                }
+            }
+        }
+
+        private IsolatedStorageFile getStore()
+        {
+            return IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
+        }
+        private string getPath(string file)
+        {
+            return CourseGradeEstimator.Properties.Resources.AppName + "/" + file;
         }
     }
 }
