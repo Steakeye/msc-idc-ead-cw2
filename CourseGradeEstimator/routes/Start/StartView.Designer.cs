@@ -1,4 +1,4 @@
-﻿namespace CourseGradeEstimator.Start
+﻿namespace CourseGradeEstimator.routes.Start
 {
     partial class StartView
     {

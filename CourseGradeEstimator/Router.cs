@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CourseGradeEstimator.Start;
 using System.Windows.Forms;
-using CourseGradeEstimator.Create;
+using CourseGradeEstimator.routes.Start;
+using CourseGradeEstimator.routes.Create;
+using CourseGradeEstimator.routes.CourseSummary;
 using System.Drawing;
 
 namespace CourseGradeEstimator
 {
     public enum Routings {
         Start,
-        Create
+        Create,
+        CourseSummary
     }
     public class Router : ApplicationContext
     {
@@ -22,27 +24,18 @@ namespace CourseGradeEstimator
             
         }
 
-        public void navTo(Routings route) {
+        public void navTo(Routings route, object data = null) {
             core.View oldView = null;
             Point? pos = null;
-            //core.View view;
 
-            core.IViewController<core.View> nextRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route], this);
+            core.IViewController<core.View> nextRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route], this, data);
             core.View view = nextRoute.View;
 
             if (currentRoute != null)
             {
                 oldView = currentRoute.View;
-                //view.Location = oldView.Location;
-                //view.Location = new Point(oldView.Location.X, oldView.Location.Y);
                 pos = new Point(oldView.Location.X, oldView.Location.Y); ;
-
-                //pos.Value.X = oldView.Location.X;
-                //pos.Y = oldView.Location.Y;
                 currentRoute.tearDown();
-            }
-            else
-            {
             }
 
             currentRoute = nextRoute;
@@ -66,6 +59,7 @@ namespace CourseGradeEstimator
         private void registerRoutes() {
             routes.Add(Routings.Start, typeof(StartController));
             routes.Add(Routings.Create, typeof(CreateController));
+            routes.Add(Routings.CourseSummary, typeof(CourseSummaryController));
         }
 
         private Dictionary<Routings, Type> routes = new Dictionary<Routings, Type>();

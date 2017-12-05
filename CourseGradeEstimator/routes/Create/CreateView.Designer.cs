@@ -1,4 +1,4 @@
-﻿namespace CourseGradeEstimator.Create
+﻿namespace CourseGradeEstimator.routes.Create
 {
     partial class CreateView
     {
