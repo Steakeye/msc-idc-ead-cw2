@@ -10,7 +10,7 @@ namespace CourseGradeEstimator.core.io
 {
     public class GradeIO : CoreIO<CourseGrade, GradeFS, CourseDB>, IConcreteIO<CourseGrade>
     {
-        public GradeIO(string user) : base(user, new GradeFS()) {
+        public GradeIO(string user) : base(new GradeFS()) {
             resourceType = Properties.Resources.AppResourceTypeCourse;
         }
 

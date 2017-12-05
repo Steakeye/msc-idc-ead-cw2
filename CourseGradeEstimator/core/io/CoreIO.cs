@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.core.io
@@ -14,8 +15,7 @@ namespace CourseGradeEstimator.core.io
     abstract public class CoreIO<D, F, S>
         where F : FS
     {
-        public CoreIO(string user, F fsFacade) {
-            userName = user;
+        public CoreIO(F fsFacade) {
             fs = fsFacade;
         }
 
@@ -32,6 +32,15 @@ namespace CourseGradeEstimator.core.io
             return fs.LoadData(resourceType + fsExt);
         }
         public virtual void loadDataFromDB() { }
+
+
+        protected string getUserName()
+        {
+            string name = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            Match userMatch = Regex.Match(name, @"\w+\\(\w+)");
+
+            return userMatch.Groups[1].Value;
+        }
 
         protected string userName;
         protected string resourceType;

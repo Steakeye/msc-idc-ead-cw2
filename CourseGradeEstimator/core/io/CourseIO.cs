@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 using CourseGradeEstimator.models;
+using System.Text.RegularExpressions;
 
 namespace CourseGradeEstimator.core.io
 {
     public class CourseIO : CoreIO<Course, CourseFS, CourseDB>, IConcreteIO<Course>
     {
-        public CourseIO(string user) : base(user, new CourseFS()) {
+        public CourseIO() : base(new CourseFS()) {
             resourceType = Properties.Resources.AppResourceTypeCourse;
         }
 
