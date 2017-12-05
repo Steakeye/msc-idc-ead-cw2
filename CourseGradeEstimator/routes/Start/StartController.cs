@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CourseGradeEstimator;
 
-namespace CourseGradeEstimator.Start
+namespace CourseGradeEstimator.routes.Start
 {
     delegate void NavToCreate();
     class StartController : core.ViewController<StartView>

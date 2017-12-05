@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.Create
+namespace CourseGradeEstimator.routes.Create
 {
     public partial class CreateView : core.View
     {
