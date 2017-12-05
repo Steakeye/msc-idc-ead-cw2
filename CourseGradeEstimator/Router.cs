@@ -20,8 +20,6 @@ namespace CourseGradeEstimator
     {
         public Router() {
             registerRoutes();
-            
-            
         }
 
         public void navTo(Routings route, object data = null) {

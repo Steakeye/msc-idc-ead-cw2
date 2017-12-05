@@ -14,6 +14,11 @@ namespace CourseGradeEstimator.models
         {
             return JsonConvert.DeserializeObject<T>(json);
         }
+        public static string GetJsonFromInstance<T>(T item)
+            where T : Item
+        {
+            return JsonConvert.SerializeObject(item);
+        }
 
         [JsonProperty("title")]
         public string Title { get; set; }
