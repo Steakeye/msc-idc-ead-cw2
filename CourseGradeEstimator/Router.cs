@@ -27,24 +27,15 @@ namespace CourseGradeEstimator
         public void navTo(Routings route, object data = null) {
             core.View oldView = null;
             Point? pos = null;
-            //core.View view;
 
-            core.IViewController<core.View> nextRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route], this);
+            core.IViewController<core.View> nextRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route], this, data);
             core.View view = nextRoute.View;
 
             if (currentRoute != null)
             {
                 oldView = currentRoute.View;
-                //view.Location = oldView.Location;
-                //view.Location = new Point(oldView.Location.X, oldView.Location.Y);
                 pos = new Point(oldView.Location.X, oldView.Location.Y); ;
-
-                //pos.Value.X = oldView.Location.X;
-                //pos.Y = oldView.Location.Y;
                 currentRoute.tearDown();
-            }
-            else
-            {
             }
 
             currentRoute = nextRoute;

@@ -29,7 +29,7 @@ namespace CourseGradeEstimator.core.io
             return loadDataFromFile();
         }
         public virtual string loadDataFromFile() {
-            return fs.LoadData(resourceType);
+            return fs.LoadData(resourceType + fsExt);
         }
         public virtual void loadDataFromDB() { }
 
@@ -38,5 +38,7 @@ namespace CourseGradeEstimator.core.io
 
         protected F fs;
         protected S db;
+
+        private static string fsExt = ".json";
     }
 }
