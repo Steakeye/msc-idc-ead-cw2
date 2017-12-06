@@ -5,6 +5,7 @@ using CourseGradeEstimator.routes.Start;
 using CourseGradeEstimator.routes.Create;
 using CourseGradeEstimator.routes.CourseSummary;
 using System.Drawing;
+using CourseGradeEstimator.core.data;
 
 namespace CourseGradeEstimator
 {

@@ -6,6 +6,7 @@ using System.Net;
 using MongoDB.Bson;
 using System.Text.RegularExpressions;
 using CourseGradeEstimator.models;
+using MongoDB.Bson.Serialization.Serializers;
 
 namespace CourseGradeEstimator.core.io
 {
@@ -44,10 +45,15 @@ namespace CourseGradeEstimator.core.io
                 { "title" , "test!" }
             };*/
             
-            Dictionary<string, Course> entry = new Dictionary<string, Course>();
-            entry.Add(user, new Course());
+            Dictionary<string, CourseTest> entry = new Dictionary<string, CourseTest>();
+            entry.Add(user, new CourseTest());
 
-            BsonDocument course = new BsonDocument(entry);
+            //BsonDocumentSerializer serializer = new BsonDocumentSerializer();
+            //serializer.Serialize(new CourseTest());
+            //IConvertibleToBsonDocument
+            //ToJson();
+            //ToBsonDocument();
+            //BsonDocument course = new BsonDocument(entry);
 
             string jsonObj = "{ \"title\":\"test!\"}";
 

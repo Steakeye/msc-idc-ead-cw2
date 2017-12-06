@@ -1,4 +1,5 @@
-﻿using CourseGradeEstimator.models;
+﻿using CourseGradeEstimator.core.data;
+using CourseGradeEstimator.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,10 @@ namespace CourseGradeEstimator.routes.CourseSummary
 {
     class CourseSummaryController : core.ViewController<CourseSummaryView>
     {
-        public CourseSummaryController(Router r, Course data): base(r) {
+        public CourseSummaryController(Router r, Course course): base(r) {
             view = new CourseSummaryView();
+
+            data.SaveCourseData(course);
         }
     }
 }

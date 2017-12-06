@@ -34,7 +34,8 @@ namespace CourseGradeEstimator.core.io
             return data;
         }
 
-        public void saveData(string path, char[] data)
+        //public void SaveData(string path, char[] data)
+        public void SaveData(string path, string data)
         {
             IsolatedStorageFile isoStore = getStore();
 
@@ -67,7 +68,7 @@ namespace CourseGradeEstimator.core.io
         }
         private string getPath(string file)
         {
-            return CourseGradeEstimator.Properties.Resources.AppName + "/" + file;
+            return Properties.Resources.AppName + "/" + file;
         }
     }
 }
