@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourseGradeEstimator.core.data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace CourseGradeEstimator.routes.Create
 {
     class CreateController : core.ViewController<CreateView>
     {
-        public CreateController(Router r): base(r) {
+        public CreateController(Router r) : base(r) {
             view = new CreateView();
         }
     }

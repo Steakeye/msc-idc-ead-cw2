@@ -11,7 +11,7 @@ namespace CourseGradeEstimator.core.io
 {
     public class CourseIO : CoreIO<Course, CourseFS, CourseDB>, IConcreteIO<Course>
     {
-        public CourseIO() : base(new CourseFS()) {
+        public CourseIO() : base(new CourseFS(), new CourseDB()) {
             resourceType = Properties.Resources.AppResourceTypeCourse;
         }
 
@@ -25,7 +25,6 @@ namespace CourseGradeEstimator.core.io
             }
 
             return null;
-            
         }
     }
 }

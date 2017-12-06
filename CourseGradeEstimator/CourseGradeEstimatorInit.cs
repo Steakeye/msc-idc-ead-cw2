@@ -26,6 +26,6 @@ namespace CourseGradeEstimator
         }
 
         private Router router = new Router();
-        private Data dataLayer = new Data();
+        private Data dataLayer = Data.GetInstance();
     }
 }
