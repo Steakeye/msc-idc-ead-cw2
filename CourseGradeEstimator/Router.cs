@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CourseGradeEstimator.routes.Start;
 using CourseGradeEstimator.routes.Create;
 using CourseGradeEstimator.routes.CourseSummary;
 using System.Drawing;
+using CourseGradeEstimator.core.data;
 
 namespace CourseGradeEstimator
 {
@@ -20,8 +18,6 @@ namespace CourseGradeEstimator
     {
         public Router() {
             registerRoutes();
-            
-            
         }
 
         public void navTo(Routings route, object data = null) {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourseGradeEstimator.core.data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace CourseGradeEstimator.core
 
         protected ViewController(Router r) {
             router = r;
+            data = Data.GetInstance(); ;
         }
 
         public void tearDown()
@@ -32,6 +34,7 @@ namespace CourseGradeEstimator.core
          * Private Members
          */
         protected Router router;
+        protected Data data;
         protected V view;
 
     }

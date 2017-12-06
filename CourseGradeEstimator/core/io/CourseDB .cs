@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CourseGradeEstimator.models;
+using MongoDB.Bson.Serialization;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
@@ -8,11 +10,12 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.core.io
 {
-    public class CourseDB
+    public class CourseDB : DB
     {
-        public void Something()
+        public CourseDB()
         {
-
+            BsonClassMap.RegisterClassMap<CourseTest>();
+            BsonClassMap.RegisterClassMap<Course>();
         }
     }
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.models
 {
-    public abstract class CourseItem : Item
+    public class CourseTest
     {
-        [JsonProperty("description")]
-        public string Description;
+        public int test = 42;
+           
     }
 }

@@ -11,20 +11,34 @@ namespace CourseGradeEstimator.core.data
 {
     public class Data
     {
-
-        public Data()
+        public static Data GetInstance()
         {
-            string name = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-// Match userMatch = Regex.Match(name, @"\w+\\\\(\w+)");
-            Match userMatch = Regex.Match(name, @"\w+\\(\w+)");
-            userName = userMatch.Groups[1].Value;
-            courseIO = new CourseIO(userName);
+            //Data dl = instance;
+
+            if (instance == null) {
+                //dl = 
+                instance = new Data();
+            }
+
+            return instance;
         }
-        public Course LoadCourseData() {
+
+        Data()
+        {
+            courseIO = new CourseIO();
+        }
+        public Course LoadCourseData()
+        {
             return courseIO.LoadData();
         }
+        public void SaveCourseData(Course course)
+        {
+            string jsonData = Course.GetJsonFromInstance(course);
 
-        private string userName;
+            courseIO.SaveData(jsonData);
+        }
+
+        private static Data instance;
 
         private CourseIO courseIO;
     }

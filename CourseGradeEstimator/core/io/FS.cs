@@ -10,8 +10,6 @@ namespace CourseGradeEstimator.core.io
 {
     public class FS
     {
-        public FS() { }
-
         public string LoadData(string path)
         {
             string data = null;
@@ -36,21 +34,32 @@ namespace CourseGradeEstimator.core.io
             return data;
         }
 
-        public void saveData(string path, char[] data)
+        //public void SaveData(string path, char[] data)
+        public void SaveData(string path, string data)
         {
             IsolatedStorageFile isoStore = getStore();
 
             string filePath = getPath(path);
-
-            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream("TestStore.txt", FileMode.CreateNew, isoStore))
-            {
-                using (StreamWriter writer = new StreamWriter(isoStream))
+            //using (var stream = new FileStream(path, FileMode.Truncate))
+            //{
+            //	using (var writer = new StreamWriter(stream))
+            //	{
+            //		writer.Write("data");
+            //	}
+            //}
+            //            if (!isoStore.FileExists(filePath))
+            //            {
+            //using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.CreateNew, isoStore))
+            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Create, isoStore))
                 {
-                    //writer.Write("");
-                    writer.WriteLine(data);
-                    //Console.WriteLine("You have written to the file.");
+                    using (StreamWriter writer = new StreamWriter(isoStream))
+                    {
+                        //writer.Write("");
+                        writer.WriteLine(data);
+                        //Console.WriteLine("You have written to the file.");
+                    }
                 }
-            }
+//            }
         }
 
         private IsolatedStorageFile getStore()
@@ -59,7 +68,7 @@ namespace CourseGradeEstimator.core.io
         }
         private string getPath(string file)
         {
-            return CourseGradeEstimator.Properties.Resources.AppName + "/" + file;
+            return Properties.Resources.AppName + "/" + file;
         }
     }
 }

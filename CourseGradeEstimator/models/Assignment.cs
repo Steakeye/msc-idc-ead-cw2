@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.models
 {
-    public class Course : CourseItem
+    public class Assignment : CourseItem
     {
-        public int TotalCredits { get => determineCredits(); }
-
         [JsonProperty("modules")]
-        public List<Module> Modules;
-
-        private int determineCredits() {
-            return 42;
-        }
+        public int CreditWeight;
+        
+        [JsonProperty("qualifying_component")]
+        public int QualifyingComponent;
     }
 }
