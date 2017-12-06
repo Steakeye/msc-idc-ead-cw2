@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.core.io
 {
-    public class CourseDB
+    public class CourseDB : DB
     {
         public void Something()
         {

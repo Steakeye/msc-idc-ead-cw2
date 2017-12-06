@@ -14,6 +14,7 @@ namespace CourseGradeEstimator.core.io
 
     abstract public class CoreIO<D, F, S>
         where F : FS
+        where S : DB
     {
         public CoreIO(F fsFacade, S storeFacade) {
             fs = fsFacade;
@@ -22,17 +23,21 @@ namespace CourseGradeEstimator.core.io
 
         public CoreIO()
         {
+            userName = getUserName();
         }
 
         public abstract D LoadData();
 
         protected virtual string LoadRawData() {
+            string dbData = loadDataFromDB();
             return loadDataFromFile();
         }
         public virtual string loadDataFromFile() {
             return fs.LoadData(resourceType + fsExt);
         }
-        public virtual void loadDataFromDB() { }
+        public virtual string loadDataFromDB() {
+            return db.LoadData(resourceType, userName);
+        }
 
 
         protected string getUserName()

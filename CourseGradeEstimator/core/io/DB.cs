@@ -2,25 +2,28 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Net;
+using MongoDB.Bson;
 
 namespace CourseGradeEstimator.core.io
 {
-    class DB
+    public class DB
     {
         public DB() {
             //"mongodb://user:pass@host:port/db";
             string dbName = Properties.Resources.AppDBName;
-            string uri = String.Format(Properties.Resources.AppDBConnectionString, Properties.Resources.AppDBUser, Properties.Resources.AppDBPass);
+            string uri = String.Format(Properties.Resources.AppDBConnectionString, Properties.Resources.AppDBUser, WebUtility.UrlEncode(Properties.Resources.AppDBPass));
 
             client = new MongoClient(uri + dbName);
             db = client.GetDatabase(dbName);
         }
 
 
-        public string LoadData(string path)
+        public string LoadData(string collection, string user)
         {
             string data = null;
 
+            IMongoCollection<BsonDocument> dbCollection = db.GetCollection<BsonDocument>(collection.ToLower());
             /*string filePath = getPath(path);
 
             if (isoStore.FileExists(filePath))
@@ -35,6 +38,17 @@ namespace CourseGradeEstimator.core.io
                     }
                 }
             }*/
+
+            //dbCollection.CountAsync<string>();
+            BsonDocument course = new BsonDocument {
+                { "title" , "test!" }
+            };
+
+            string jsonObj = "{ \"title\":\"test!\"}";
+
+            dbCollection.InsertOne(course);
+
+            db.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(1000);
 
             return data;
         }
