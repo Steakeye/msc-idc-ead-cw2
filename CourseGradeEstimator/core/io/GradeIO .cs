@@ -5,23 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 using CourseGradeEstimator.models;
-using System.Text.RegularExpressions;
 
 namespace CourseGradeEstimator.core.io
 {
-    public class CourseIO : CoreIO<Course, CourseFS, CourseDB>, IConcreteIO<Course>
+    public class GradeIO : CoreIO<CourseGrade, GradeFS, CourseDB>, IConcreteIO<CourseGrade>
     {
-        public CourseIO() : base(new CourseFS()) {
+        public GradeIO(string user) : base(new GradeFS()) {
             resourceType = Properties.Resources.AppResourceTypeCourse;
         }
 
-        public override Course LoadData()
+        public override CourseGrade LoadData()
         {
             string rawData = LoadRawData();
 
             if (rawData != null)
             {
-                return Course.GetInstanceFromJson<Course>(rawData);
+                return CourseGrade.GetInstanceFromJson<CourseGrade>(rawData);
             }
 
             return null;

@@ -14,17 +14,11 @@ namespace CourseGradeEstimator.core.data
 
         public Data()
         {
-            string name = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-// Match userMatch = Regex.Match(name, @"\w+\\\\(\w+)");
-            Match userMatch = Regex.Match(name, @"\w+\\(\w+)");
-            userName = userMatch.Groups[1].Value;
-            courseIO = new CourseIO(userName);
+            courseIO = new CourseIO();
         }
         public Course LoadCourseData() {
             return courseIO.LoadData();
         }
-
-        private string userName;
 
         private CourseIO courseIO;
     }
