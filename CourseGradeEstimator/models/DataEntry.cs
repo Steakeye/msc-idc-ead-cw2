@@ -21,7 +21,6 @@ namespace CourseGradeEstimator.models
 
         public DataEntry(string userId, D dataItem) {
             User = userId;
-            //date = DateTime.UtcNow;
             Data = dataItem;
         }
 

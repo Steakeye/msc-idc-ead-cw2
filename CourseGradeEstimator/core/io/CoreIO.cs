@@ -40,8 +40,6 @@ namespace CourseGradeEstimator.core.io
         }
         protected virtual void SaveRawData(string data)
         {
-            //TODO: Timestamp at this point??
-            //string isoDate = DateTime.UtcNow.ToString("o");
             saveDateToFile(data);
             saveDateToDB(data);
         }

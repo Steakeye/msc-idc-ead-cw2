@@ -26,13 +26,9 @@ namespace CourseGradeEstimator.core.io
         public string LoadData(string resourceType)
         {
             string data = null;
-
             IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
-
             FilterDefinition<BsonDocument> userExists = getFilterForExistance();
-
             IFindFluent<BsonDocument, BsonDocument> existingData = dbCollection.Find(userExists);
-
             List<BsonDocument> dataFromDB = existingData.ToList();
 
             if (dataFromDB.Count > 0)
@@ -47,31 +43,9 @@ namespace CourseGradeEstimator.core.io
         public void SaveData(string resourceType, string data)
         {
             IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
-
-            /*BsonDocument course = new BsonDocument {
-                { "title" , "test!" }
-            };*/
-            
-            //Dictionary<string, CourseTest> entry = new Dictionary<string, CourseTest>();
-            //entry.Add(user, new CourseTest());
-
-            //string json = "{ 'foo' : 'bar' }";
             BsonDocument document = BsonDocument.Parse(data);
 
-            
-            //BsonDocumentSerializer serializer = new BsonDocumentSerializer();
-            //serializer.Serialize(new CourseTest());
-            //IConvertibleToBsonDocument
-            //ToJson();
-            //ToBsonDocument();
-            //BsonDocument course = new BsonDocument(entry);
-
-
-            //dbCollection
-
-            //dbCollection.InsertOne(document);
-            //dbCollection.UpdateOne(getFilterForExistance(), document, new UpdateOptions { IsUpsert = true });
-            dbCollection.InsertOne(document);
+            dbCollection.ReplaceOne(getFilterForExistance(), document, new UpdateOptions { IsUpsert = true });
         }
 
         private IMongoCollection<BsonDocument> getStore(string collection)
@@ -89,8 +63,6 @@ namespace CourseGradeEstimator.core.io
         protected string user;
 
         protected FilterDefinition<BsonDocument>  getFilterForExistance() {
-            //return $"{{ {user}: {{ $exists: true }}}}";
-            //return $"{{ user: {{ {user} }}}}";
             return new BsonDocument("user", user);
         }
     }

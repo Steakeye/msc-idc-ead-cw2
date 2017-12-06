@@ -14,8 +14,6 @@ namespace CourseGradeEstimator.core.io
     {
         public CourseDB()
         {
-            BsonClassMap.RegisterClassMap<CourseTest>();
-            BsonClassMap.RegisterClassMap<Course>();
         }
     }
 }
