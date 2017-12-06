@@ -41,13 +41,28 @@ namespace CourseGradeEstimator.core.io
             string filePath = getPath(path);
 
             using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Create, isoStore))
+            {
+                using (StreamWriter writer = new StreamWriter(isoStream))
+                {
+                    Console.WriteLine("File exists!");
+                    writer.WriteLine(data);
+                }
+            }
+        }
+        public void DeleteData(string path, string data)
+        {
+            IsolatedStorageFile isoStore = getStore();
+
+            string filePath = getPath(path);
+
+            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Create, isoStore))
                 {
                     using (StreamWriter writer = new StreamWriter(isoStream))
                     {
+                        Console.WriteLine("File exists!");
                         writer.WriteLine(data);
                     }
                 }
-//            }
         }
 
         private IsolatedStorageFile getStore()

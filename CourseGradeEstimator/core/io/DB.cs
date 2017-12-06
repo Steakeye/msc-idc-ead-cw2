@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net;
 using MongoDB.Bson;
-using System.Text.RegularExpressions;
-using CourseGradeEstimator.models;
-using MongoDB.Bson.Serialization.Serializers;
 using CourseGradeEstimator.core.utils;
 
 namespace CourseGradeEstimator.core.io
