@@ -25,7 +25,6 @@ namespace CourseGradeEstimator.core.io
             }
 
             return null;
-            
         }
     }
 }

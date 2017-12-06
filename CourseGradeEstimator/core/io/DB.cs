@@ -4,42 +4,37 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net;
 using MongoDB.Bson;
+using System.Text.RegularExpressions;
 
 namespace CourseGradeEstimator.core.io
 {
     public class DB
     {
         public DB() {
-            //"mongodb://user:pass@host:port/db";
             string dbName = Properties.Resources.AppDBName;
             string uri = String.Format(Properties.Resources.AppDBConnectionString, Properties.Resources.AppDBUser, WebUtility.UrlEncode(Properties.Resources.AppDBPass));
 
             client = new MongoClient(uri + dbName);
             db = client.GetDatabase(dbName);
+            user = getUserName();
         }
 
 
-        public string LoadData(string collection, string user)
+        public string LoadData(string resourceType)
         {
             string data = null;
 
-            IMongoCollection<BsonDocument> dbCollection = db.GetCollection<BsonDocument>(collection.ToLower());
-            /*string filePath = getPath(path);
+            IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
 
-            if (isoStore.FileExists(filePath))
-            {
-                Console.WriteLine("File exists!");
-                using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Open, isoStore))
-                {
-                    using (StreamReader reader = new StreamReader(isoStream))
-                    {
-                        Console.WriteLine("Reading contents:");
-                        data = reader.ReadToEnd();
-                    }
-                }
-            }*/
+            saveData(resourceType, user, null);
+            
+            return data;
+        }
 
-            //dbCollection.CountAsync<string>();
+        public void saveData(string resourceType, string user, char[] data)
+        {
+            IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
+
             BsonDocument course = new BsonDocument {
                 { "title" , "test!" }
             };
@@ -47,27 +42,13 @@ namespace CourseGradeEstimator.core.io
             string jsonObj = "{ \"title\":\"test!\"}";
 
             dbCollection.InsertOne(course);
-
-            db.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(1000);
-
-            return data;
         }
 
-        public void saveData(string path, char[] data)
+        private IMongoCollection<BsonDocument> getStore(string collection)
         {
-            /*string filePath = getPath(path);
-
-            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream("TestStore.txt", FileMode.CreateNew, isoStore))
-            {
-                using (StreamWriter writer = new StreamWriter(isoStream))
-                {
-                    //writer.Write("");
-                    writer.WriteLine(data);
-                    //Console.WriteLine("You have written to the file.");
-                }
-            }*/
+            return db.GetCollection<BsonDocument>(collection.ToLower());
         }
-    
+
         private string getPath(string file)
         {
             return "path";
@@ -75,5 +56,14 @@ namespace CourseGradeEstimator.core.io
 
         protected MongoClient client;
         protected IMongoDatabase db;
+        protected string user;
+
+        protected string getUserName()
+        {
+            string name = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            Match userMatch = Regex.Match(name, @"\w+\\(\w+)");
+
+            return userMatch.Groups[1].Value;
+        }
     }
 }

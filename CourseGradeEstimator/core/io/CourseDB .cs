@@ -10,9 +10,9 @@ namespace CourseGradeEstimator.core.io
 {
     public class CourseDB : DB
     {
-        public void Something()
+        /*public CourseDB()
         {
 
-        }
+        }*/
     }
 }

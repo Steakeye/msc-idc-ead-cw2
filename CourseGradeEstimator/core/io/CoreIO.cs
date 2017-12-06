@@ -21,11 +21,6 @@ namespace CourseGradeEstimator.core.io
             db = storeFacade;
         }
 
-        public CoreIO()
-        {
-            userName = getUserName();
-        }
-
         public abstract D LoadData();
 
         protected virtual string LoadRawData() {
@@ -36,19 +31,9 @@ namespace CourseGradeEstimator.core.io
             return fs.LoadData(resourceType + fsExt);
         }
         public virtual string loadDataFromDB() {
-            return db.LoadData(resourceType, userName);
+            return db.LoadData(resourceType);
         }
 
-
-        protected string getUserName()
-        {
-            string name = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            Match userMatch = Regex.Match(name, @"\w+\\(\w+)");
-
-            return userMatch.Groups[1].Value;
-        }
-
-        protected string userName;
         protected string resourceType;
 
         protected F fs;
