@@ -65,11 +65,13 @@
     <Compile Include="core\io\GradeFS.cs" />
     <Compile Include="core\io\CourseFS .cs" />
     <Compile Include="core\io\GradeIO .cs" />
+    <Compile Include="core\utils\Utils.cs" />
     <Compile Include="models\CourseTest.cs" />
     <Compile Include="models\CourseGrade.cs" />
     <Compile Include="models\Assignment.cs" />
     <Compile Include="models\AssignmentGrade.cs" />
     <Compile Include="models\GradeItem.cs" />
+    <Compile Include="models\DataEntry.cs" />
     <Compile Include="models\ModuleGrade.cs" />
     <Compile Include="models\Module.cs" />
     <Compile Include="models\Item.cs" />
