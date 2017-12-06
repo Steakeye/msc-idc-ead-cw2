@@ -31,13 +31,12 @@ namespace CourseGradeEstimator.core.io
             FilterDefinition<BsonDocument> userExists = $"{{ {user}: {{ $exists: true }}}}";
 
             IFindFluent<BsonDocument, BsonDocument> existingData = dbCollection.Find(userExists);
-
-            saveData(resourceType, user, null);
             
             return data;
         }
 
-        public void saveData(string resourceType, string user, char[] data)
+        //public void SaveData(string resourceType, string user, char[] data)
+        public void SaveData(string resourceType, string data)
         {
             IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
 
