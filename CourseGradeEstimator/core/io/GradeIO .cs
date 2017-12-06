@@ -24,7 +24,11 @@ namespace CourseGradeEstimator.core.io
             }
 
             return null;
-            
+
+        }
+        public override void SaveData(CourseGrade data)
+        {
+
         }
     }
 }

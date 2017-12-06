@@ -31,16 +31,16 @@ namespace CourseGradeEstimator.core.io
         }*/
 
         public abstract D LoadData();
+        public abstract void SaveData(D data);
 
         protected virtual string LoadRawData()
         {
             string dbData = loadDataFromDB();
             return loadDataFromFile();
         }
-        protected virtual string SaveRawData(string data)
+        protected virtual void SaveRawData(string data)
         {
-            //string dbData = loadDataFromDB();
-            //return loadDataFromFile();
+            //TODO: Timestamp at this point??
             saveDateToFile(data);
             saveDateToDB(data);
         }
@@ -52,13 +52,13 @@ namespace CourseGradeEstimator.core.io
         {
             return db.LoadData(resourceType);
         }
-        protected virtual string saveDateToFile(string data)
+        protected virtual void saveDateToFile(string data)
         {
-            return fs.SaveData(resourceType + fsExt);
+            fs.SaveData(resourceType + fsExt, data);
         }
-        protected virtual string saveDateToDB(string data)
+        protected virtual void saveDateToDB(string data)
         {
-            return db.SaveData(resourceType);
+            db.SaveData(resourceType, data);
         }
 
         protected string resourceType;

@@ -26,5 +26,12 @@ namespace CourseGradeEstimator.core.io
 
             return null;
         }
+
+        public override void SaveData(Course data)
+        {
+            string rawData = Course.GetJsonFromInstance(data);
+
+            SaveRawData(rawData);
+        }
     }
 }
