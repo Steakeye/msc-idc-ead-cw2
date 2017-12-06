@@ -33,9 +33,9 @@ namespace CourseGradeEstimator.core.data
         }
         public void SaveCourseData(Course course)
         {
-            string jsonData = Course.GetJsonFromInstance(course);
+            //string jsonData = Course.GetJsonFromInstance(course);
 
-            courseIO.SaveData(jsonData);
+            courseIO.SaveData(course);
         }
 
         private static Data instance;
