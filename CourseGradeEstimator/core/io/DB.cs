@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Net;
 using MongoDB.Bson;
 using System.Text.RegularExpressions;
+using CourseGradeEstimator.models;
 
 namespace CourseGradeEstimator.core.io
 {
@@ -26,6 +27,10 @@ namespace CourseGradeEstimator.core.io
 
             IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
 
+            FilterDefinition<BsonDocument> userExists = $"{{ {user}: {{ $exists: true }}}}";
+
+            IFindFluent<BsonDocument, BsonDocument> existingData = dbCollection.Find(userExists);
+
             saveData(resourceType, user, null);
             
             return data;
@@ -35,13 +40,20 @@ namespace CourseGradeEstimator.core.io
         {
             IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
 
-            BsonDocument course = new BsonDocument {
+            /*BsonDocument course = new BsonDocument {
                 { "title" , "test!" }
-            };
+            };*/
+            
+            Dictionary<string, Course> entry = new Dictionary<string, Course>();
+            entry.Add(user, new Course());
+
+            BsonDocument course = new BsonDocument(entry);
 
             string jsonObj = "{ \"title\":\"test!\"}";
 
-            dbCollection.InsertOne(course);
+            //dbCollection
+
+            //dbCollection.InsertOne(course);
         }
 
         private IMongoCollection<BsonDocument> getStore(string collection)
