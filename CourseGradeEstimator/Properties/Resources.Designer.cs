@@ -61,6 +61,42 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mongodb://{0}:{1}@ds129906.mlab.com:29906/.
+        /// </summary>
+        internal static string AppDBConnectionString {
+            get {
+                return ResourceManager.GetString("AppDBConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ead-cw2.
+        /// </summary>
+        internal static string AppDBName {
+            get {
+                return ResourceManager.GetString("AppDBName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gr4d3:P$%%.
+        /// </summary>
+        internal static string AppDBPass {
+            get {
+                return ResourceManager.GetString("AppDBPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to gradeApp.
+        /// </summary>
+        internal static string AppDBUser {
+            get {
+                return ResourceManager.GetString("AppDBUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CourseGradeEstimator.
         /// </summary>
         internal static string AppName {

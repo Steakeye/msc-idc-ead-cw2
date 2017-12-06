@@ -15,8 +15,9 @@ namespace CourseGradeEstimator.core.io
     abstract public class CoreIO<D, F, S>
         where F : FS
     {
-        public CoreIO(F fsFacade) {
+        public CoreIO(F fsFacade, S storeFacade) {
             fs = fsFacade;
+            db = storeFacade;
         }
 
         public CoreIO()

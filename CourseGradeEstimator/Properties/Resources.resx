@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppDBConnectionString" xml:space="preserve">
+    <value>mongodb://{0}:{1}@ds129906.mlab.com:29906/</value>
+  </data>
+  <data name="AppDBName" xml:space="preserve">
+    <value>ead-cw2</value>
+  </data>
+  <data name="AppDBPass" xml:space="preserve">
+    <value>Gr4d3:P$%%</value>
+  </data>
+  <data name="AppDBUser" xml:space="preserve">
+    <value>gradeApp</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>CourseGradeEstimator</value>
   </data>
