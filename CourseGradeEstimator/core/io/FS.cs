@@ -34,32 +34,35 @@ namespace CourseGradeEstimator.core.io
             return data;
         }
 
-        //public void SaveData(string path, char[] data)
         public void SaveData(string path, string data)
         {
             IsolatedStorageFile isoStore = getStore();
 
             string filePath = getPath(path);
-            //using (var stream = new FileStream(path, FileMode.Truncate))
-            //{
-            //	using (var writer = new StreamWriter(stream))
-            //	{
-            //		writer.Write("data");
-            //	}
-            //}
-            //            if (!isoStore.FileExists(filePath))
-            //            {
-            //using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.CreateNew, isoStore))
+
+            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Create, isoStore))
+            {
+                using (StreamWriter writer = new StreamWriter(isoStream))
+                {
+                    Console.WriteLine("File exists!");
+                    writer.WriteLine(data);
+                }
+            }
+        }
+        public void DeleteData(string path, string data)
+        {
+            IsolatedStorageFile isoStore = getStore();
+
+            string filePath = getPath(path);
+
             using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Create, isoStore))
                 {
                     using (StreamWriter writer = new StreamWriter(isoStream))
                     {
-                        //writer.Write("");
+                        Console.WriteLine("File exists!");
                         writer.WriteLine(data);
-                        //Console.WriteLine("You have written to the file.");
                     }
                 }
-//            }
         }
 
         private IsolatedStorageFile getStore()
