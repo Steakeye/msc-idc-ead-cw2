@@ -65,7 +65,8 @@
     <Compile Include="core\io\GradeFS.cs" />
     <Compile Include="core\io\CourseFS .cs" />
     <Compile Include="core\io\GradeIO .cs" />
-    <Compile Include="core\utils\Utils.cs" />
+    <Compile Include="core\utils\View.cs" />
+    <Compile Include="core\utils\User.cs" />
     <Compile Include="models\CourseTest.cs" />
     <Compile Include="models\CourseGrade.cs" />
     <Compile Include="models\Assignment.cs" />
@@ -111,6 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="core\view\View.resx">
+      <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -121,6 +125,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="routes\Start\StartView.resx">
+      <DependentUpon>StartView.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StartView1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

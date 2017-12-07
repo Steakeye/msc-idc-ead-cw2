@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CourseGradeEstimator.core.view
@@ -20,10 +19,10 @@ namespace CourseGradeEstimator.core.view
 
         public Hashtable EventBindings => eventBindings;
 
-        protected System.EventHandler makeBinding<A>(A eventKey) {
+        protected EventHandler makeBinding<A>(A eventKey) {
             VoidDelegate cb = (VoidDelegate)eventBindings[eventKey];
 
-            return new System.EventHandler((object sender, EventArgs e) => Invoke(cb));
+            return new EventHandler((object sender, EventArgs e) => Invoke(cb));
         }
         protected void FindFuncAndCall<A>(A eventKey)
         {
@@ -33,5 +32,17 @@ namespace CourseGradeEstimator.core.view
 
         protected Hashtable eventBindings = new Hashtable();
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // View
+            // 
+            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.MinimumSize = new System.Drawing.Size(600, 400);
+            this.Name = "View";
+            this.ResumeLayout(false);
+
+        }
     }
 }

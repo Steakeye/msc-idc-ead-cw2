@@ -1,4 +1,7 @@
-﻿namespace CourseGradeEstimator.routes.Start
+﻿using CourseGradeEstimator.core.utils;
+using System.Resources;
+
+namespace CourseGradeEstimator.routes.Start
 {
     partial class StartView
     {
@@ -35,11 +38,10 @@
             // 
             this.button1.Location = new System.Drawing.Point(108, 190);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = View.GetButtonSize();
             this.button1.TabIndex = 0;
-            this.button1.Text = "create";
+            this.button1.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
             this.button1.UseVisualStyleBackColor = true;
-            //this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StartView
             // 
@@ -48,7 +50,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.button1);
             this.Name = "StartView";
-            this.Text = "Start";
+            this.Text = "Create Course";
             this.ResumeLayout(false);
 
         }
