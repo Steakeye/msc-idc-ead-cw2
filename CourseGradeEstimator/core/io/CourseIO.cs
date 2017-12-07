@@ -31,7 +31,6 @@ namespace CourseGradeEstimator.core.io
 
         public override void SaveData(Course data)
         {
-            //string rawData = Course.GetJsonFromInstance(data);
             DataEntry<Course> entry = new DataEntry<Course>(Utils.GetUserName(), data);
 
             //Add date
@@ -40,6 +39,10 @@ namespace CourseGradeEstimator.core.io
             string rawData = DataEntry<Course>.GetJsonFromInstance(entry);
 
             SaveRawData(rawData);
+        }
+        public override void DeleteData()
+        {
+            DeleteRawData();
         }
     }
 }

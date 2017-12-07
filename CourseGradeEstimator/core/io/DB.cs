@@ -36,13 +36,20 @@ namespace CourseGradeEstimator.core.io
             return data;
         }
 
-        //public void SaveData(string resourceType, string user, char[] data)
         public void SaveData(string resourceType, string data)
         {
             IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
             BsonDocument document = BsonDocument.Parse(data);
 
             dbCollection.ReplaceOne(getFilterForExistance(), document, new UpdateOptions { IsUpsert = true });
+        }
+
+        public void DeleteData(string resourceType)
+        {
+            IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
+            //BsonDocument document = BsonDocument.Parse(data);
+
+            dbCollection.DeleteOne(getFilterForExistance());
         }
 
         private IMongoCollection<BsonDocument> getStore(string collection)

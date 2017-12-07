@@ -40,5 +40,10 @@ namespace CourseGradeEstimator.core.io
 
             SaveRawData(rawData);
         }
+
+        public override void DeleteData()
+        {
+            DeleteRawData();
+        }
     }
 }

@@ -51,7 +51,7 @@ namespace CourseGradeEstimator.core.io
                 isoStream.Close();
             }
         }
-        public void DeleteData(string path, string data)
+        public void DeleteData(string path)
         {
             IsolatedStorageFile isoStore = getStore();
 
