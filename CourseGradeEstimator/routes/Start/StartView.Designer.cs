@@ -34,11 +34,12 @@
             // startBtn
             // 
             this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startBtn.Location = new System.Drawing.Point(185, 217);
             this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(75, 23);
             this.startBtn.TabIndex = 0;
-            this.startBtn.Text = Properties.Resources.ViewStartStartButtonText;
+            this.startBtn.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
             this.startBtn.UseVisualStyleBackColor = true;
-
             // 
             // StartView
             // 
@@ -47,9 +48,8 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.startBtn);
             this.Name = "StartView";
-            this.Text = Properties.Resources.AppTitle;
+            this.Text = "Course Grade Estimator";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
