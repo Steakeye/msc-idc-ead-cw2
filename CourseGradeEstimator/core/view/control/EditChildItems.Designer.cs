@@ -35,15 +35,15 @@ namespace CourseGradeEstimator.core.view.control
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flowPanel
             // 
             this.flowPanel.Location = new System.Drawing.Point(0, 0);
             this.flowPanel.Name = "flowPanel";
             this.flowPanel.Size = new System.Drawing.Size(252, 100);
             this.flowPanel.TabIndex = 0;
-            this.flowPanel.AutoScroll = true;
+            //this.flowPanel.AutoScroll = true;
             this.flowPanel.FlowDirection = FlowDirection.TopDown;
-            this.flowPanel.WrapContents = true;
+            this.flowPanel.WrapContents = false;
             // 
             // headerLabel
             // 
@@ -53,7 +53,6 @@ namespace CourseGradeEstimator.core.view.control
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(0, 29);
             this.headerLabel.TabIndex = 1;
-            this.headerLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel1
             // 

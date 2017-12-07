@@ -39,7 +39,7 @@ namespace CourseGradeEstimator.core.view
 
         protected void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // View
             // 
@@ -57,19 +57,40 @@ namespace CourseGradeEstimator.core.view
             this.MinimumSize = this.Size;
             **/
 
+            setupLayoutPanel();
+
             ResumeLayout(false);
 
         }
 
-        protected void setupButton(Button btn)
+        protected static void setupButton(Button btn)
         {
             btn.Size = ViewUtils.GetButtonSize();
         }
-        protected void setupButton(Button btn, ButtonSize size)
+        protected static void setupButton(Button btn, ButtonSize size)
         {
                 /*btn.Margin = new Padding(50);
                 btn.Padding = new Padding(50);*/
             btn.Size = ViewUtils.GetButtonSize(size);
         }
+
+        protected void setupLayoutPanel()
+        {
+            // 
+            // flowPanel
+            // 
+            flowPanel = new FlowLayoutPanel();
+            flowPanel.Location = new System.Drawing.Point(0, 0);
+            flowPanel.Name = "flowPanel";
+            flowPanel.Size = new System.Drawing.Size(ClientSize.Width, ClientSize.Height);
+            flowPanel.TabIndex = 0;
+            //this.flowPanel.AutoScroll = true;
+            flowPanel.FlowDirection = FlowDirection.TopDown;
+            flowPanel.WrapContents = false;
+
+            Controls.Add(flowPanel);
+        }
+
+        protected FlowLayoutPanel flowPanel;
     }
 }

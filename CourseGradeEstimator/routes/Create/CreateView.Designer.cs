@@ -47,9 +47,9 @@
             // 
             this.childItems.AutoSize = true;
             this.childItems.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.childItems.Location = new System.Drawing.Point(0, 0);
+            this.childItems.Location = new System.Drawing.Point(0, 250);
             this.childItems.Name = "childItems";
-            this.childItems.Size = new System.Drawing.Size(0, 0);
+            this.childItems.Size = new System.Drawing.Size(100, 100);
             this.childItems.TabIndex = 1;
 
             // 
@@ -59,7 +59,7 @@
             this.bottomButtonBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.bottomButtonBar.Location = new System.Drawing.Point(0, 168);
             this.bottomButtonBar.Name = "bottomButtonBar1";
-            this.bottomButtonBar.Size = new System.Drawing.Size(0, 0);
+            this.bottomButtonBar.Size = new System.Drawing.Size(200, 50);
             this.bottomButtonBar.TabIndex = 2;
 
             // 
@@ -68,9 +68,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.header);
+            /*this.Controls.Add(this.header);
             this.Controls.Add(this.childItems);
-            this.Controls.Add(this.bottomButtonBar);
+            this.Controls.Add(this.bottomButtonBar);*/
+            //flowPanel
+            flowPanel.Controls.Add(this.header);
+            flowPanel.Controls.Add(this.childItems);
+            flowPanel.Controls.Add(this.bottomButtonBar);
             this.Name = "CreateView";
             this.ResumeLayout(false);
             this.PerformLayout();

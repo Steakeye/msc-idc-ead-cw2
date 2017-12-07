@@ -20,6 +20,9 @@ namespace CourseGradeEstimator.routes.Create
             this.Text = $"{Properties.Resources.AppTitle} - Create {headerTitle}";
             this.header.Title = headerTitle;
             this.childItems.Title = Properties.Resources.StringsModules;
+            header.BackColor = Color.Orange;
+            childItems.BackColor = Color.Blue;
+            bottomButtonBar.BackColor = Color.Green;
         }
     }
 }
