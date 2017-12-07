@@ -36,12 +36,14 @@
             this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.startBtn.AutoSize = true;
             this.startBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.startBtn.Location = new System.Drawing.Point(99, 190);
+            this.startBtn.Location = new System.Drawing.Point(0, 0);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(84, 23);
             this.startBtn.TabIndex = 0;
             this.startBtn.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
             this.startBtn.UseVisualStyleBackColor = true;
+            setupButton(startBtn);
+
             // 
             // StartView
             // 

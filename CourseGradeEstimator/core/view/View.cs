@@ -42,10 +42,16 @@ namespace CourseGradeEstimator.core.view
             // 
             // View
             // 
-            this.ClientSize = new System.Drawing.Size(584, 361);
-            this.MinimumSize = new System.Drawing.Size(600, 400);
-            this.Name = "View";
-            this.ResumeLayout(false);
+            ClientSize = new System.Drawing.Size(584, 361);
+            MinimumSize = new System.Drawing.Size(600, 400);
+            Name = "View";
+            //MaximizeBox = false;
+            // Set the MinimizeBox to false to remove the minimize box.
+            MinimizeBox = false;
+            // Set the start position of the form to the center of the screen.
+            StartPosition = FormStartPosition.CenterScreen;
+
+            ResumeLayout(false);
 
         }
 

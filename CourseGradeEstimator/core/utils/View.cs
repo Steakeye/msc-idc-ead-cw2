@@ -20,14 +20,6 @@ namespace CourseGradeEstimator.core.utils
                     }
                     break;
             }
-            if (userName == null)
-            {
-                string name = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                Match userMatch = Regex.Match(name, @"\w+\\(\w+)");
-
-                userName = userMatch.Groups[1].Value;
-
-            }
 
             return new System.Drawing.Size(w, h); ;
         }

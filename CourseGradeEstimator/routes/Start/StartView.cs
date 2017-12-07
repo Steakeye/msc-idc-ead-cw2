@@ -14,7 +14,7 @@ namespace CourseGradeEstimator.routes.Start
         {
             base.InitializeComponent();
             InitializeComponent();
-            setupButton(startBtn);
+            //setupButton(startBtn);
             //startBtn.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
            // startBtn.Location = new Point(350, 350);
             //ViewUtils.GetButtonSize(startBtn);
