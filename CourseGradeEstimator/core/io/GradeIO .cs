@@ -12,7 +12,7 @@ namespace CourseGradeEstimator.core.io
     public class GradeIO : CoreIO<CourseGrade, GradeFS, CourseDB>, IConcreteIO<CourseGrade>
     {
         public GradeIO() : base(new GradeFS(), new CourseDB()) {
-            resourceType = Properties.Resources.AppResourceTypeCourse;
+            resourceType = Properties.Resources.AppResourceTypeGrade;
         }
 
         public override CourseGrade LoadData()

@@ -135,6 +135,9 @@
   <data name="AppResourceTypeCourse" xml:space="preserve">
     <value>Course</value>
   </data>
+  <data name="AppResourceTypeGrade" xml:space="preserve">
+    <value>Grade</value>
+  </data>
   <data name="AppTitle" xml:space="preserve">
     <value>Course Grade Estimator</value>
   </data>
