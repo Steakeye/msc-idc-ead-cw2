@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.core.view
+namespace CourseGradeEstimator.core.view.control
 {
     public partial class EditHeader : UserControl
     {

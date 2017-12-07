@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.header = new CourseGradeEstimator.core.view.EditHeader();
-            this.bottomButtonBar = new CourseGradeEstimator.core.view.BottomButtonBar();
+            this.header = new CourseGradeEstimator.core.view.control.EditHeader();
+            this.childItems = new CourseGradeEstimator.core.view.control.EditChildItems();
+            this.bottomButtonBar = new CourseGradeEstimator.core.view.control.BottomButtonBar();
             this.SuspendLayout();
             // 
             // header
@@ -40,6 +41,16 @@
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(0, 0);
             this.header.TabIndex = 0;
+
+            // 
+            // childItems
+            // 
+            this.childItems.AutoSize = true;
+            this.childItems.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.childItems.Location = new System.Drawing.Point(0, 0);
+            this.childItems.Name = "childItems";
+            this.childItems.Size = new System.Drawing.Size(0, 0);
+            this.childItems.TabIndex = 1;
 
             // 
             // bottomButtonBar1
@@ -58,6 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.header);
+            this.Controls.Add(this.childItems);
             this.Controls.Add(this.bottomButtonBar);
             this.Name = "CreateView";
             this.ResumeLayout(false);
@@ -67,8 +79,9 @@
 
         #endregion
 
-        protected core.view.EditHeader header;
-        protected core.view.BottomButtonBar bottomButtonBar;
+        protected core.view.control.EditHeader header;
+        protected core.view.control.EditChildItems childItems;
+        protected core.view.control.BottomButtonBar bottomButtonBar;
     }
 }
 

@@ -67,22 +67,22 @@
     <Compile Include="core\io\GradeIO .cs" />
     <Compile Include="core\utils\View.cs" />
     <Compile Include="core\utils\User.cs" />
-    <Compile Include="core\view\EditChildItems.cs">
+    <Compile Include="core\view\control\EditChildItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="core\view\EditChildItems.Designer.cs">
+    <Compile Include="core\view\control\EditChildItems.Designer.cs">
       <DependentUpon>EditChildItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="core\view\EditHeader.cs">
+    <Compile Include="core\view\control\EditHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="core\view\EditHeader.Designer.cs">
+    <Compile Include="core\view\control\EditHeader.Designer.cs">
       <DependentUpon>EditHeader.cs</DependentUpon>
     </Compile>
-    <Compile Include="core\view\BottomButtonBar.cs">
+    <Compile Include="core\view\control\BottomButtonBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="core\view\BottomButtonBar.Designer.cs">
+    <Compile Include="core\view\control\BottomButtonBar.Designer.cs">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
     </Compile>
     <Compile Include="models\CourseTest.cs" />
@@ -114,7 +114,7 @@
     <Compile Include="routes\CourseSummary\CourseSummaryView.Designer.cs">
       <DependentUpon>CourseSummaryView.cs</DependentUpon>
     </Compile>
-    <Compile Include="routes\Create\CreateController.cs" />
+    <Compile Include="routes\Create\CreateCourseController.cs" />
     <Compile Include="routes\Create\CreateCourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,13 +136,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="core\view\EditChildItems.resx">
+    <EmbeddedResource Include="core\view\control\EditChildItems.resx">
       <DependentUpon>EditChildItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="core\view\EditHeader.resx">
+    <EmbeddedResource Include="core\view\control\EditHeader.resx">
       <DependentUpon>EditHeader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="core\view\BottomButtonBar.resx">
+    <EmbeddedResource Include="core\view\control\BottomButtonBar.resx">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="core\view\View.resx">

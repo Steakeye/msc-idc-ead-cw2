@@ -19,6 +19,7 @@ namespace CourseGradeEstimator.routes.Create
             string headerTitle = Properties.Resources.ViewCreateCourseHeader;
             this.Text = $"{Properties.Resources.AppTitle} - Create {headerTitle}";
             this.header.Title = headerTitle;
+            this.childItems.Title = Properties.Resources.StringsModules;
         }
     }
 }

@@ -141,6 +141,15 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Course Grade Estimator</value>
   </data>
+  <data name="StringsCourse" xml:space="preserve">
+    <value>Course</value>
+  </data>
+  <data name="StringsGrades" xml:space="preserve">
+    <value>Grades</value>
+  </data>
+  <data name="StringsModules" xml:space="preserve">
+    <value>Modules</value>
+  </data>
   <data name="ViewCreateCourseHeader" xml:space="preserve">
     <value>Course</value>
   </data>

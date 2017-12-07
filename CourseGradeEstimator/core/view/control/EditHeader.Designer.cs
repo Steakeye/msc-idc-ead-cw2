@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
 
-namespace CourseGradeEstimator.core.view
+namespace CourseGradeEstimator.core.view.control
 {
-    partial class EditChildItems
+    partial class EditHeader
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace CourseGradeEstimator.core.view
         private void InitializeComponent()
         {
             this.headerLabel = new Label();
-            //this.headerTextfield = new TextBox();
+            this.headerTextfield = new TextBox();
 
             this.SuspendLayout();
 
@@ -50,19 +50,19 @@ namespace CourseGradeEstimator.core.view
             //
             // headerTextfield
             //
-            //this.headerTextfield.AutoSize = true;
-            //this.headerTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.headerTextfield.Location = new System.Drawing.Point(15, 100);
-            //this.headerTextfield.Name = "headerTextfield";
-            //this.headerTextfield.Size = new System.Drawing.Size(282, 29);
-            //this.headerTextfield.TabIndex = 1;
+            this.headerTextfield.AutoSize = true;
+            this.headerTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headerTextfield.Location = new System.Drawing.Point(15, 100);
+            this.headerTextfield.Name = "headerTextfield";
+            this.headerTextfield.Size = new System.Drawing.Size(282, 29);
+            this.headerTextfield.TabIndex = 1;
 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.headerLabel);
-            //this.Controls.Add(this.headerTextfield);
+            this.Controls.Add(this.headerTextfield);
             this.Name = "EditHeader";
             this.Size = new System.Drawing.Size(0, 0);
             this.ResumeLayout(false);
@@ -72,7 +72,7 @@ namespace CourseGradeEstimator.core.view
         #endregion
 
         private Label headerLabel;
-        //private TextBox headerTextfield;
+        private TextBox headerTextfield;
 
     }
 }

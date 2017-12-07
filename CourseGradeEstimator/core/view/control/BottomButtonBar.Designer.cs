@@ -1,4 +1,4 @@
-﻿namespace CourseGradeEstimator.core.view
+﻿namespace CourseGradeEstimator.core.view.control
 {
     partial class BottomButtonBar
     {
