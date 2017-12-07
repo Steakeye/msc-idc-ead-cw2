@@ -11,7 +11,7 @@ namespace CourseGradeEstimator.core.io
 {
     public class GradeIO : CoreIO<CourseGrade, GradeFS, CourseDB>, IConcreteIO<CourseGrade>
     {
-        public GradeIO(string user) : base(new GradeFS(), new CourseDB()) {
+        public GradeIO() : base(new GradeFS(), new CourseDB()) {
             resourceType = Properties.Resources.AppResourceTypeCourse;
         }
 
@@ -30,7 +30,6 @@ namespace CourseGradeEstimator.core.io
 
         public override void SaveData(CourseGrade data)
         {
-            //string rawData = Course.GetJsonFromInstance(data);
             DataEntry<CourseGrade> entry = new DataEntry<CourseGrade>(Utils.GetUserName(), data);
 
             //Add date
@@ -39,6 +38,11 @@ namespace CourseGradeEstimator.core.io
             string rawData = DataEntry<CourseGrade>.GetJsonFromInstance(entry);
 
             SaveRawData(rawData);
+        }
+
+        public override void DeleteData()
+        {
+            DeleteRawData();
         }
     }
 }

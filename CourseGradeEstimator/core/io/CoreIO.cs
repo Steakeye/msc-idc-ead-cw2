@@ -23,25 +23,25 @@ namespace CourseGradeEstimator.core.io
             db = storeFacade;
         }
 
-        /*public static string SerializeData<D>(D data)
-            where D : Item
-        {
-            return Item.GetJsonFromInstance(data);
-            //return "";
-        }*/
-
         public abstract D LoadData();
         public abstract void SaveData(D data);
+        public abstract void DeleteData();
 
         protected virtual string LoadRawData()
         {
+            //TODO: load both and pick the newest
             string dbData = loadDataFromDB();
             return loadDataFromFile();
         }
         protected virtual void SaveRawData(string data)
         {
-            saveDateToFile(data);
-            saveDateToDB(data);
+            saveDataToFile(data);
+            saveDataToDB(data);
+        }
+        protected virtual void DeleteRawData()
+        {
+            deleteDataFromFile();
+            deleteDataFromDB();
         }
         protected virtual string loadDataFromFile()
         {
@@ -51,13 +51,21 @@ namespace CourseGradeEstimator.core.io
         {
             return db.LoadData(resourceType);
         }
-        protected virtual void saveDateToFile(string data)
+        protected virtual void saveDataToFile(string data)
         {
             fs.SaveData(resourceType + fsExt, data);
         }
-        protected virtual void saveDateToDB(string data)
+        protected virtual void saveDataToDB(string data)
         {
             db.SaveData(resourceType, data);
+        }
+        protected virtual void deleteDataFromFile()
+        {
+            fs.DeleteData(resourceType + fsExt);
+        }
+        protected virtual void deleteDataFromDB()
+        {
+            db.DeleteData(resourceType);
         }
 
         protected string resourceType;
