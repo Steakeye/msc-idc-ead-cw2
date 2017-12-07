@@ -28,6 +28,7 @@ namespace CourseGradeEstimator.core.io
                         Console.WriteLine("Reading contents:");
                         data = reader.ReadToEnd();
                     }
+                    isoStream.Close();
                 }
             }
 
@@ -44,9 +45,10 @@ namespace CourseGradeEstimator.core.io
             {
                 using (StreamWriter writer = new StreamWriter(isoStream))
                 {
-                    Console.WriteLine("File exists!");
+                    Console.WriteLine("Saving file to disk");
                     writer.WriteLine(data);
                 }
+                isoStream.Close();
             }
         }
         public void DeleteData(string path, string data)
@@ -55,14 +57,11 @@ namespace CourseGradeEstimator.core.io
 
             string filePath = getPath(path);
 
-            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Create, isoStore))
-                {
-                    using (StreamWriter writer = new StreamWriter(isoStream))
-                    {
-                        Console.WriteLine("File exists!");
-                        writer.WriteLine(data);
-                    }
-                }
+            if (isoStore.FileExists(path))
+            {
+
+                isoStore.DeleteFile(path);
+            }
         }
 
         private IsolatedStorageFile getStore()
