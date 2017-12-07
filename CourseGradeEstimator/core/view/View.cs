@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using ViewUtils = CourseGradeEstimator.core.utils.View;
 
 using System.Windows.Forms;
+using CourseGradeEstimator.core.utils;
 
 namespace CourseGradeEstimator.core.view
 {
@@ -51,12 +52,24 @@ namespace CourseGradeEstimator.core.view
             // Set the start position of the form to the center of the screen.
             StartPosition = FormStartPosition.CenterScreen;
 
+            /*// lock form
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            **/
+
             ResumeLayout(false);
 
         }
 
-        protected void setupButton(Button btn) {
+        protected void setupButton(Button btn)
+        {
             btn.Size = ViewUtils.GetButtonSize();
+        }
+        protected void setupButton(Button btn, ButtonSize size)
+        {
+                /*btn.Margin = new Padding(50);
+                btn.Padding = new Padding(50);*/
+            btn.Size = ViewUtils.GetButtonSize(size);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace CourseGradeEstimator.core.utils
 {
-    enum ButtonSize {
+    public enum ButtonSize {
         Standard
     }
     static class View
