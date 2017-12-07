@@ -13,10 +13,8 @@ namespace CourseGradeEstimator.core.data
     {
         public static Data GetInstance()
         {
-            //Data dl = instance;
 
             if (instance == null) {
-                //dl = 
                 instance = new Data();
             }
 
@@ -33,8 +31,6 @@ namespace CourseGradeEstimator.core.data
         }
         public void SaveCourseData(Course course)
         {
-            //string jsonData = Course.GetJsonFromInstance(course);
-
             courseIO.SaveData(course);
         }
 

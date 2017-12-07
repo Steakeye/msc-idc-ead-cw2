@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net;
 using MongoDB.Bson;
-using System.Text.RegularExpressions;
-using CourseGradeEstimator.models;
-using MongoDB.Bson.Serialization.Serializers;
+using CourseGradeEstimator.core.utils;
 
 namespace CourseGradeEstimator.core.io
 {
@@ -18,20 +16,23 @@ namespace CourseGradeEstimator.core.io
 
             client = new MongoClient(uri + dbName);
             db = client.GetDatabase(dbName);
-            user = getUserName();
+            user = Utils.GetUserName();
         }
 
 
         public string LoadData(string resourceType)
         {
             string data = null;
-
             IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
-
-            FilterDefinition<BsonDocument> userExists = $"{{ {user}: {{ $exists: true }}}}";
-
+            FilterDefinition<BsonDocument> userExists = getFilterForExistance();
             IFindFluent<BsonDocument, BsonDocument> existingData = dbCollection.Find(userExists);
-            
+            List<BsonDocument> dataFromDB = existingData.ToList();
+
+            if (dataFromDB.Count > 0)
+            {
+                data = dataFromDB[0].ToJson();
+            }
+
             return data;
         }
 
@@ -39,26 +40,9 @@ namespace CourseGradeEstimator.core.io
         public void SaveData(string resourceType, string data)
         {
             IMongoCollection<BsonDocument> dbCollection = getStore(resourceType);
+            BsonDocument document = BsonDocument.Parse(data);
 
-            /*BsonDocument course = new BsonDocument {
-                { "title" , "test!" }
-            };*/
-            
-            Dictionary<string, CourseTest> entry = new Dictionary<string, CourseTest>();
-            entry.Add(user, new CourseTest());
-
-            //BsonDocumentSerializer serializer = new BsonDocumentSerializer();
-            //serializer.Serialize(new CourseTest());
-            //IConvertibleToBsonDocument
-            //ToJson();
-            //ToBsonDocument();
-            //BsonDocument course = new BsonDocument(entry);
-
-            string jsonObj = "{ \"title\":\"test!\"}";
-
-            //dbCollection
-
-            //dbCollection.InsertOne(course);
+            dbCollection.ReplaceOne(getFilterForExistance(), document, new UpdateOptions { IsUpsert = true });
         }
 
         private IMongoCollection<BsonDocument> getStore(string collection)
@@ -75,12 +59,8 @@ namespace CourseGradeEstimator.core.io
         protected IMongoDatabase db;
         protected string user;
 
-        protected string getUserName()
-        {
-            string name = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            Match userMatch = Regex.Match(name, @"\w+\\(\w+)");
-
-            return userMatch.Groups[1].Value;
+        protected FilterDefinition<BsonDocument>  getFilterForExistance() {
+            return new BsonDocument("user", user);
         }
     }
 }

@@ -40,7 +40,6 @@ namespace CourseGradeEstimator.core.io
         }
         protected virtual void SaveRawData(string data)
         {
-            //TODO: Timestamp at this point??
             saveDateToFile(data);
             saveDateToDB(data);
         }
