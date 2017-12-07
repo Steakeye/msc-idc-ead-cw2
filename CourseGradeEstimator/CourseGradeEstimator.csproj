@@ -67,6 +67,12 @@
     <Compile Include="core\io\GradeIO .cs" />
     <Compile Include="core\utils\View.cs" />
     <Compile Include="core\utils\User.cs" />
+    <Compile Include="core\view\EditChildItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\view\EditChildItems.Designer.cs">
+      <DependentUpon>EditChildItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="core\view\EditHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="core\view\EditChildItems.resx">
+      <DependentUpon>EditChildItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="core\view\EditHeader.resx">
       <DependentUpon>EditHeader.cs</DependentUpon>
     </EmbeddedResource>
