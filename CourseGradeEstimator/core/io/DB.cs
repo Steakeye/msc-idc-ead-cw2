@@ -16,7 +16,7 @@ namespace CourseGradeEstimator.core.io
 
             client = new MongoClient(uri + dbName);
             db = client.GetDatabase(dbName);
-            user = Utils.GetUserName();
+            user = User.GetUserName();
         }
 
 

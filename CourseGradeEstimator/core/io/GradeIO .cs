@@ -30,7 +30,7 @@ namespace CourseGradeEstimator.core.io
 
         public override void SaveData(CourseGrade data)
         {
-            DataEntry<CourseGrade> entry = new DataEntry<CourseGrade>(Utils.GetUserName(), data);
+            DataEntry<CourseGrade> entry = new DataEntry<CourseGrade>(User.GetUserName(), data);
 
             //Add date
             entry.Date = DateTime.UtcNow;

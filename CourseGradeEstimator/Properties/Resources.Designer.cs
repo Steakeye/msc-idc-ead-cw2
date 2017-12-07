@@ -131,5 +131,50 @@ namespace CourseGradeEstimator.Properties {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This tool allows you to enter information about a course and then assign grades to assessments in order to determin your predicted grade..
+        /// </summary>
+        internal static string ViewStartDescription {
+            get {
+                return ResourceManager.GetString("ViewStartDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quit.
+        /// </summary>
+        internal static string ViewStartExitButtonText {
+            get {
+                return ResourceManager.GetString("ViewStartExitButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Course.
+        /// </summary>
+        internal static string ViewStartStartButtonText {
+            get {
+                return ResourceManager.GetString("ViewStartStartButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to the {0}.
+        /// </summary>
+        internal static string ViewStartSubTitle {
+            get {
+                return ResourceManager.GetString("ViewStartSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to University of Westminster.
+        /// </summary>
+        internal static string ViewStartTitle {
+            get {
+                return ResourceManager.GetString("ViewStartTitle", resourceCulture);
+            }
+        }
     }
 }

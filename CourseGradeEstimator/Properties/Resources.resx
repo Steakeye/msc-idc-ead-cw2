@@ -141,4 +141,19 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Course Grade Estimator</value>
   </data>
+  <data name="ViewStartDescription" xml:space="preserve">
+    <value>This tool allows you to enter information about a course and then assign grades to assessments in order to determin your predicted grade.</value>
+  </data>
+  <data name="ViewStartExitButtonText" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="ViewStartStartButtonText" xml:space="preserve">
+    <value>Create Course</value>
+  </data>
+  <data name="ViewStartSubTitle" xml:space="preserve">
+    <value>Welcome to the {0}</value>
+  </data>
+  <data name="ViewStartTitle" xml:space="preserve">
+    <value>University of Westminster</value>
+  </data>
 </root>

@@ -26,36 +26,41 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private new void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.startBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // startBtn
             // 
-            this.button1.Location = new System.Drawing.Point(108, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "create";
-            this.button1.UseVisualStyleBackColor = true;
-            //this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startBtn.AutoSize = true;
+            this.startBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.startBtn.Location = new System.Drawing.Point(0, 0);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(84, 23);
+            this.startBtn.TabIndex = 0;
+            this.startBtn.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
+            this.startBtn.UseVisualStyleBackColor = true;
+            setupButton(startBtn);
+
             // 
             // StartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.startBtn);
             this.Name = "StartView";
-            this.Text = "Start";
+            this.Text = "Course Grade Estimator";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button startBtn;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.core
+namespace CourseGradeEstimator.core.view
 {
     interface IViewController<out V> {
         void tearDown();

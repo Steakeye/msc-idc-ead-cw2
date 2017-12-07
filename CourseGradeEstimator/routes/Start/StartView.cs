@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CourseGradeEstimator.routes.Start
@@ -14,15 +8,20 @@ namespace CourseGradeEstimator.routes.Start
         Create
     }
 
-    public partial class StartView : core.View
+    public partial class StartView : core.view.View
     {
         public StartView()
         {
+            base.InitializeComponent();
             InitializeComponent();
+            //setupButton(startBtn);
+            //startBtn.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
+           // startBtn.Location = new Point(350, 350);
+            //ViewUtils.GetButtonSize(startBtn);
         }
 
         public override void BindDelegates() {
-            button1.Click += makeBinding(StartViewBindings.Create);
+            startBtn.Click += makeBinding(StartViewBindings.Create);
         }
     }
 }
