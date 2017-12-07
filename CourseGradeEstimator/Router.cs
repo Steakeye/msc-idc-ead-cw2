@@ -24,6 +24,21 @@ namespace CourseGradeEstimator
             core.View oldView = null;
             Point? pos = null;
 
+            object[] args; // = data == null ? { this } : { this, data };
+
+            if (data == null)
+            {
+                args = new object[1];
+                args[0] = this;
+            }
+            else
+            {
+                args = new object[1];
+                args[1] = data;
+            }
+            
+
+            //core.IViewController<core.View> nextRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route], this, data);
             core.IViewController<core.View> nextRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route], this, data);
             core.View view = nextRoute.View;
 
