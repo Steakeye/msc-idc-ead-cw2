@@ -57,11 +57,11 @@ namespace CourseGradeEstimator.core.io
 
             string filePath = getPath(path);
 
-            if (isoStore.FileExists(path))
-            {
+            /*if (isoStore.FileExists(filePath))
+            {*/
 
-                isoStore.DeleteFile(path);
-            }
+                isoStore.DeleteFile(filePath);
+            //}
         }
 
         private IsolatedStorageFile getStore()
