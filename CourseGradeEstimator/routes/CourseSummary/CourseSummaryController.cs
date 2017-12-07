@@ -13,7 +13,8 @@ namespace CourseGradeEstimator.routes.CourseSummary
         public CourseSummaryController(Router r, Course course): base(r) {
             view = new CourseSummaryView();
 
-            data.SaveCourseData(course);
+            //data.SaveCourseData(course);
+            data.DeleteCourseData();
         }
     }
 }
