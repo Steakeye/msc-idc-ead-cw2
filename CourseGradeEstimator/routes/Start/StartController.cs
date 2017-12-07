@@ -22,7 +22,7 @@ namespace CourseGradeEstimator.routes.Start
 
         protected void navToCreate() {
             System.Console.WriteLine("NavToCreate!!");
-            router.navTo(Routings.Create);
+            router.navTo(Routings.CourseCreate);
         }
     }
 }

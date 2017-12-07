@@ -11,7 +11,7 @@ namespace CourseGradeEstimator
 {
     public enum Routings {
         Start,
-        Create,
+        CourseCreate,
         CourseSummary
     }
     public class Router : ApplicationContext
@@ -68,7 +68,7 @@ namespace CourseGradeEstimator
 
         private void registerRoutes() {
             routes.Add(Routings.Start, typeof(StartController));
-            routes.Add(Routings.Create, typeof(CreateController));
+            routes.Add(Routings.CourseCreate, typeof(CreateCourseController));
             routes.Add(Routings.CourseSummary, typeof(CourseSummaryController));
         }
 

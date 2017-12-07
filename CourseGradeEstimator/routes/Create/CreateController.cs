@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.routes.Create
 {
-    class CreateController : core.view.ViewController<CreateView>
+    class CreateCourseController : core.view.ViewController<CreateView>
     {
-        public CreateController(Router r) : base(r) {
-            view = new CreateView();
+        public CreateCourseController(Router r) : base(r) {
+            view = new CreateCourse();
         }
     }
 }

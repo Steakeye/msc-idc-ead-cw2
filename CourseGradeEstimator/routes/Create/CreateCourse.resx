@@ -117,46 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppDBConnectionString" xml:space="preserve">
-    <value>mongodb://{0}:{1}@ds129906.mlab.com:29906/</value>
-  </data>
-  <data name="AppDBName" xml:space="preserve">
-    <value>ead-cw2</value>
-  </data>
-  <data name="AppDBPass" xml:space="preserve">
-    <value>Gr4d3:P$%%</value>
-  </data>
-  <data name="AppDBUser" xml:space="preserve">
-    <value>gradeApp</value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value>CourseGradeEstimator</value>
-  </data>
-  <data name="AppResourceTypeCourse" xml:space="preserve">
-    <value>Course</value>
-  </data>
-  <data name="AppResourceTypeGrade" xml:space="preserve">
-    <value>Grade</value>
-  </data>
-  <data name="AppTitle" xml:space="preserve">
-    <value>Course Grade Estimator</value>
-  </data>
-  <data name="ViewCreateCourseHeader" xml:space="preserve">
-    <value>Course</value>
-  </data>
-  <data name="ViewStartDescription" xml:space="preserve">
-    <value>This tool allows you to enter information about a course and then assign grades to assessments in order to determin your predicted grade.</value>
-  </data>
-  <data name="ViewStartExitButtonText" xml:space="preserve">
-    <value>Quit</value>
-  </data>
-  <data name="ViewStartStartButtonText" xml:space="preserve">
-    <value>Create Course</value>
-  </data>
-  <data name="ViewStartSubTitle" xml:space="preserve">
-    <value>Welcome to the {0}</value>
-  </data>
-  <data name="ViewStartTitle" xml:space="preserve">
-    <value>University of Westminster</value>
-  </data>
 </root>

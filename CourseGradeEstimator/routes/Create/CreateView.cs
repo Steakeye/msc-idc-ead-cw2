@@ -15,6 +15,7 @@ namespace CourseGradeEstimator.routes.Create
         public CreateView()
         {
             InitializeComponent();
+            this.Text = $"{Properties.Resources.AppTitle} - Create";
         }
     }
 }

@@ -53,12 +53,12 @@
             this.title.TabIndex = 1;
             this.title.Text = "University of Westminster";
             // 
-            // label1
+            // subtitle
             // 
             this.subtitle.AutoSize = true;
             this.subtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitle.Location = new System.Drawing.Point(15, 50);
-            this.subtitle.Name = "label1";
+            this.subtitle.Name = "subtitle";
             this.subtitle.Size = new System.Drawing.Size(282, 29);
             this.subtitle.TabIndex = 2;
             this.subtitle.Text = Properties.Resources.AppTitle;
