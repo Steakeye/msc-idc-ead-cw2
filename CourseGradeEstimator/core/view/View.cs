@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.core
+namespace CourseGradeEstimator.core.view
 {
     public delegate void VoidDelegate();
     public interface IEnumLike : IComparable, IFormattable, IConvertible { }

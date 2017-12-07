@@ -14,7 +14,7 @@ namespace CourseGradeEstimator.routes.Start
         Create
     }
 
-    public partial class StartView : core.View
+    public partial class StartView : core.view.View
     {
         public StartView()
         {

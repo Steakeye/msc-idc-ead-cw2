@@ -21,7 +21,7 @@ namespace CourseGradeEstimator
         }
 
         public void navTo(Routings route, object data = null) {
-            core.View oldView = null;
+            core.view.View oldView = null;
             Point? pos = null;
 
             object[] args;
@@ -38,8 +38,8 @@ namespace CourseGradeEstimator
 
             args[0] = this;
 
-            core.IViewController<core.View> nextRoute = (core.IViewController<core.View>)Activator.CreateInstance(routes[route], args);
-            core.View view = nextRoute.View;
+            core.view.IViewController<core.view.View> nextRoute = (core.view.IViewController<core.view.View>)Activator.CreateInstance(routes[route], args);
+            core.view.View view = nextRoute.View;
 
             if (currentRoute != null)
             {
@@ -75,8 +75,8 @@ namespace CourseGradeEstimator
         private Dictionary<Routings, Type> routes = new Dictionary<Routings, Type>();
 
         //private core.ViewController<core.View> currentRoute;
-        private core.IViewController<core.View> currentRoute;
-        private Stack<core.ViewController<core.View>> routeHistory = new Stack<core.ViewController<core.View>>();
+        private core.view.IViewController<core.view.View> currentRoute;
+        private Stack<core.view.ViewController<core.view.View>> routeHistory = new Stack<core.view.ViewController<core.view.View>>();
 
     }
 }

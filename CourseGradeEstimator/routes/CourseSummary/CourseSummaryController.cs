@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.routes.CourseSummary
 {
-    class CourseSummaryController : core.ViewController<CourseSummaryView>
+    class CourseSummaryController : core.view.ViewController<CourseSummaryView>
     {
         public CourseSummaryController(Router r, Course course): base(r) {
             view = new CourseSummaryView();
-
         }
     }
 }
