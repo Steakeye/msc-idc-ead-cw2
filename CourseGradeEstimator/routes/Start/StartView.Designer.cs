@@ -28,15 +28,17 @@
         /// </summary>
         private new void InitializeComponent()
         {
-            //base.InitializeComponent();
             this.startBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(108, 190);
+            this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startBtn.AutoSize = true;
+            this.startBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.startBtn.Location = new System.Drawing.Point(99, 190);
             this.startBtn.Name = "startBtn";
-            //this.startBtn.Size = core.utils.View.GetButtonSize();
+            this.startBtn.Size = new System.Drawing.Size(84, 23);
             this.startBtn.TabIndex = 0;
             this.startBtn.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
             this.startBtn.UseVisualStyleBackColor = true;
@@ -45,11 +47,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.startBtn);
             this.Name = "StartView";
-            this.Text = Properties.Resources.AppTitle;
+            this.Text = "Course Grade Estimator";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

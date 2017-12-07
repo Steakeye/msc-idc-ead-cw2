@@ -125,11 +125,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="routes\Start\StartView.resx">
-      <DependentUpon>StartView.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StartView1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
