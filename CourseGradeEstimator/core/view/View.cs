@@ -2,6 +2,10 @@
 using System.Collections;
 using System.Windows.Forms;
 
+using ViewUtils = CourseGradeEstimator.core.utils.View;
+
+using System.Windows.Forms;
+
 namespace CourseGradeEstimator.core.view
 {
     public delegate void VoidDelegate();
@@ -32,7 +36,7 @@ namespace CourseGradeEstimator.core.view
 
         protected Hashtable eventBindings = new Hashtable();
 
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
             this.SuspendLayout();
             // 
@@ -43,6 +47,10 @@ namespace CourseGradeEstimator.core.view
             this.Name = "View";
             this.ResumeLayout(false);
 
+        }
+
+        protected void setupButton(Button btn) {
+            btn.Size = ViewUtils.GetButtonSize();
         }
     }
 }

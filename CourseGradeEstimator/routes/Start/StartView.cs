@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿
 namespace CourseGradeEstimator.routes.Start
 {
     public enum StartViewBindings {
@@ -18,11 +9,14 @@ namespace CourseGradeEstimator.routes.Start
     {
         public StartView()
         {
+            base.InitializeComponent();
             InitializeComponent();
+            setupButton(startBtn);
+            //ViewUtils.GetButtonSize(startBtn);
         }
 
         public override void BindDelegates() {
-            button1.Click += makeBinding(StartViewBindings.Create);
+            startBtn.Click += makeBinding(StartViewBindings.Create);
         }
     }
 }

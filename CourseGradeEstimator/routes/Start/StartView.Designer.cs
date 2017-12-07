@@ -1,7 +1,4 @@
-﻿using CourseGradeEstimator.core.utils;
-using System.Resources;
-
-namespace CourseGradeEstimator.routes.Start
+﻿namespace CourseGradeEstimator.routes.Start
 {
     partial class StartView
     {
@@ -29,35 +26,36 @@ namespace CourseGradeEstimator.routes.Start
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private new void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            //base.InitializeComponent();
+            this.startBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(108, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = View.GetButtonSize();
-            this.button1.TabIndex = 0;
-            this.button1.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.startBtn.Location = new System.Drawing.Point(108, 190);
+            this.startBtn.Name = "startBtn";
+            //this.startBtn.Size = core.utils.View.GetButtonSize();
+            this.startBtn.TabIndex = 0;
+            this.startBtn.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
+            this.startBtn.UseVisualStyleBackColor = true;
             // 
             // StartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
+            //this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.startBtn);
             this.Name = "StartView";
-            this.Text = "Create Course";
+            this.Text = Properties.Resources.AppTitle;
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button startBtn;
     }
 }
 
