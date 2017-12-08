@@ -20,11 +20,5 @@ namespace CourseGradeEstimator.routes.CreateCourse
 
             view.BindDelegates();
         }
-
-        protected void navToBack()
-        {
-            System.Console.WriteLine("navToBack!!");
-            //router.navTo(Routings.CourseCreate);
-        }
     }
 }

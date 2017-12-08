@@ -30,8 +30,14 @@ namespace CourseGradeEstimator.core.view
         /*
          * Privates
          */
+
+        protected void navToBack()
+        {
+            System.Console.WriteLine("navToBack!!");
+            router.navBack();
+        }
         /*
-         * Private Members
+         * Protected Members
          */
         protected Router router;
         protected Data data;

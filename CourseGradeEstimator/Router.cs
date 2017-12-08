@@ -20,11 +20,13 @@ namespace CourseGradeEstimator
             registerRoutes();
         }
 
-        public void navTo(Routings route, object data = null) {
+        public void navTo(Routings route, object data = null, bool forward = true) {
             core.view.View oldView = null;
             Point? pos = null;
 
             object[] args;
+
+            addToHistory(route, data, forward);
 
             if (data != null)
             {
@@ -66,17 +68,44 @@ namespace CourseGradeEstimator
             }
         }
 
+        public void navBack() {
+            //HistoryItem lastRoute = routeHistory.Pop();
+            routeHistory.Pop();
+            HistoryItem lastRoute = routeHistory.Peek();
+
+            routeHistory.Peek();
+
+            if (lastRoute != null)
+            {
+                navTo(lastRoute.Route, lastRoute.Data, false);
+            }
+        }
+
         private void registerRoutes() {
             routes.Add(Routings.Start, typeof(StartController));
             routes.Add(Routings.CourseCreate, typeof(CreateCourseController));
             routes.Add(Routings.CourseSummary, typeof(CourseSummaryController));
         }
 
+        //private void addToHistory(Routings route, object data = null, bool forward = true)
+        private void addToHistory(Routings route, object data, bool forward)
+        {
+            if (forward)
+            {
+                routeHistory.Push(new HistoryItem { Route = route, Data = data  });
+            }
+        }
+
         private Dictionary<Routings, Type> routes = new Dictionary<Routings, Type>();
 
         //private core.ViewController<core.View> currentRoute;
         private core.view.IViewController<core.view.View> currentRoute;
-        private Stack<core.view.ViewController<core.view.View>> routeHistory = new Stack<core.view.ViewController<core.view.View>>();
+        //private Stack<core.view.ViewController<core.view.View>> routeHistory = new Stack<core.view.ViewController<core.view.View>>();
+        private Stack<HistoryItem> routeHistory = new Stack<HistoryItem>();
 
+        class HistoryItem {
+            public Routings Route;
+            public object Data;
+        }
     }
 }
