@@ -1,6 +1,6 @@
 ﻿namespace CourseGradeEstimator.routes.Start
 {
-    partial class StartView
+    partial class StartView: core.view.View
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            //this.ClientSize = new System.Drawing.Size(284, 261);
             flowPanel.Controls.Add(this.title);
             flowPanel.Controls.Add(this.subtitle);
             flowPanel.Controls.Add(this.startBtn);

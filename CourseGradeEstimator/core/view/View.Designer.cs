@@ -13,15 +13,15 @@ namespace CourseGradeEstimator.core.view
     //should be `public abstract class View : Form, IView` but VS forms preview fails if this is applied
     partial class View : Form, IView
     {
-        protected void InitializeComponent2()
+        protected void InitializeComponent()
         {
             this.SuspendLayout();
             //SuspendLayout();
             // 
             // View
             // 
-            this.ClientSize = new System.Drawing.Size(920, 425);
-            Size = new System.Drawing.Size(920, 425);
+            this.ClientSize = new System.Drawing.Size(800, 400);
+            Size = new System.Drawing.Size(800, 400);
             //            ClientSize = new System.Drawing.Size(584, 361);
             MinimumSize = new System.Drawing.Size(600, 400);
             Name = "View";
