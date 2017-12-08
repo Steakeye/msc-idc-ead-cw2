@@ -118,24 +118,18 @@
     <Compile Include="routes\CourseSummary\CourseSummaryView.Designer.cs">
       <DependentUpon>CourseSummaryView.cs</DependentUpon>
     </Compile>
-    <Compile Include="routes\Create\CreateCourseController.cs" />
-    <Compile Include="routes\Create\CreateCourse.cs">
+    <Compile Include="routes\CreateCourse\CreateCourseController.cs" />
+    <Compile Include="routes\CreateCourse\CreateCourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="routes\Create\CreateCourse.Designer.cs">
+    <Compile Include="routes\CreateCourse\CreateCourse.Designer.cs">
       <DependentUpon>CreateCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="routes\Create\CreateView.cs">
+    <Compile Include="core\view\Create\CreateView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="routes\Create\CreateView.Designer.cs">
+    <Compile Include="core\view\Create\CreateView.Designer.cs">
       <DependentUpon>CreateView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="routes\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="routes\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="routes\Start\StartController.cs" />
     <Compile Include="routes\Start\StartView.cs">
@@ -168,14 +162,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="routes\Create\CreateCourse.resx">
+    <EmbeddedResource Include="routes\CreateCourse\CreateCourse.resx">
       <DependentUpon>CreateCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="routes\Create\CreateView.resx">
+    <EmbeddedResource Include="core\view\Create\CreateView.resx">
       <DependentUpon>CreateView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="routes\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="routes\Start\StartView.resx">
       <DependentUpon>StartView.cs</DependentUpon>

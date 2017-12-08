@@ -68,6 +68,7 @@ namespace CourseGradeEstimator.core.view.control
             // 
             this.flowPanel.Controls.Add(this.headerLabel);
             this.flowPanel.Controls.Add(this.itemTablePanel);
+            this.flowPanel.Controls.Add(this.addBtn);
             this.flowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowPanel.Location = new System.Drawing.Point(0, 0);
             this.flowPanel.Name = "flowPanel";
@@ -76,11 +77,7 @@ namespace CourseGradeEstimator.core.view.control
             this.flowPanel.WrapContents = false;
             // 
             // EditChildItems
-            // 
-            //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.AutoSize = true;
-            //this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            //
             this.Controls.Add(this.flowPanel);
             this.Name = "EditChildItems";
             ((System.ComponentModel.ISupportInitialize)(this.itemTablePanel)).EndInit();

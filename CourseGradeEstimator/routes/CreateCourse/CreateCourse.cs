@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.routes.Create
+namespace CourseGradeEstimator.routes.CreateCourse
 {
-    public partial class CreateCourse : CreateView
+    public partial class CreateCourse : core.view.Create.CreateView
     {
         public CreateCourse(): base()
         {

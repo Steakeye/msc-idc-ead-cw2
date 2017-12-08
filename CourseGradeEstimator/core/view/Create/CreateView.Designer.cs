@@ -1,6 +1,6 @@
-﻿namespace CourseGradeEstimator.routes.Create
+﻿namespace CourseGradeEstimator.core.view.Create
 {
-    partial class CreateView : core.view.View
+    partial class CreateView : View
     {
         /// <summary>
         /// Required designer variable.

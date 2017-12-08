@@ -1,6 +1,6 @@
-﻿namespace CourseGradeEstimator.routes.Create
+﻿namespace CourseGradeEstimator.routes.CreateCourse
 {
-    partial class CreateCourse: CreateView
+    partial class CreateCourse : core.view.Create.CreateView
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,8 @@
             // 
             // CreateCourse
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(784, 361);
             this.Name = "CreateCourse";
             this.ResumeLayout(false);
 

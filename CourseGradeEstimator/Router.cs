@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 
 using CourseGradeEstimator.routes.Start;
-using CourseGradeEstimator.routes.Create;
+using CourseGradeEstimator.routes.CreateCourse;
 using CourseGradeEstimator.routes.CourseSummary;
 
 namespace CourseGradeEstimator
