@@ -41,13 +41,16 @@ namespace CourseGradeEstimator.core.view.control
         }
         private void setupInternalComponents()
         {
+            //layoutPanel.Dock = DockStyle.Fill;
+            layoutPanel.Size = new Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
             setupDataGridView();
             setupAddButton();
         }
         private void setupDataGridView()
         {
             //table
-            itemTablePanel.Size = new System.Drawing.Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
+            dataGrid.Size = new Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
+            //dataGrid.Dock = DockStyle.Fill;
             //columns
             // 
             // titleColumn

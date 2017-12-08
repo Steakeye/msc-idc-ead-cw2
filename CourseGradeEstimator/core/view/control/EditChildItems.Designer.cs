@@ -31,15 +31,15 @@ namespace CourseGradeEstimator.core.view.control
         private void InitializeComponent()
         {
             this.headerLabel = new System.Windows.Forms.Label();
-            this.itemTablePanel = new System.Windows.Forms.DataGridView();
-            this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.layoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.titleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteColumn = new System.Windows.Forms.DataGridViewButtonColumn(); 
-             ((System.ComponentModel.ISupportInitialize)(this.itemTablePanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.addBtn = new Button();
-            this.flowPanel.SuspendLayout();
+            this.layoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -53,48 +53,45 @@ namespace CourseGradeEstimator.core.view.control
             // 
             // itemTablePanel
             // 
-            this.itemTablePanel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleColumn,
             this.descriptionColumn,
             this.editColumn,
             this.deleteColumn});
-            this.itemTablePanel.Location = new System.Drawing.Point(3, 32);
-            this.itemTablePanel.Name = "itemTablePanel";
+            this.dataGrid.Location = new System.Drawing.Point(3, 32);
+            this.dataGrid.Name = "itemTablePanel";
             //this.itemTablePanel.Size = new System.Drawing.Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
-            this.itemTablePanel.TabIndex = 2;
-            this.itemTablePanel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTablePanel_CellContentClick);
+            this.dataGrid.TabIndex = 2;
+            this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTablePanel_CellContentClick);
             // 
             // addBtn
             //
             this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBtn.Location = new System.Drawing.Point(140, 210);
+            //this.addBtn.Location = new System.Drawing.Point(140, 210);
             this.addBtn.Name = "addBtn";
-            //this.addBtn.Size = //new System.Drawing.Size(75, 23);
-            //this.addBtn.Size = core.utils.View.GetButtonSize();
-            //View.setupButton(this.addBtn);
             this.addBtn.TabIndex = 3;
             this.addBtn.Text = global::CourseGradeEstimator.Properties.Resources.StringsAdd;
             this.addBtn.UseVisualStyleBackColor = true;
             // 
             // flowPanel
             // 
-            this.flowPanel.Controls.Add(this.headerLabel);
-            this.flowPanel.Controls.Add(this.itemTablePanel);
-            this.flowPanel.Controls.Add(this.addBtn);
-            this.flowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowPanel.Location = new System.Drawing.Point(0, 0);
-            this.flowPanel.Name = "flowPanel";
-            this.flowPanel.Size = new System.Drawing.Size(252, 100);
-            this.flowPanel.TabIndex = 0;
-            this.flowPanel.WrapContents = false;
+            this.layoutPanel.Controls.Add(this.headerLabel);
+            this.layoutPanel.Controls.Add(this.dataGrid);
+            this.layoutPanel.Controls.Add(this.addBtn);
+            //this.layoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.layoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.layoutPanel.Name = "flowPanel";
+            this.layoutPanel.Size = new System.Drawing.Size(252, 200);
+            this.layoutPanel.TabIndex = 0;
+            //this.layoutPanel.WrapContents = false;
             // 
             // EditChildItems
             //
-            this.Controls.Add(this.flowPanel);
+            this.Controls.Add(this.layoutPanel);
             this.Name = "EditChildItems";
-            ((System.ComponentModel.ISupportInitialize)(this.itemTablePanel)).EndInit();
-            this.flowPanel.ResumeLayout(false);
-            this.flowPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            this.layoutPanel.ResumeLayout(false);
+            this.layoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -102,8 +99,9 @@ namespace CourseGradeEstimator.core.view.control
         #endregion
 
         private Label headerLabel;
-        private DataGridView itemTablePanel;
-        private FlowLayoutPanel flowPanel;
+        private DataGridView dataGrid;
+        //private FlowLayoutPanel flowPanel;
+        private TableLayoutPanel layoutPanel;
         private DataGridViewTextBoxColumn titleColumn;
         private DataGridViewTextBoxColumn descriptionColumn;
         private DataGridViewButtonColumn editColumn;
