@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using System.Drawing;
 
 namespace CourseGradeEstimator.core.view.control
 {
@@ -30,43 +31,41 @@ namespace CourseGradeEstimator.core.view.control
         /// </summary>
         private void InitializeComponent()
         {
-            this.headerLabel = new Label();
-            this.headerTextfield = new TextBox();
-
+            this.headerLabel = new System.Windows.Forms.Label();
+            this.headerTextfield = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-
             // 
             // headerLabel
             // 
             this.headerLabel.AutoSize = true;
             this.headerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headerLabel.Location = new System.Drawing.Point(15, 50);
+            this.headerLabel.Location = new System.Drawing.Point(10, 15);
             this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(282, 29);
+            this.headerLabel.Size = new System.Drawing.Size(0, 29);
             this.headerLabel.TabIndex = 0;
-            //this.headerLabel.Text = Properties.Resources.AppTitle;
             this.headerLabel.Click += new System.EventHandler(this.label1_Click);
-
-            //
+            // 
             // headerTextfield
-            //
-            this.headerTextfield.AutoSize = true;
+            // 
             this.headerTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headerTextfield.Location = new System.Drawing.Point(15, 100);
+            this.headerTextfield.Location = new System.Drawing.Point(10, 45);
             this.headerTextfield.Name = "headerTextfield";
-            this.headerTextfield.Size = new System.Drawing.Size(282, 29);
+            this.headerTextfield.Size = new System.Drawing.Size(282, 35);
             this.headerTextfield.TabIndex = 1;
-
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            // 
+            // EditHeader
+            // 
+            //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            //this.AutoSize = true;
+            //this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.headerLabel);
             this.Controls.Add(this.headerTextfield);
             this.Name = "EditHeader";
-            this.Size = new System.Drawing.Size(0, 0);
+            //this.Size = new System.Drawing.Size(444, 83);
             this.ResumeLayout(false);
-            PerformLayout();
+            this.PerformLayout();
+
         }
 
         #endregion

@@ -142,6 +142,33 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string StringsDelete {
+            get {
+                return ResourceManager.GetString("StringsDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string StringsDescription {
+            get {
+                return ResourceManager.GetString("StringsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string StringsEdit {
+            get {
+                return ResourceManager.GetString("StringsEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grades.
         /// </summary>
         internal static string StringsGrades {
@@ -156,6 +183,15 @@ namespace CourseGradeEstimator.Properties {
         internal static string StringsModules {
             get {
                 return ResourceManager.GetString("StringsModules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string StringsTitle {
+            get {
+                return ResourceManager.GetString("StringsTitle", resourceCulture);
             }
         }
         

@@ -22,7 +22,11 @@ namespace CourseGradeEstimator.routes.Create
             this.childItems.Title = Properties.Resources.StringsModules;
             header.BackColor = Color.Orange;
             childItems.BackColor = Color.Blue;
+            childItems.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             bottomButtonBar.BackColor = Color.Green;
+            childItems.Width = Width;
+            flowPanel.BackColor = Color.LightBlue;
+            BackColor = Color.HotPink;
         }
     }
 }

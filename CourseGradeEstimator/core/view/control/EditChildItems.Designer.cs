@@ -31,65 +31,76 @@ namespace CourseGradeEstimator.core.view.control
         private void InitializeComponent()
         {
             this.headerLabel = new System.Windows.Forms.Label();
-            this.itemTablePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.itemTablePanel = new System.Windows.Forms.DataGridView();
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.titleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.deleteColumn = new System.Windows.Forms.DataGridViewButtonColumn(); 
+             ((System.ComponentModel.ISupportInitialize)(this.itemTablePanel)).BeginInit();
+            this.addBtn = new Button();
+            this.flowPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // flowPanel
-            // 
-            this.flowPanel.Location = new System.Drawing.Point(0, 0);
-            this.flowPanel.Name = "flowPanel";
-            this.flowPanel.Size = new System.Drawing.Size(252, 100);
-            this.flowPanel.TabIndex = 0;
-            //this.flowPanel.AutoScroll = true;
-            this.flowPanel.FlowDirection = FlowDirection.TopDown;
-            this.flowPanel.WrapContents = false;
             // 
             // headerLabel
             // 
             this.headerLabel.AutoSize = true;
             this.headerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headerLabel.Location = new System.Drawing.Point(15, 50);
+            this.headerLabel.Location = new System.Drawing.Point(3, 0);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(0, 29);
             this.headerLabel.TabIndex = 1;
             // 
-            // tableLayoutPanel1
+            // itemTablePanel
             // 
-            this.itemTablePanel.ColumnCount = 3;
-            this.itemTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.itemTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.itemTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.itemTablePanel.Location = new System.Drawing.Point(8, 20);
+            this.itemTablePanel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.titleColumn,
+            this.descriptionColumn,
+            this.editColumn,
+            this.deleteColumn});
+            this.itemTablePanel.Location = new System.Drawing.Point(3, 32);
             this.itemTablePanel.Name = "itemTablePanel";
-            this.itemTablePanel.RowCount = 2;
-            this.itemTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.itemTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.itemTablePanel.Size = new System.Drawing.Size(200, 100);
+            //this.itemTablePanel.Size = new System.Drawing.Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
             this.itemTablePanel.TabIndex = 2;
+            this.itemTablePanel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTablePanel_CellContentClick);
+            // 
+            // flowPanel
+            // 
+            this.flowPanel.Controls.Add(this.headerLabel);
+            this.flowPanel.Controls.Add(this.itemTablePanel);
+            this.flowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowPanel.Name = "flowPanel";
+            this.flowPanel.Size = new System.Drawing.Size(252, 100);
+            this.flowPanel.TabIndex = 0;
+            this.flowPanel.WrapContents = false;
             // 
             // EditChildItems
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowPanel.Controls.Add(this.headerLabel);
-            this.flowPanel.Controls.Add(this.itemTablePanel);
+            //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            //this.AutoSize = true;
+            //this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.flowPanel);
             this.Name = "EditChildItems";
-            this.Size = new System.Drawing.Size(211, 123);
+            //this.Size = new System.Drawing.Size(255, 103);
+            ((System.ComponentModel.ISupportInitialize)(this.itemTablePanel)).EndInit();
+            this.flowPanel.ResumeLayout(false);
+            this.flowPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Label headerLabel;
-        private TableLayoutPanel itemTablePanel;
+        private DataGridView itemTablePanel;
         private FlowLayoutPanel flowPanel;
-        //private TextBox headerTextfield;
+        private DataGridViewTextBoxColumn titleColumn;
+        private DataGridViewTextBoxColumn descriptionColumn;
+        private DataGridViewButtonColumn editColumn;
+        private DataGridViewButtonColumn deleteColumn;
+        private Button addBtn;
 
     }
 }

@@ -144,11 +144,23 @@
   <data name="StringsCourse" xml:space="preserve">
     <value>Course</value>
   </data>
+  <data name="StringsDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="StringsDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="StringsEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="StringsGrades" xml:space="preserve">
     <value>Grades</value>
   </data>
   <data name="StringsModules" xml:space="preserve">
     <value>Modules</value>
+  </data>
+  <data name="StringsTitle" xml:space="preserve">
+    <value>Title</value>
   </data>
   <data name="ViewCreateCourseHeader" xml:space="preserve">
     <value>Course</value>

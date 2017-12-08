@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\Class1.cs" />
     <Compile Include="core\io\CourseDB .cs" />
     <Compile Include="core\io\GradeFS.cs" />
     <Compile Include="core\io\CourseFS .cs" />

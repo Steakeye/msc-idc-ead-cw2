@@ -83,6 +83,7 @@ namespace CourseGradeEstimator.core.view
             flowPanel.Location = new System.Drawing.Point(0, 0);
             flowPanel.Name = "flowPanel";
             flowPanel.Size = new System.Drawing.Size(ClientSize.Width, ClientSize.Height);
+            flowPanel.ClientSize = flowPanel.Size;
             flowPanel.TabIndex = 0;
             //this.flowPanel.AutoScroll = true;
             flowPanel.FlowDirection = FlowDirection.TopDown;
