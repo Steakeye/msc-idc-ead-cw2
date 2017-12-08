@@ -40,10 +40,5 @@ namespace CourseGradeEstimator.routes.Start
 
             endViewAdjustment();
         }
-
-        private void label1_Click(object sender, System.EventArgs e)
-        {
-
-        }
     }
 }

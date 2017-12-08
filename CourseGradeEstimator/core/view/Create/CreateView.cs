@@ -10,6 +10,14 @@ using System.Windows.Forms;
 
 namespace CourseGradeEstimator.core.view.Create
 {
+    public enum CreateViewBindings
+    {
+        Edit,
+        Delete,
+        Add,
+        Save,
+        Cancel
+    }
     public partial class CreateView : View
     {
         public CreateView() : base()
@@ -17,6 +25,11 @@ namespace CourseGradeEstimator.core.view.Create
             InitializeComponent();
             this.Text = $"{Properties.Resources.AppTitle} - Create";
             setupView();
+        }
+
+        public override void BindDelegates()
+        {
+            cancelButton.Click += makeBinding(CreateViewBindings.Cancel);
         }
 
         protected void setupView()

@@ -67,7 +67,6 @@ namespace CourseGradeEstimator.routes.Start
             this.subtitle.Size = new System.Drawing.Size(282, 29);
             this.subtitle.TabIndex = 2;
             this.subtitle.Text = Properties.Resources.AppTitle;
-            this.subtitle.Click += new System.EventHandler(this.label1_Click);
             this.subtitle.Margin = new System.Windows.Forms.Padding(Config.Dimensions.PaddingLrg, 0, Config.Dimensions.PaddingLrg, 0);
             // 
             // StartView
