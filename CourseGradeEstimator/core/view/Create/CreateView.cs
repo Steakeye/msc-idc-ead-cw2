@@ -29,7 +29,9 @@ namespace CourseGradeEstimator.core.view.Create
 
         public override void BindDelegates()
         {
+            childItems.AddButton.Click += makeBinding(CreateViewBindings.Add);
             cancelButton.Click += makeBinding(CreateViewBindings.Cancel);
+            saveButton.Click += makeBinding(CreateViewBindings.Save);
         }
 
         protected void setupView()

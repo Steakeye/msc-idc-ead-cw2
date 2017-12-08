@@ -23,6 +23,7 @@ namespace CourseGradeEstimator.core.view.control
         }
 
         public string Title { get { return headerLabel.Text; } set { headerLabel.Text = value; } }
+        public Button AddButton => addBtn;
 
         private void itemTablePanel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

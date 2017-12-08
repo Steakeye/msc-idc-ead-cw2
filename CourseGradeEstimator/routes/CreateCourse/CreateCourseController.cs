@@ -16,9 +16,15 @@ namespace CourseGradeEstimator.routes.CreateCourse
 
             Hashtable eventMap = view.EventBindings;
 
+            eventMap.Add(CreateViewBindings.Add, new core.view.VoidDelegate(navToCreateModule));
             eventMap.Add(CreateViewBindings.Cancel, new core.view.VoidDelegate(navToBack));
 
             view.BindDelegates();
+        }
+        private void navToCreateModule()
+        {
+            Console.WriteLine("navToCreateModule!!");
+            router.navTo(Routings.ModuleCreate);
         }
     }
 }

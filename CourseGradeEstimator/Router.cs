@@ -6,13 +6,15 @@ using System.Drawing;
 using CourseGradeEstimator.routes.Start;
 using CourseGradeEstimator.routes.CreateCourse;
 using CourseGradeEstimator.routes.CourseSummary;
+using CourseGradeEstimator.routes.CreateModule;
 
 namespace CourseGradeEstimator
 {
     public enum Routings {
         Start,
         CourseCreate,
-        CourseSummary
+        CourseSummary,
+        ModuleCreate
     }
     public class Router : ApplicationContext
     {
@@ -85,9 +87,9 @@ namespace CourseGradeEstimator
             routes.Add(Routings.Start, typeof(StartController));
             routes.Add(Routings.CourseCreate, typeof(CreateCourseController));
             routes.Add(Routings.CourseSummary, typeof(CourseSummaryController));
+            routes.Add(Routings.ModuleCreate, typeof(CreateModuleController));
         }
 
-        //private void addToHistory(Routings route, object data = null, bool forward = true)
         private void addToHistory(Routings route, object data, bool forward)
         {
             if (forward)
@@ -98,9 +100,7 @@ namespace CourseGradeEstimator
 
         private Dictionary<Routings, Type> routes = new Dictionary<Routings, Type>();
 
-        //private core.ViewController<core.View> currentRoute;
         private core.view.IViewController<core.view.View> currentRoute;
-        //private Stack<core.view.ViewController<core.view.View>> routeHistory = new Stack<core.view.ViewController<core.view.View>>();
         private Stack<HistoryItem> routeHistory = new Stack<HistoryItem>();
 
         class HistoryItem {
