@@ -39,6 +39,7 @@ namespace CourseGradeEstimator.core.view
 
         }
 
-        protected FlowLayoutPanel flowPanel;
+        //protected FlowLayoutPanel flowPanel;
+        protected TableLayoutPanel tablePanel;
     }
 }

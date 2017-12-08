@@ -68,9 +68,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             //flowPanel
-            flowPanel.Controls.Add(this.header);
-            flowPanel.Controls.Add(this.childItems);
-            flowPanel.Controls.Add(this.bottomButtonBar);
+            tablePanel.Controls.Add(this.header);
+            tablePanel.Controls.Add(this.childItems);
+            tablePanel.Controls.Add(this.bottomButtonBar);
             this.Name = "CreateView";
             this.ResumeLayout(false);
             this.PerformLayout();

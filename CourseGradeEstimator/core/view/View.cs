@@ -63,17 +63,17 @@ namespace CourseGradeEstimator.core.view
             // 
             // flowPanel
             // 
-            flowPanel = new FlowLayoutPanel();
-            flowPanel.Location = new System.Drawing.Point(0, 0);
-            flowPanel.Name = "flowPanel";
-            flowPanel.Size = new System.Drawing.Size(ClientSize.Width, ClientSize.Height);
-            flowPanel.ClientSize = flowPanel.Size;
-            flowPanel.TabIndex = 0;
+            tablePanel = new TableLayoutPanel();
+            tablePanel.Location = new System.Drawing.Point(0, 0);
+            tablePanel.Name = "flowPanel";
+            tablePanel.Size = new System.Drawing.Size(ClientSize.Width, ClientSize.Height);
+            tablePanel.ClientSize = tablePanel.Size;
+            tablePanel.TabIndex = 0;
             //this.flowPanel.AutoScroll = true;
-            flowPanel.FlowDirection = FlowDirection.TopDown;
-            flowPanel.WrapContents = false;
+            /*flowPanel.FlowDirection = FlowDirection.TopDown;
+            flowPanel.WrapContents = false;*/
 
-            Controls.Add(flowPanel);
+            Controls.Add(tablePanel);
         }
 
         /*protected void InitializeComponent()

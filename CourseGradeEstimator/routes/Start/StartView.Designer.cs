@@ -69,9 +69,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             //this.ClientSize = new System.Drawing.Size(284, 261);
-            flowPanel.Controls.Add(this.title);
-            flowPanel.Controls.Add(this.subtitle);
-            flowPanel.Controls.Add(this.startBtn);
+            tablePanel.Controls.Add(this.title);
+            tablePanel.Controls.Add(this.subtitle);
+            tablePanel.Controls.Add(this.startBtn);
             this.Name = "StartView";
             this.Text = "Course Grade Estimator";
             this.ResumeLayout(false);

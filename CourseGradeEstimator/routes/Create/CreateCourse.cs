@@ -24,7 +24,7 @@ namespace CourseGradeEstimator.routes.Create
 
             bottomButtonBar.BackColor = Color.Green;
             childItems.Width = Width;
-            flowPanel.BackColor = Color.LightBlue;
+            tablePanel.BackColor = Color.LightBlue;
             BackColor = Color.HotPink;
         }
     }
