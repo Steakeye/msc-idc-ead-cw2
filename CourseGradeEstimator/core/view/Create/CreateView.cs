@@ -22,9 +22,10 @@ namespace CourseGradeEstimator.core.view.Create
         protected void setupView()
         {
             AnchorStyles sides = AnchorStyles.Left | AnchorStyles.Right;
+            AnchorStyles allSides = sides | AnchorStyles.Top | AnchorStyles.Bottom;
             header.Anchor = sides;
-            childItems.Anchor = sides;
-            bottomButtonBar.Anchor = sides;
+            childItems.Anchor = allSides;
+            bottomButtonBar.Anchor = allSides;
 
             fixLayout();
 
@@ -34,9 +35,21 @@ namespace CourseGradeEstimator.core.view.Create
         protected void fixLayout()
         {
             tablePanel.RowStyles.Clear();
-            for (int i = 0; i < tablePanel.RowCount; i++)
+            //for (int i = 0; i < tablePanel.RowCount; i++)
+            for (int i = 0; i < tablePanel.Controls.Count; i++)
             {
-                tablePanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                RowStyle style;
+                if (i == 1) //target the middle!
+                {
+                    //style = new RowStyle(SizeType.AutoSize, 300);
+                    //style = new RowStyle(SizeType.AutoSize, 300);
+                    style = new RowStyle(SizeType.Absolute, 250);
+                }
+                else
+                {
+                    style = new RowStyle(SizeType.AutoSize);
+                }
+                tablePanel.RowStyles.Add(style);
             }
         }
     }

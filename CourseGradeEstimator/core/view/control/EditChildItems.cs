@@ -33,7 +33,7 @@ namespace CourseGradeEstimator.core.view.control
         {
             //this.Width = Parent.Width;
             //this.Width = this.Parent.Height;
-            this.Dock = DockStyle.Fill;
+            //this.Dock = DockStyle.Fill;
         }
 
         private void setupComponent()
@@ -44,7 +44,8 @@ namespace CourseGradeEstimator.core.view.control
             //layoutPanel.Dock = DockStyle.Fill;
             layoutPanel.Size = new Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
             layoutPanel.BackColor = Color.MediumPurple;
-            layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            //layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
             setupDataGridView();
             setupAddButton();
         }

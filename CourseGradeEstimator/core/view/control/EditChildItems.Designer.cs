@@ -66,7 +66,7 @@ namespace CourseGradeEstimator.core.view.control
             // 
             // addBtn
             //
-            this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             //this.addBtn.Location = new System.Drawing.Point(140, 210);
             this.addBtn.Name = "addBtn";
             this.addBtn.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace CourseGradeEstimator.core.view.control
             //this.layoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.layoutPanel.Location = new System.Drawing.Point(0, 0);
             this.layoutPanel.Name = "flowPanel";
-            this.layoutPanel.Size = new System.Drawing.Size(252, 200);
+            this.layoutPanel.Size = new System.Drawing.Size(252, 300);
             this.layoutPanel.TabIndex = 0;
             //this.layoutPanel.WrapContents = false;
             // 
@@ -90,6 +90,7 @@ namespace CourseGradeEstimator.core.view.control
             this.Controls.Add(this.layoutPanel);
             this.Name = "EditChildItems";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            //this.Size = new System.Drawing.Size(252, 350); NO! this fails!
             this.layoutPanel.ResumeLayout(false);
             this.layoutPanel.PerformLayout();
             this.ResumeLayout(false);
