@@ -144,6 +144,9 @@
   <data name="StringsAdd" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="StringsAssessments" xml:space="preserve">
+    <value>Assessments</value>
+  </data>
   <data name="StringsCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>

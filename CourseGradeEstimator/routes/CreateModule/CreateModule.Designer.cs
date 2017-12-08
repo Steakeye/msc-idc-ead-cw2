@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Name = "CreateCourse";
+            this.Name = "CreateModule";
             this.ResumeLayout(false);
 
         }

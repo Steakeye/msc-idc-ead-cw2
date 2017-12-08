@@ -54,8 +54,6 @@ namespace CourseGradeEstimator.core.view
         }
         protected static void setupButton(Button btn, ButtonSize size)
         {
-                /*btn.Margin = new Padding(50);
-                btn.Padding = new Padding(50);*/
             btn.Size = ViewUtils.GetButtonSize(size);
         }
 
