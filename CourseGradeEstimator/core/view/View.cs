@@ -15,9 +15,11 @@ namespace CourseGradeEstimator.core.view
     }
 
     //should be `public abstract class View : Form, IView` but VS forms preview fails if this is applied
-    public class View : Form, IView 
+    public partial class View : Form, IView 
     {
         protected View() {
+            InitializeComponent();
+            setupLayoutPanel();
         }
 
         public virtual void BindDelegates() { }
@@ -36,32 +38,6 @@ namespace CourseGradeEstimator.core.view
         }
 
         protected Hashtable eventBindings = new Hashtable();
-
-        protected void InitializeComponent()
-        {
-            SuspendLayout();
-            // 
-            // View
-            // 
-            ClientSize = new System.Drawing.Size(584, 361);
-            MinimumSize = new System.Drawing.Size(600, 400);
-            Name = "View";
-            //MaximizeBox = false;
-            // Set the MinimizeBox to false to remove the minimize box.
-            MinimizeBox = false;
-            // Set the start position of the form to the center of the screen.
-            StartPosition = FormStartPosition.CenterScreen;
-
-            /*// lock form
-            this.MaximumSize = this.Size;
-            this.MinimumSize = this.Size;
-            **/
-
-            setupLayoutPanel();
-
-            ResumeLayout(false);
-
-        }
 
         protected static void setupButton(Button btn)
         {
@@ -91,7 +67,5 @@ namespace CourseGradeEstimator.core.view
 
             Controls.Add(flowPanel);
         }
-
-        protected FlowLayoutPanel flowPanel;
     }
 }

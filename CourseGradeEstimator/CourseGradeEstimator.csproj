@@ -86,6 +86,9 @@
     <Compile Include="core\view\control\BottomButtonBar.Designer.cs">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="core\view\View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
+    </Compile>
     <Compile Include="models\CourseTest.cs" />
     <Compile Include="models\CourseGrade.cs" />
     <Compile Include="models\Assignment.cs" />
@@ -128,6 +131,12 @@
     <Compile Include="routes\Create\CreateView.Designer.cs">
       <DependentUpon>CreateView.cs</DependentUpon>
     </Compile>
+    <Compile Include="routes\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="routes\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="routes\Start\StartController.cs" />
     <Compile Include="routes\Start\StartView.cs">
       <SubType>Form</SubType>
@@ -164,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="routes\Create\CreateView.resx">
       <DependentUpon>CreateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="routes\Start\StartView.resx">
       <DependentUpon>StartView.cs</DependentUpon>
