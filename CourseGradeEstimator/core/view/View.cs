@@ -69,23 +69,8 @@ namespace CourseGradeEstimator.core.view
             tablePanel.Size = new System.Drawing.Size(ClientSize.Width, ClientSize.Height);
             tablePanel.ClientSize = tablePanel.Size;
             tablePanel.TabIndex = 0;
-            //this.flowPanel.AutoScroll = true;
-            /*flowPanel.FlowDirection = FlowDirection.TopDown;
-            flowPanel.WrapContents = false;*/
 
             Controls.Add(tablePanel);
         }
-
-        /*protected void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // View
-            // 
-            this.ClientSize = new System.Drawing.Size(944, 349);
-            this.Name = "View";
-            this.ResumeLayout(false);
-
-        }*/
     }
 }

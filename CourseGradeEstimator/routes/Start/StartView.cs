@@ -38,7 +38,6 @@ namespace CourseGradeEstimator.routes.Start
 
             setupButton(startBtn);
 
-
             endViewAdjustment();
         }
 
