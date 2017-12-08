@@ -19,6 +19,8 @@ namespace CourseGradeEstimator.core.view
     {
         protected View() {
             InitializeComponent();
+            InitializeComponent2();
+            setupView();
             setupLayoutPanel();
         }
 
@@ -50,6 +52,12 @@ namespace CourseGradeEstimator.core.view
             btn.Size = ViewUtils.GetButtonSize(size);
         }
 
+        protected void setupView()
+        {
+            this.ClientSize = new System.Drawing.Size(920, 425);
+            Size = new System.Drawing.Size(920, 425);
+        }
+
         protected void setupLayoutPanel()
         {
             // 
@@ -66,6 +74,18 @@ namespace CourseGradeEstimator.core.view
             flowPanel.WrapContents = false;
 
             Controls.Add(flowPanel);
+        }
+
+        protected void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // View
+            // 
+            this.ClientSize = new System.Drawing.Size(944, 349);
+            this.Name = "View";
+            this.ResumeLayout(false);
+
         }
     }
 }

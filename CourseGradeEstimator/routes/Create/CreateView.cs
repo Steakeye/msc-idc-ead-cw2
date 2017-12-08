@@ -12,9 +12,9 @@ namespace CourseGradeEstimator.routes.Create
 {
     public partial class CreateView : core.view.View
     {
-        public CreateView()
+        public CreateView() : base()
         {
-            base.InitializeComponent();
+            //base.InitializeComponent();
             InitializeComponent();
             this.Text = $"{Properties.Resources.AppTitle} - Create";
         }

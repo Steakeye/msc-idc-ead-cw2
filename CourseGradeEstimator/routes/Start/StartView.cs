@@ -12,9 +12,9 @@ namespace CourseGradeEstimator.routes.Start
 
     public partial class StartView : core.view.View
     {
-        public StartView()
+        public StartView(): base()
         {
-            base.InitializeComponent();
+            //base.InitializeComponent();
             InitializeComponent();
             customLayout();
             //startBtn.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);

@@ -1,6 +1,6 @@
 ﻿namespace CourseGradeEstimator.routes.Create
 {
-    partial class CreateView
+    partial class CreateView : core.view.View
     {
         /// <summary>
         /// Required designer variable.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
             this.header = new CourseGradeEstimator.core.view.control.EditHeader();
             this.childItems = new CourseGradeEstimator.core.view.control.EditChildItems();
