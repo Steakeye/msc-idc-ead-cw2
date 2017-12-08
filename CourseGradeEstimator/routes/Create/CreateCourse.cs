@@ -14,7 +14,6 @@ namespace CourseGradeEstimator.routes.Create
     {
         public CreateCourse(): base()
         {
-            //base.InitializeComponent();
             InitializeComponent();
             string headerTitle = Properties.Resources.ViewCreateCourseHeader;
             this.Text = $"{Properties.Resources.AppTitle} - Create {headerTitle}";
