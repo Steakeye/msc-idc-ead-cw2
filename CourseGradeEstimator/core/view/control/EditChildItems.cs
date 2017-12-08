@@ -41,7 +41,8 @@ namespace CourseGradeEstimator.core.view.control
         }
         private void setupInternalComponents()
         {
-            setupDataGridView();    
+            setupDataGridView();
+            setupAddButton();
         }
         private void setupDataGridView()
         {
@@ -49,25 +50,30 @@ namespace CourseGradeEstimator.core.view.control
             itemTablePanel.Size = new System.Drawing.Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
             //columns
             // 
-            // dataGridViewTextBoxColumn1
+            // titleColumn
             // 
             this.titleColumn.HeaderText = ResourceStrings.StringsTitle;
             this.titleColumn.Name = "titleColumn";
             this.titleColumn.ToolTipText = ResourceStrings.StringsTitle;
             // 
-            // dataGridViewTextBoxColumn2
+            // descriptionColumn
             // 
             this.descriptionColumn.HeaderText = ResourceStrings.StringsDescription;
             this.descriptionColumn.Name = "descriptionColumn";
             // 
-            // dataGridViewTextBoxColumn3
+            // editColumn
             // 
             this.editColumn.HeaderText = ResourceStrings.StringsEdit;
             this.editColumn.Name = "editColumn";
-            // del colum
+            // deleteColumn
             this.deleteColumn.HeaderText = ResourceStrings.StringsDelete;
             this.deleteColumn.Name = "deleteColumn";
             //rows
+        }
+
+        private void setupAddButton()
+        {
+            this.addBtn.Size = core.utils.View.GetButtonSize();
         }
     }
 }

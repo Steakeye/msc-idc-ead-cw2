@@ -23,7 +23,5 @@ namespace CourseGradeEstimator.core.utils
 
             return new System.Drawing.Size(w, h); ;
         }
-
-        private static string userName;
     }
 }

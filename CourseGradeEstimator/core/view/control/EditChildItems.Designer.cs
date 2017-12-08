@@ -64,6 +64,18 @@ namespace CourseGradeEstimator.core.view.control
             this.itemTablePanel.TabIndex = 2;
             this.itemTablePanel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTablePanel_CellContentClick);
             // 
+            // addBtn
+            //
+            this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addBtn.Location = new System.Drawing.Point(140, 210);
+            this.addBtn.Name = "addBtn";
+            //this.addBtn.Size = //new System.Drawing.Size(75, 23);
+            //this.addBtn.Size = core.utils.View.GetButtonSize();
+            //View.setupButton(this.addBtn);
+            this.addBtn.TabIndex = 3;
+            this.addBtn.Text = global::CourseGradeEstimator.Properties.Resources.StringsAdd;
+            this.addBtn.UseVisualStyleBackColor = true;
+            // 
             // flowPanel
             // 
             this.flowPanel.Controls.Add(this.headerLabel);
