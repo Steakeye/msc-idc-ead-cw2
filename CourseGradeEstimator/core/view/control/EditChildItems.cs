@@ -43,6 +43,8 @@ namespace CourseGradeEstimator.core.view.control
         {
             //layoutPanel.Dock = DockStyle.Fill;
             layoutPanel.Size = new Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
+            layoutPanel.BackColor = Color.MediumPurple;
+            layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             setupDataGridView();
             setupAddButton();
         }

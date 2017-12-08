@@ -19,10 +19,9 @@ namespace CourseGradeEstimator.core.view
             // 
             // View
             // 
-            this.ClientSize = new System.Drawing.Size(800, 400);
-            Size = new System.Drawing.Size(800, 400);
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            Size = new System.Drawing.Size(800, 500);
             //            ClientSize = new System.Drawing.Size(584, 361);
-            MinimumSize = new System.Drawing.Size(600, 400);
             Name = "View";
             //MaximizeBox = false;
             // Set the MinimizeBox to false to remove the minimize box.
@@ -30,10 +29,9 @@ namespace CourseGradeEstimator.core.view
             // Set the start position of the form to the center of the screen.
             StartPosition = FormStartPosition.CenterScreen;
 
-            /*// lock form
+            // lock form
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
-            **/
 
             ResumeLayout(false);
 
