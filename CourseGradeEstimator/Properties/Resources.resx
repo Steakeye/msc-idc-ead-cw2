@@ -144,6 +144,9 @@
   <data name="StringsAdd" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="StringsCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="StringsCourse" xml:space="preserve">
     <value>Course</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="StringsModules" xml:space="preserve">
     <value>Modules</value>
+  </data>
+  <data name="StringsSave" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="StringsTitle" xml:space="preserve">
     <value>Title</value>

@@ -17,6 +17,14 @@ namespace CourseGradeEstimator.core.view.control
             InitializeComponent();
         }
 
+        public void AddButton(Button button)
+        {
+            this.layoutPanel.Controls.Add(button);
+        }
+        public void RemoveButton(Button button)
+        {
+            this.layoutPanel.Controls.Remove(button);
+        }
         protected override void OnPaint(PaintEventArgs e)
         {
             layoutPanel.MaximumSize = new Size(ClientSize.Width - (Config.Dimensions.PaddingStd * 2), 50);

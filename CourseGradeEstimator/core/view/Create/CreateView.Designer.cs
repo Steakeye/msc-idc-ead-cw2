@@ -1,4 +1,6 @@
-﻿namespace CourseGradeEstimator.core.view.Create
+﻿using System.Windows.Forms;
+
+namespace CourseGradeEstimator.core.view.Create
 {
     partial class CreateView : View
     {
@@ -83,6 +85,8 @@
         protected core.view.control.EditHeader header;
         protected core.view.control.EditChildItems childItems;
         protected core.view.control.BottomButtonBar bottomButtonBar;
+        protected Button saveButton;
+        protected Button cancelButton;
     }
 }
 

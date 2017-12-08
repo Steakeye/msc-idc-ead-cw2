@@ -142,6 +142,15 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string StringsCancel {
+            get {
+                return ResourceManager.GetString("StringsCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Course.
         /// </summary>
         internal static string StringsCourse {
@@ -192,6 +201,15 @@ namespace CourseGradeEstimator.Properties {
         internal static string StringsModules {
             get {
                 return ResourceManager.GetString("StringsModules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string StringsSave {
+            get {
+                return ResourceManager.GetString("StringsSave", resourceCulture);
             }
         }
         
