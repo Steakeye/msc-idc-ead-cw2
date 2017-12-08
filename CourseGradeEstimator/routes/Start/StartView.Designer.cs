@@ -1,4 +1,6 @@
-﻿namespace CourseGradeEstimator.routes.Start
+﻿using CourseGradeEstimator.core;
+
+namespace CourseGradeEstimator.routes.Start
 {
     partial class StartView: core.view.View
     {
@@ -42,6 +44,7 @@
             this.startBtn.TabIndex = 0;
             this.startBtn.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
             this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Margin = new System.Windows.Forms.Padding(Config.Dimensions.PaddingLrg);
             // 
             // title
             // 
@@ -52,6 +55,8 @@
             this.title.Size = new System.Drawing.Size(378, 37);
             this.title.TabIndex = 1;
             this.title.Text = "University of Westminster";
+            this.title.Margin = new System.Windows.Forms.Padding(Config.Dimensions.PaddingLrg);
+
             // 
             // subtitle
             // 
@@ -63,6 +68,7 @@
             this.subtitle.TabIndex = 2;
             this.subtitle.Text = Properties.Resources.AppTitle;
             this.subtitle.Click += new System.EventHandler(this.label1_Click);
+            this.subtitle.Margin = new System.Windows.Forms.Padding(Config.Dimensions.PaddingLrg, 0, Config.Dimensions.PaddingLrg, 0);
             // 
             // StartView
             // 
