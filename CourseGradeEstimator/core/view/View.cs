@@ -31,7 +31,14 @@ namespace CourseGradeEstimator.core.view
         protected EventHandler makeBinding<A>(A eventKey) {
             VoidDelegate cb = (VoidDelegate)eventBindings[eventKey];
 
-            return new EventHandler((object sender, EventArgs e) => Invoke(cb));
+            EventHandler handler = null;
+
+            if (cb != null)
+            {
+                handler = new EventHandler((object sender, EventArgs e) => Invoke(cb));
+            }
+
+            return handler;
         }
         protected void FindFuncAndCall<A>(A eventKey)
         {
