@@ -16,6 +16,14 @@ namespace CourseGradeEstimator.routes.Create
         {
             InitializeComponent();
             this.Text = $"{Properties.Resources.AppTitle} - Create";
+            setupView();
+        }
+
+        protected void setupView()
+        {
+            header.Dock = DockStyle.Fill;
+            childItems.Dock = DockStyle.Fill;
+            bottomButtonBar.Dock = DockStyle.Fill;
         }
     }
 }
