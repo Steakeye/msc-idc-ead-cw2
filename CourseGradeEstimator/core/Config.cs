@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CourseGradeEstimator.core
 {
@@ -14,6 +15,10 @@ namespace CourseGradeEstimator.core
             public static Point GetStandardStartLocation()
             {
                 return new Point(PaddingStd, PaddingMed);
+            }
+            public static Padding GetStandardSidePadding()
+            {
+                return new Padding(PaddingStd, 0, PaddingStd, 0);
             }
 
             public static int PaddingStd = 10;

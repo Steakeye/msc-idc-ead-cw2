@@ -1,4 +1,6 @@
-﻿namespace CourseGradeEstimator.core.view.control
+﻿using System.Windows.Forms;
+
+namespace CourseGradeEstimator.core.view.control
 {
     partial class BottomButtonBar
     {
@@ -28,7 +30,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.layoutPanel = new FlowLayoutPanel();
+
             this.SuspendLayout();
+            // 
+            // layoutPanel
+            // 
+            layoutPanel.FlowDirection = FlowDirection.LeftToRight;
+            //layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+            layoutPanel.Size = new System.Drawing.Size(0, 50);
+            //layoutPanel.MaximumSize = Size;
+            layoutPanel.MinimumSize = Size;
+            layoutPanel.Location = Config.Dimensions.GetStandardStartLocation();
+            //layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            //layoutPanel.Dock = DockStyle.Fill;
+            layoutPanel.BackColor = System.Drawing.Color.BlueViolet;
+            //layoutPanel.Margin = new Padding(30);
+            //layoutPanel.Padding = new Padding(30);
+
+            //layoutPanel.Margin.Top = 50;
             // 
             // BottomButtonBar
             // 
@@ -36,14 +57,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MaximumSize = new System.Drawing.Size(0, 50);
-            this.MinimumSize = new System.Drawing.Size(0, 50);
+            this.Size = new System.Drawing.Size(0, 100);
+            this.MaximumSize = Size;
+            this.MinimumSize = Size;
+            this.Controls.Add(layoutPanel);
             this.Name = "BottomButtonBar";
-            this.Size = new System.Drawing.Size(0, 50);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        //If in doubt change over to the TableLayoutPanel
+        //private TableLayoutPanel layoutPanel;
+        private FlowLayoutPanel layoutPanel;
+        private int topMargin = 15;
     }
 }
