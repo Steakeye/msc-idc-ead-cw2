@@ -21,9 +21,15 @@ namespace CourseGradeEstimator.routes.Create
 
         protected void setupView()
         {
-            header.Dock = DockStyle.Fill;
+            AnchorStyles sides = AnchorStyles.Left | AnchorStyles.Right;
+            ////childItems.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            /*header.Dock = DockStyle.Fill;
             childItems.Dock = DockStyle.Fill;
-            bottomButtonBar.Dock = DockStyle.Fill;
+            bottomButtonBar.Dock = DockStyle.Fill;*/
+            header.Anchor = sides;
+            childItems.Anchor = sides;
+            bottomButtonBar.Anchor = sides;
+            ResumeLayout(true);
         }
     }
 }

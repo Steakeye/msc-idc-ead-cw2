@@ -16,7 +16,6 @@ namespace CourseGradeEstimator.core.view
         protected void InitializeComponent()
         {
             this.SuspendLayout();
-            //SuspendLayout();
             // 
             // View
             // 

@@ -50,7 +50,7 @@ namespace CourseGradeEstimator.core.view.control
             this.headerTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerTextfield.Location = new System.Drawing.Point(10, 45);
             this.headerTextfield.Name = "headerTextfield";
-            this.headerTextfield.Size = new System.Drawing.Size(282, 35);
+            this.headerTextfield.Size = new System.Drawing.Size(600, 35);
             this.headerTextfield.TabIndex = 1;
             // 
             // EditHeader

@@ -83,7 +83,6 @@ namespace CourseGradeEstimator.core.view.control
             //this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.flowPanel);
             this.Name = "EditChildItems";
-            //this.Size = new System.Drawing.Size(255, 103);
             ((System.ComponentModel.ISupportInitialize)(this.itemTablePanel)).EndInit();
             this.flowPanel.ResumeLayout(false);
             this.flowPanel.PerformLayout();
