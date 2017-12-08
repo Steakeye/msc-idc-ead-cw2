@@ -232,6 +232,24 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Module.
+        /// </summary>
+        internal static string ViewCreateModuleHeader {
+            get {
+                return ResourceManager.GetString("ViewCreateModuleHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} - Create {1}.
+        /// </summary>
+        internal static string ViewCreateViewHeader {
+            get {
+                return ResourceManager.GetString("ViewCreateViewHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This tool allows you to enter information about a course and then assign grades to assessments in order to determin your predicted grade..
         /// </summary>
         internal static string ViewStartDescription {

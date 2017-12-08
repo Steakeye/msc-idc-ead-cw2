@@ -118,6 +118,13 @@
     <Compile Include="routes\CourseSummary\CourseSummaryView.Designer.cs">
       <DependentUpon>CourseSummaryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="routes\CreateModule\CreateModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="routes\CreateModule\CreateModule.Designer.cs">
+      <DependentUpon>CreateModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\CreateModule\CreateModuleController.cs" />
     <Compile Include="routes\CreateCourse\CreateCourseController.cs" />
     <Compile Include="routes\CreateCourse\CreateCourse.cs">
       <SubType>Form</SubType>
@@ -154,7 +161,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -164,6 +170,9 @@
     </Compile>
     <EmbeddedResource Include="routes\CourseSummary\CourseSummaryView.resx">
       <DependentUpon>CourseSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\CreateModule\CreateModule.resx">
+      <DependentUpon>CreateModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="routes\CreateCourse\CreateCourse.resx">
       <DependentUpon>CreateCourse.cs</DependentUpon>

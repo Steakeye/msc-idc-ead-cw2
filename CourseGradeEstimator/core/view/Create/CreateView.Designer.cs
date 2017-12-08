@@ -33,6 +33,8 @@ namespace CourseGradeEstimator.core.view.Create
             this.header = new CourseGradeEstimator.core.view.control.EditHeader();
             this.childItems = new CourseGradeEstimator.core.view.control.EditChildItems();
             this.bottomButtonBar = new CourseGradeEstimator.core.view.control.BottomButtonBar();
+            this.saveButton = new Button();
+            this.cancelButton = new Button();
             this.SuspendLayout();
             // 
             // header
@@ -63,6 +65,24 @@ namespace CourseGradeEstimator.core.view.Create
             this.bottomButtonBar.Name = "bottomButtonBar1";
             this.bottomButtonBar.Size = new System.Drawing.Size(200, 50);
             this.bottomButtonBar.TabIndex = 2;
+
+            // 
+            // saveButton
+            //
+            //this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.saveButton.Name = "saveButton";
+            this.saveButton.TabIndex = 3;
+            this.saveButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsSave;
+            this.saveButton.UseVisualStyleBackColor = true;
+
+            // 
+            // cancelButton
+            //
+            //this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.TabIndex = 3;
+            this.cancelButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsCancel;
+            this.cancelButton.UseVisualStyleBackColor = true;
 
             // 
             // CreateView

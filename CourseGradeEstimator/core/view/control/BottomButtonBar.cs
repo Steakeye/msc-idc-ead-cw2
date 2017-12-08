@@ -19,6 +19,9 @@ namespace CourseGradeEstimator.core.view.control
 
         public void AddButton(Button button)
         {
+            //Is there a more appropriate location?
+            button.Size = core.utils.View.GetButtonSize();
+
             this.layoutPanel.Controls.Add(button);
         }
         public void RemoveButton(Button button)

@@ -8,18 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.routes.CreateCourse
+namespace CourseGradeEstimator.routes.CreateModule
 {
-    public partial class CreateCourse : core.view.Create.CreateView
+    public partial class CreateModule : core.view.Create.CreateView
     {
-        public CreateCourse(): base()
+        public CreateModule(): base()
         {
             InitializeComponent();
-            string headerTitle = Properties.Resources.ViewCreateCourseHeader;
-            this.Text = String.Format(Properties.Resources.ViewCreateViewHeader, Properties.Resources.AppTitle, headerTitle);
+            string headerTitle = Properties.Resources.ViewCreateModuleHeader;
+            this.Text = $"{Properties.Resources.AppTitle} - Create {headerTitle}";
             this.header.Title = headerTitle;
             this.childItems.Title = Properties.Resources.StringsModules;
-            addBottomButtons();
             header.BackColor = Color.Orange;
             childItems.BackColor = Color.Blue;
 
@@ -27,12 +26,6 @@ namespace CourseGradeEstimator.routes.CreateCourse
             childItems.Width = Width;
             tablePanel.BackColor = Color.LightBlue;
             BackColor = Color.HotPink;
-        }
-
-        protected void addBottomButtons()
-        {
-            bottomButtonBar.AddButton(this.saveButton);
-            bottomButtonBar.AddButton(this.cancelButton);
         }
     }
 }
