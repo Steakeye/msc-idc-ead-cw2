@@ -162,6 +162,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="routes\CourseSummary\CourseSummaryView.resx">
+      <DependentUpon>CourseSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="routes\CreateCourse\CreateCourse.resx">
       <DependentUpon>CreateCourse.cs</DependentUpon>
     </EmbeddedResource>

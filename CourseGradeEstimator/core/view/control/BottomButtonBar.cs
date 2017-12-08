@@ -19,6 +19,13 @@ namespace CourseGradeEstimator.core.view.control
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            layoutPanel.MaximumSize = new Size(ClientSize.Width - (Config.Dimensions.PaddingStd * 2), 50);
+
+            drawLine(e);
+        }
+
+        private void drawLine(PaintEventArgs e)
+        {
             Color back = BackColor;
             Color dark = Color.FromArgb(back.R >> 1, back.G >> 1, back.B >> 1);
             int y = topMargin;

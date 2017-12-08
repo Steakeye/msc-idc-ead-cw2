@@ -60,7 +60,6 @@ namespace CourseGradeEstimator.core.view.control
             this.deleteColumn});
             this.dataGrid.Location = new System.Drawing.Point(3, 32);
             this.dataGrid.Name = "dataGrid";
-            //this.itemTablePanel.Size = new System.Drawing.Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
             this.dataGrid.TabIndex = 2;
             this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTablePanel_CellContentClick);
             // 
@@ -99,7 +98,6 @@ namespace CourseGradeEstimator.core.view.control
 
         private Label headerLabel;
         private DataGridView dataGrid;
-        //private FlowLayoutPanel flowPanel;
         private TableLayoutPanel layoutPanel;
         private DataGridViewTextBoxColumn titleColumn;
         private DataGridViewTextBoxColumn descriptionColumn;
