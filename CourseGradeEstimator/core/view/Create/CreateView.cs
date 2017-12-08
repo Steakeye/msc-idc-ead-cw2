@@ -22,14 +22,22 @@ namespace CourseGradeEstimator.core.view.Create
         protected void setupView()
         {
             AnchorStyles sides = AnchorStyles.Left | AnchorStyles.Right;
-            ////childItems.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            /*header.Dock = DockStyle.Fill;
-            childItems.Dock = DockStyle.Fill;
-            bottomButtonBar.Dock = DockStyle.Fill;*/
             header.Anchor = sides;
             childItems.Anchor = sides;
             bottomButtonBar.Anchor = sides;
+
+            fixLayout();
+
             ResumeLayout(true);
+        }
+
+        protected void fixLayout()
+        {
+            tablePanel.RowStyles.Clear();
+            for (int i = 0; i < tablePanel.RowCount; i++)
+            {
+                tablePanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            }
         }
     }
 }

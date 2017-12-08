@@ -65,7 +65,7 @@ namespace CourseGradeEstimator.core.view
             // 
             tablePanel = new TableLayoutPanel();
             tablePanel.Location = new System.Drawing.Point(0, 0);
-            tablePanel.Name = "flowPanel";
+            tablePanel.Name = "tablePanel";
             tablePanel.Size = new System.Drawing.Size(ClientSize.Width, ClientSize.Height);
             tablePanel.ClientSize = tablePanel.Size;
             tablePanel.TabIndex = 0;
