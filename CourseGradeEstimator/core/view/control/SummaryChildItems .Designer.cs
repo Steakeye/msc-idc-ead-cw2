@@ -38,7 +38,7 @@ namespace CourseGradeEstimator.core.view.control
             this.editColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteColumn = new System.Windows.Forms.DataGridViewButtonColumn(); 
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
-            this.addBtn = new Button();
+            //this.addBtn = new Button();
             this.layoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,17 +65,17 @@ namespace CourseGradeEstimator.core.view.control
             // 
             // addBtn
             //
-            this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            /*this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.addBtn.Name = "addBtn";
             this.addBtn.TabIndex = 3;
             this.addBtn.Text = global::CourseGradeEstimator.Properties.Resources.StringsAdd;
-            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.UseVisualStyleBackColor = true;*/
             // 
             // flowPanel
             // 
             this.layoutPanel.Controls.Add(this.headerLabel);
             this.layoutPanel.Controls.Add(this.dataGrid);
-            this.layoutPanel.Controls.Add(this.addBtn);
+            //this.layoutPanel.Controls.Add(this.addBtn);
             this.layoutPanel.Location = new System.Drawing.Point(0, 15);
             this.layoutPanel.Name = "flowPanel";
             this.layoutPanel.Size = new System.Drawing.Size(252, 300);
@@ -103,7 +103,7 @@ namespace CourseGradeEstimator.core.view.control
         private DataGridViewTextBoxColumn descriptionColumn;
         private DataGridViewButtonColumn editColumn;
         private DataGridViewButtonColumn deleteColumn;
-        private Button addBtn;
+        //private Button addBtn;
 
     }
 }

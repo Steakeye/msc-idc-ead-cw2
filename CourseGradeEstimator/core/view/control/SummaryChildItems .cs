@@ -23,7 +23,7 @@ namespace CourseGradeEstimator.core.view.control
         }
 
         public string Title { get { return headerLabel.Text; } set { headerLabel.Text = value; } }
-        public Button AddButton => addBtn;
+        //public Button AddButton => addBtn;
 
         private void itemTablePanel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -42,13 +42,10 @@ namespace CourseGradeEstimator.core.view.control
         }
         private void setupInternalComponents()
         {
-            //layoutPanel.Dock = DockStyle.Fill;
             layoutPanel.Size = new Size(Config.Dimensions.InputTextWidthStd * 2, Config.Dimensions.InputHeightStd * 5);
-            //layoutPanel.BackColor = Color.MediumPurple;
-            //layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
             setupDataGridView();
-            setupAddButton();
+            //setupAddButton();
         }
         private void setupDataGridView()
         {
@@ -78,9 +75,9 @@ namespace CourseGradeEstimator.core.view.control
             //rows
         }
 
-        private void setupAddButton()
+        /*private void setupAddButton()
         {
             this.addBtn.Size = core.utils.View.GetButtonSize();
-        }
+        }*/
     }
 }
