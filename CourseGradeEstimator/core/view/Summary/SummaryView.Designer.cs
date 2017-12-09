@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
 
-namespace CourseGradeEstimator.core.view.Create
+namespace CourseGradeEstimator.core.view.Summary
 {
-    partial class CreateView : View
+    partial class SummaryView : View
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@ namespace CourseGradeEstimator.core.view.Create
         /// </summary>
         protected void InitializeComponent()
         {
-            this.header = new CourseGradeEstimator.core.view.control.EditHeader();
+            this.header = new CourseGradeEstimator.core.view.control.SummaryHeader();
             this.bottomButtonBar = new CourseGradeEstimator.core.view.control.BottomButtonBar();
-            this.saveButton = new Button();
-            this.cancelButton = new Button();
+            //this.saveButton = new Button();
+            this.backButton = new Button();
             this.SuspendLayout();
             // 
             // header
@@ -59,19 +59,19 @@ namespace CourseGradeEstimator.core.view.Create
             // saveButton
             //
             //this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveButton.Name = "saveButton";
+            /*this.saveButton.Name = "saveButton";
             this.saveButton.TabIndex = 3;
             this.saveButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsSave;
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.UseVisualStyleBackColor = true;*/
 
             // 
-            // cancelButton
+            // backButton
             //
             //this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.TabIndex = 3;
-            this.cancelButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsCancel;
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.backButton.Name = "backButton";
+            this.backButton.TabIndex = 3;
+            this.backButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsCancel;
+            this.backButton.UseVisualStyleBackColor = true;
 
             // 
             // CreateView
@@ -82,7 +82,7 @@ namespace CourseGradeEstimator.core.view.Create
             //TODO: AK - this is where the components are added!
             tablePanel.Controls.Add(this.header);
             tablePanel.Controls.Add(this.bottomButtonBar);
-            this.Name = "CreateView";
+            this.Name = "SummaryView";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,10 +90,10 @@ namespace CourseGradeEstimator.core.view.Create
 
         #endregion
 
-        protected core.view.control.EditHeader header;
+        protected core.view.control.SummaryHeader header;
         protected core.view.control.BottomButtonBar bottomButtonBar;
-        protected Button saveButton;
-        protected Button cancelButton;
+        //protected Button saveButton;
+        protected Button backButton;
     }
 }
 

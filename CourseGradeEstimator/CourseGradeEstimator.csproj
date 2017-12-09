@@ -68,11 +68,23 @@
     <Compile Include="core\io\GradeIO .cs" />
     <Compile Include="core\utils\View.cs" />
     <Compile Include="core\utils\User.cs" />
+    <Compile Include="core\view\control\SummaryChildItems .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\view\control\SummaryChildItems .Designer.cs">
+      <DependentUpon>SummaryChildItems .cs</DependentUpon>
+    </Compile>
     <Compile Include="core\view\control\EditChildItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="core\view\control\EditChildItems.Designer.cs">
       <DependentUpon>EditChildItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\control\SummaryHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\view\control\SummaryHeader.Designer.cs">
+      <DependentUpon>SummaryHeader.cs</DependentUpon>
     </Compile>
     <Compile Include="core\view\control\EditHeader.cs">
       <SubType>UserControl</SubType>
@@ -85,6 +97,12 @@
     </Compile>
     <Compile Include="core\view\control\BottomButtonBar.Designer.cs">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\Summary\SummaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\view\Summary\SummaryView.Designer.cs">
+      <DependentUpon>SummaryView.cs</DependentUpon>
     </Compile>
     <Compile Include="core\view\CreateSimple\CreateSimple.cs">
       <SubType>Form</SubType>
@@ -166,14 +184,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="core\view\control\SummaryChildItems .resx">
+      <DependentUpon>SummaryChildItems .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="core\view\control\EditChildItems.resx">
       <DependentUpon>EditChildItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\control\SummaryHeader.resx">
+      <DependentUpon>SummaryHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="core\view\control\EditHeader.resx">
       <DependentUpon>EditHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="core\view\control\BottomButtonBar.resx">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\Summary\SummaryView.resx">
+      <DependentUpon>SummaryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="core\view\CreateSimple\CreateSimple.resx">
       <DependentUpon>CreateSimple.cs</DependentUpon>
