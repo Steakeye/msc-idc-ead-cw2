@@ -238,25 +238,49 @@ namespace CourseGradeEstimator.Properties {
                 return ResourceManager.GetString("StringsSave", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
-        internal static string StringsTitle {
-            get {
+        internal static string StringsTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("StringsTitle", resourceCulture);
             }
         }
-        
+        /// <summary>
+        ///   Looks up a localized string similar to Weighting.
+        /// </summary>
+        internal static string StringsWeighting
+        {
+            get
+            {
+                return ResourceManager.GetString("StringsWeighting", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Course.
         /// </summary>
-        internal static string ViewCreateCourseHeader {
-            get {
+        internal static string ViewCreateAssignmentHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("ViewCreateAssignmentHeader", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to Course.
+        /// </summary>
+        internal static string ViewCreateCourseHeader
+        {
+            get
+            {
                 return ResourceManager.GetString("ViewCreateCourseHeader", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Module.
         /// </summary>

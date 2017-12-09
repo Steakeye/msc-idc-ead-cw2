@@ -15,16 +15,17 @@ namespace CourseGradeEstimator.routes.CreateAssignment
         public CreateAssignment(): base()
         {
             InitializeComponent();
-            string headerTitle = Properties.Resources.ViewCreateModuleHeader;
+            string headerTitle = Properties.Resources.ViewCreateAssignmentHeader;
             this.Text = $"{Properties.Resources.AppTitle} - Create {headerTitle}";
             this.header.Title = headerTitle;
-            header.BackColor = Color.Orange;
+            this.weightLabel.Text = Properties.Resources.StringsWeighting;
+            //header.BackColor = Color.Orange;
             //childItems.BackColor = Color.Blue;
 
-            bottomButtonBar.BackColor = Color.Green;
+            //bottomButtonBar.BackColor = Color.Green;
             container.Width = Width;
-            tablePanel.BackColor = Color.LightBlue;
-            BackColor = Color.HotPink;
+            //tablePanel.BackColor = Color.LightBlue;
+            //BackColor = Color.HotPink;
         }
 
         protected void setupView()

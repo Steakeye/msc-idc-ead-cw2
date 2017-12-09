@@ -177,6 +177,9 @@
   <data name="StringsTitle" xml:space="preserve">
     <value>Title</value>
   </data>
+  <data name="StringsWeighting" xml:space="preserve">
+    <value>Weighting</value>
+  </data>
   <data name="ViewCreateAssignmentHeader" xml:space="preserve">
     <value>Assessment</value>
   </data>
