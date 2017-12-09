@@ -98,6 +98,12 @@
     <Compile Include="core\view\control\BottomButtonBar.Designer.cs">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="core\view\SummarySimple\SummarySimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\view\SummarySimple\SummarySimple.Designer.cs">
+      <DependentUpon>SummarySimple.cs</DependentUpon>
+    </Compile>
     <Compile Include="core\view\Summary\SummaryView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="core\view\control\BottomButtonBar.resx">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\SummarySimple\SummarySimple.resx">
+      <DependentUpon>SummarySimple.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="core\view\Summary\SummaryView.resx">
       <DependentUpon>SummaryView.cs</DependentUpon>
