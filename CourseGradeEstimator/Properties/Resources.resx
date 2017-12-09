@@ -150,6 +150,9 @@
   <data name="StringsCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="StringsCode" xml:space="preserve">
+    <value>Code</value>
+  </data>
   <data name="StringsCourse" xml:space="preserve">
     <value>Course</value>
   </data>

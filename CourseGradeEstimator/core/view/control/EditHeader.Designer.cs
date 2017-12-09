@@ -33,6 +33,10 @@ namespace CourseGradeEstimator.core.view.control
         {
             this.headerLabel = new System.Windows.Forms.Label();
             this.headerTextfield = new System.Windows.Forms.TextBox();
+            this.codeLabel = new System.Windows.Forms.Label();
+            this.codeTextfield = new System.Windows.Forms.TextBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.descriptionTextfield = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -53,16 +57,57 @@ namespace CourseGradeEstimator.core.view.control
             this.headerTextfield.Size = new System.Drawing.Size(600, 35);
             this.headerTextfield.TabIndex = 1;
             // 
+            // codeLabel
+            // 
+            this.codeLabel.AutoSize = true;
+            this.codeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codeLabel.Location = new System.Drawing.Point(610, 15);
+            this.codeLabel.Name = "codeLabel";
+            this.codeLabel.Text = Properties.Resources.StringsCode;
+            this.codeLabel.Size = new System.Drawing.Size(0, 29);
+            this.codeLabel.TabIndex = 2;
+            this.codeLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // codeTextfield
+            // 
+            this.codeTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codeTextfield.Location = new System.Drawing.Point(610, 45);
+            this.codeTextfield.Name = "codeTextfield";
+            this.codeTextfield.Size = new System.Drawing.Size(60, 35);
+            this.codeTextfield.TabIndex = 3;
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(10, 100);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Text = Properties.Resources.StringsDescription;
+            this.descriptionLabel.Size = new System.Drawing.Size(0, 29);
+            this.descriptionLabel.TabIndex = 4;
+            this.descriptionLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // descriptionTextfield
+            // 
+            this.descriptionTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTextfield.Location = new System.Drawing.Point(10, 145);
+            this.descriptionTextfield.Name = "descriptionTextfield";
+            this.descriptionTextfield.Size = new System.Drawing.Size(670, 70);
+            this.descriptionTextfield.TabIndex = 5;
+            this.descriptionTextfield.Multiline = true;
+            this.descriptionTextfield.AcceptsReturn = true;
+            this.descriptionTextfield.AcceptsTab = true;
+            this.descriptionTextfield.WordWrap = true;
+            // 
             // EditHeader
             // 
-            //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.AutoSize = true;
-            //this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.headerLabel);
             this.Controls.Add(this.headerTextfield);
+            this.Controls.Add(this.codeLabel);
+            this.Controls.Add(this.codeTextfield);
+            this.Controls.Add(this.descriptionLabel);
+            this.Controls.Add(this.descriptionTextfield);
             this.Name = "EditHeader";
-            //this.Size = new System.Drawing.Size(444, 83);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,6 +117,10 @@ namespace CourseGradeEstimator.core.view.control
 
         private Label headerLabel;
         private TextBox headerTextfield;
+        private Label codeLabel;
+        private TextBox codeTextfield;
+        private Label descriptionLabel;
+        private TextBox descriptionTextfield;
 
     }
 }
