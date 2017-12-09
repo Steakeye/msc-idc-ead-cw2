@@ -54,14 +54,14 @@ namespace CourseGradeEstimator.core.view.control
             this.headerTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerTextfield.Location = new System.Drawing.Point(10, 45);
             this.headerTextfield.Name = "headerTextfield";
-            this.headerTextfield.Size = new System.Drawing.Size(600, 35);
+            this.headerTextfield.Size = new System.Drawing.Size(580, 35);
             this.headerTextfield.TabIndex = 1;
             // 
             // codeLabel
             // 
             this.codeLabel.AutoSize = true;
             this.codeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codeLabel.Location = new System.Drawing.Point(610, 15);
+            this.codeLabel.Location = new System.Drawing.Point(600, 15);
             this.codeLabel.Name = "codeLabel";
             this.codeLabel.Text = Properties.Resources.StringsCode;
             this.codeLabel.Size = new System.Drawing.Size(0, 29);
@@ -71,16 +71,16 @@ namespace CourseGradeEstimator.core.view.control
             // codeTextfield
             // 
             this.codeTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codeTextfield.Location = new System.Drawing.Point(610, 45);
+            this.codeTextfield.Location = new System.Drawing.Point(600, 45);
             this.codeTextfield.Name = "codeTextfield";
-            this.codeTextfield.Size = new System.Drawing.Size(60, 35);
+            this.codeTextfield.Size = new System.Drawing.Size(70, 45);
             this.codeTextfield.TabIndex = 3;
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(10, 100);
+            this.descriptionLabel.Location = new System.Drawing.Point(10, 85);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Text = Properties.Resources.StringsDescription;
             this.descriptionLabel.Size = new System.Drawing.Size(0, 29);
@@ -90,9 +90,9 @@ namespace CourseGradeEstimator.core.view.control
             // descriptionTextfield
             // 
             this.descriptionTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTextfield.Location = new System.Drawing.Point(10, 145);
+            this.descriptionTextfield.Location = new System.Drawing.Point(10, 115);
             this.descriptionTextfield.Name = "descriptionTextfield";
-            this.descriptionTextfield.Size = new System.Drawing.Size(670, 70);
+            this.descriptionTextfield.Size = new System.Drawing.Size(660, 70);
             this.descriptionTextfield.TabIndex = 5;
             this.descriptionTextfield.Multiline = true;
             this.descriptionTextfield.AcceptsReturn = true;

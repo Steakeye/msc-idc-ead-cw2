@@ -19,8 +19,8 @@ namespace CourseGradeEstimator.core.view
             // 
             // View
             // 
-            this.ClientSize = new System.Drawing.Size(800, 500);
-            Size = new System.Drawing.Size(800, 500);
+            this.ClientSize = new System.Drawing.Size(705, 555);
+            Size = new System.Drawing.Size(705, 555);
             //            ClientSize = new System.Drawing.Size(584, 361);
             Name = "View";
             //MaximizeBox = false;
