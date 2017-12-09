@@ -19,13 +19,13 @@ namespace CourseGradeEstimator.routes.CreateCourse
             this.Text = String.Format(Properties.Resources.ViewCreateViewHeader, Properties.Resources.AppTitle, headerTitle);
             this.header.Title = headerTitle;
             this.childItems.Title = Properties.Resources.StringsModules;
-            header.BackColor = Color.Orange;
-            childItems.BackColor = Color.Blue;
+            //header.BackColor = Color.Orange;
+            //childItems.BackColor = Color.Blue;
 
-            bottomButtonBar.BackColor = Color.Green;
+            //bottomButtonBar.BackColor = Color.Green;
             childItems.Width = Width;
-            tablePanel.BackColor = Color.LightBlue;
-            BackColor = Color.HotPink;
+            //tablePanel.BackColor = Color.LightBlue;
+            //BackColor = Color.HotPink;
         }
     }
 }

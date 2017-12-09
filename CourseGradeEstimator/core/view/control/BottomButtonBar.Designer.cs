@@ -42,7 +42,7 @@ namespace CourseGradeEstimator.core.view.control
             layoutPanel.MinimumSize = Size;
             layoutPanel.Location = System.Drawing.Point.Add(Config.Dimensions.GetStandardStartLocation(), new Size(0, 10)); //new System.Drawing.Point(30,30); //Config.Dimensions.GetStandardStartLocation();
             layoutPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            layoutPanel.BackColor = System.Drawing.Color.BlueViolet;
+            //layoutPanel.BackColor = System.Drawing.Color.BlueViolet;
             layoutPanel.Margin = Config.Dimensions.GetStandardSidePadding();
 
             // 
