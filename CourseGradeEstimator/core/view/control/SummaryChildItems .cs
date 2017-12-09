@@ -65,13 +65,11 @@ namespace CourseGradeEstimator.core.view.control
             this.descriptionColumn.HeaderText = ResourceStrings.StringsDescription;
             this.descriptionColumn.Name = "descriptionColumn";
             // 
-            // editColumn
+            // viewColumn
             // 
-            this.editColumn.HeaderText = ResourceStrings.StringsEdit;
-            this.editColumn.Name = "editColumn";
-            // deleteColumn
-            this.deleteColumn.HeaderText = ResourceStrings.StringsDelete;
-            this.deleteColumn.Name = "deleteColumn";
+            this.viewColumn.HeaderText = ResourceStrings.StringsView;
+            this.viewColumn.Name = "viewColumn";
+            this.viewColumn.UseColumnTextForButtonValue = true;
             //rows
         }
 

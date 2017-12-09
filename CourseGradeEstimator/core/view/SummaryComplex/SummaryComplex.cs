@@ -15,7 +15,7 @@ namespace CourseGradeEstimator.core.view.SummaryComplex
         public override void BindDelegates()
         {
             base.BindDelegates();
-            childItems.AddButton.Click += makeBinding(SummaryViewBindings.View);
+            //childItems.AddButton.Click += makeBinding(SummaryViewBindings.View);
         }
 
         protected void setupView()
