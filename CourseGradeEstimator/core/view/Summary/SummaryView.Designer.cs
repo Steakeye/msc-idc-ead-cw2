@@ -70,7 +70,7 @@ namespace CourseGradeEstimator.core.view.Summary
             //this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.backButton.Name = "backButton";
             this.backButton.TabIndex = 3;
-            this.backButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsCancel;
+            this.backButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsBack;
             this.backButton.UseVisualStyleBackColor = true;
 
             // 

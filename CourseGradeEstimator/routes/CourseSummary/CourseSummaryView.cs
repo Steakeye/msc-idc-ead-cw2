@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourseGradeEstimator.core.view.Summary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,21 @@ namespace CourseGradeEstimator.routes.CourseSummary
             this.Text = String.Format(Properties.Resources.ViewSummaryViewHeader, Properties.Resources.AppTitle, headerTitle);
             this.header.Title = headerTitle;
             this.childItems.Title = Properties.Resources.StringsModules;
+
+            makeCancelButtonDelete();
+
+        }
+
+        public override void BindDelegates()
+        {
+            backButton.Click += makeBinding(SummaryViewBindings.Edit);
+            deleteButton.Click += makeBinding(SummaryViewBindings.Delete);
+        }
+
+        private void makeCancelButtonDelete() {
+            this.backButton.Text = Properties.Resources.StringsEdit;
+            //this.backButton.Click += null;
+            //this.backButton.Click = new System.EventHandler();
         }
     }
 }

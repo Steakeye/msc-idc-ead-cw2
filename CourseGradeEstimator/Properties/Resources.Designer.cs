@@ -151,6 +151,15 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string StringsBack {
+            get {
+                return ResourceManager.GetString("StringsBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string StringsCancel {

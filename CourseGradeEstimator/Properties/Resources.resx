@@ -147,6 +147,9 @@
   <data name="StringsAssessments" xml:space="preserve">
     <value>Assessments</value>
   </data>
+  <data name="StringsBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
   <data name="StringsCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>

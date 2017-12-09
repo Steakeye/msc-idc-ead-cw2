@@ -1,6 +1,8 @@
 ﻿using CourseGradeEstimator.core.data;
+using CourseGradeEstimator.core.view.Summary;
 using CourseGradeEstimator.models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,13 @@ namespace CourseGradeEstimator.routes.CourseSummary
             view = new CourseSummaryView();
 
             populateView();
+
+            Hashtable eventMap = view.EventBindings;
+
+            eventMap.Add(SummaryViewBindings.Edit, new core.view.VoidDelegate(navToCreateModule));
+            eventMap.Add(SummaryViewBindings.Delete, new core.view.VoidDelegate(deleteDataAndRestart));
+
+            view.BindDelegates();
         }
 
         private void populateView()
@@ -24,6 +33,20 @@ namespace CourseGradeEstimator.routes.CourseSummary
             view.ItemCode = item.Code;
             view.ItemDescription = item.Description;
         }
+
+        private void deleteDataAndRestart()
+        {
+            Console.WriteLine("deleteDataAndRestart!!");
+            //populateModel();
+            //dataLayer.SaveCourseData(item);
+        }
+
+        private void navToCreateModule()
+        {
+            Console.WriteLine("navToCreateCourse!!");
+            router.navTo(Routings.CourseCreate, item);
+        }
+
 
         private Course item;
     }
