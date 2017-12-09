@@ -17,12 +17,12 @@ namespace CourseGradeEstimator.routes.CreateCourse
         //public CreateCourseController(Router r, Course course = null) : base(r) {
         public CreateCourseController(Router r, Course course) : base(r) {
 
-            if (course == null)
+            /*if (course == null)
             {
                 course = new Course();
-            }
+            }*/
 
-            data = course;
+            item = course;
 
             view = new CreateCourse();
 
@@ -31,6 +31,7 @@ namespace CourseGradeEstimator.routes.CreateCourse
             Hashtable eventMap = view.EventBindings;
 
             eventMap.Add(CreateViewBindings.Add, new core.view.VoidDelegate(navToCreateModule));
+            eventMap.Add(CreateViewBindings.Save, new core.view.VoidDelegate(saveData));
             eventMap.Add(CreateViewBindings.Cancel, new core.view.VoidDelegate(navToBack));
 
             view.BindDelegates();
@@ -38,9 +39,22 @@ namespace CourseGradeEstimator.routes.CreateCourse
 
         private void populateView()
         {
-            view.ItemTitle = data.Title;
-            view.ItemCode = data.Code;
-            view.ItemDescription = data.Description;
+            view.ItemTitle = item.Title;
+            view.ItemCode = item.Code;
+            view.ItemDescription = item.Description;
+        }
+        private void populateModel()
+        {
+            item.Title = view.ItemTitle;
+            item.Code = view.ItemCode;
+            item.Description = view.ItemDescription;
+        }
+
+        private void saveData()
+        {
+            Console.WriteLine("saveData!!");
+            populateModel();
+            data.SaveCourseData(item);
         }
 
         private void navToCreateModule()
@@ -49,6 +63,6 @@ namespace CourseGradeEstimator.routes.CreateCourse
             router.navTo(Routings.ModuleCreate);
         }
 
-        private Course data;
+        private Course item;
     }
 }
