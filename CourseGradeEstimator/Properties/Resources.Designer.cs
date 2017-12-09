@@ -131,6 +131,173 @@ namespace CourseGradeEstimator.Properties {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string StringsAdd
+        {
+            get
+            {
+                return ResourceManager.GetString("StringsAdd", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Assessments.
+        /// </summary>
+        internal static string StringsAssessments
+        {
+            get
+            {
+                return ResourceManager.GetString("StringsAssessments", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string StringsCancel
+        {
+            get
+            {
+                return ResourceManager.GetString("StringsCancel", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
+        internal static string StringsCode
+        {
+            get
+            {
+                return ResourceManager.GetString("StringsCode", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Course.
+        /// </summary>
+        internal static string StringsCourse {
+            get {
+                return ResourceManager.GetString("StringsCourse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string StringsDelete {
+            get {
+                return ResourceManager.GetString("StringsDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string StringsDescription {
+            get {
+                return ResourceManager.GetString("StringsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string StringsEdit {
+            get {
+                return ResourceManager.GetString("StringsEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grades.
+        /// </summary>
+        internal static string StringsGrades {
+            get {
+                return ResourceManager.GetString("StringsGrades", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modules.
+        /// </summary>
+        internal static string StringsModules {
+            get {
+                return ResourceManager.GetString("StringsModules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string StringsSave {
+            get {
+                return ResourceManager.GetString("StringsSave", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string StringsTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("StringsTitle", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to Weighting.
+        /// </summary>
+        internal static string StringsWeighting
+        {
+            get
+            {
+                return ResourceManager.GetString("StringsWeighting", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Course.
+        /// </summary>
+        internal static string ViewCreateAssignmentHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("ViewCreateAssignmentHeader", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to Course.
+        /// </summary>
+        internal static string ViewCreateCourseHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("ViewCreateCourseHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Module.
+        /// </summary>
+        internal static string ViewCreateModuleHeader {
+            get {
+                return ResourceManager.GetString("ViewCreateModuleHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} - Create {1}.
+        /// </summary>
+        internal static string ViewCreateViewHeader {
+            get {
+                return ResourceManager.GetString("ViewCreateViewHeader", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to This tool allows you to enter information about a course and then assign grades to assessments in order to determin your predicted grade..

@@ -1,6 +1,9 @@
-﻿namespace CourseGradeEstimator.routes.CourseSummary
+﻿using CourseGradeEstimator.core.view.Create;
+using System.Windows.Forms;
+
+namespace CourseGradeEstimator.core.view.CreateComplex
 {
-    partial class CourseSummaryView
+    partial class CreateComplex : CreateView
     {
         /// <summary>
         /// Required designer variable.
@@ -26,22 +29,40 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
+            this.childItems = new CourseGradeEstimator.core.view.control.EditChildItems();
+
             this.SuspendLayout();
+
+
             // 
-            // CourseSummaryView
+            // childItems
+            // 
+            this.childItems.AutoSize = true;
+            this.childItems.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.childItems.Location = new System.Drawing.Point(0, 250);
+            this.childItems.Name = "childItems";
+            this.childItems.Size = new System.Drawing.Size(100, 100);
+            this.childItems.TabIndex = 1;
+
+
+            // 
+            // CreateComplex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 516);
-            this.Name = "CourseSummaryView";
-            this.Text = "Course Summary";
+            //flowPanel
+            tablePanel.Controls.Add(this.childItems, 0, 1);
+            this.Name = "CreateComplex";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        protected core.view.control.EditChildItems childItems;
     }
 }
 

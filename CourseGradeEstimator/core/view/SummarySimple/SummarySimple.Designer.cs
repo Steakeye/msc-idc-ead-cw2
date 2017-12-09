@@ -1,6 +1,8 @@
-﻿namespace CourseGradeEstimator.routes.Create
+﻿using CourseGradeEstimator.core.view.Summary;
+
+namespace CourseGradeEstimator.core.view.SummarySimple
 {
-    partial class CreateView
+    partial class SummarySimple : SummaryView
     {
         /// <summary>
         /// Required designer variable.
@@ -26,11 +28,18 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Create";
+            this.SuspendLayout();
+
+
+            // 
+            // CreateSimple
+            // 
+            this.Name = "SummarySimple";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

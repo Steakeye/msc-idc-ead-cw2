@@ -61,12 +61,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\Config.cs" />
     <Compile Include="core\io\CourseDB .cs" />
     <Compile Include="core\io\GradeFS.cs" />
     <Compile Include="core\io\CourseFS .cs" />
     <Compile Include="core\io\GradeIO .cs" />
     <Compile Include="core\utils\View.cs" />
     <Compile Include="core\utils\User.cs" />
+    <Compile Include="core\view\control\SummaryChildItems .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\view\control\SummaryChildItems .Designer.cs">
+      <DependentUpon>SummaryChildItems .cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\control\EditChildItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\view\control\EditChildItems.Designer.cs">
+      <DependentUpon>EditChildItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\control\SummaryHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\view\control\SummaryHeader.Designer.cs">
+      <DependentUpon>SummaryHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\control\EditHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\view\control\EditHeader.Designer.cs">
+      <DependentUpon>EditHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\control\BottomButtonBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="core\view\control\BottomButtonBar.Designer.cs">
+      <DependentUpon>BottomButtonBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\SummarySimple\SummarySimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\view\SummarySimple\SummarySimple.Designer.cs">
+      <DependentUpon>SummarySimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\Summary\SummaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\view\Summary\SummaryView.Designer.cs">
+      <DependentUpon>SummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\CreateSimple\CreateSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\view\CreateSimple\CreateSimple.Designer.cs">
+      <DependentUpon>CreateSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\CreateComplex\CreateComplex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\view\CreateComplex\CreateComplex.Designer.cs">
+      <DependentUpon>CreateComplex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
+    </Compile>
     <Compile Include="models\CourseTest.cs" />
     <Compile Include="models\CourseGrade.cs" />
     <Compile Include="models\Assignment.cs" />
@@ -96,11 +154,31 @@
     <Compile Include="routes\CourseSummary\CourseSummaryView.Designer.cs">
       <DependentUpon>CourseSummaryView.cs</DependentUpon>
     </Compile>
-    <Compile Include="routes\Create\CreateController.cs" />
-    <Compile Include="routes\Create\CreateView.cs">
+    <Compile Include="routes\CreateAssignment\CreateAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="routes\Create\CreateView.Designer.cs">
+    <Compile Include="routes\CreateAssignment\CreateAssignment.Designer.cs">
+      <DependentUpon>CreateAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\CreateAssignment\CreateAssignmentController.cs" />
+    <Compile Include="routes\CreateModule\CreateModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="routes\CreateModule\CreateModule.Designer.cs">
+      <DependentUpon>CreateModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\CreateModule\CreateModuleController.cs" />
+    <Compile Include="routes\CreateCourse\CreateCourseController.cs" />
+    <Compile Include="routes\CreateCourse\CreateCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="routes\CreateCourse\CreateCourse.Designer.cs">
+      <DependentUpon>CreateCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="core\view\Create\CreateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="core\view\Create\CreateView.Designer.cs">
       <DependentUpon>CreateView.cs</DependentUpon>
     </Compile>
     <Compile Include="routes\Start\StartController.cs" />
@@ -112,12 +190,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="core\view\control\SummaryChildItems .resx">
+      <DependentUpon>SummaryChildItems .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\control\EditChildItems.resx">
+      <DependentUpon>EditChildItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\control\SummaryHeader.resx">
+      <DependentUpon>SummaryHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\control\EditHeader.resx">
+      <DependentUpon>EditHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\control\BottomButtonBar.resx">
+      <DependentUpon>BottomButtonBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\SummarySimple\SummarySimple.resx">
+      <DependentUpon>SummarySimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\Summary\SummaryView.resx">
+      <DependentUpon>SummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\CreateSimple\CreateSimple.resx">
+      <DependentUpon>CreateSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\CreateComplex\CreateComplex.resx">
+      <DependentUpon>CreateComplex.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="core\view\View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -125,6 +229,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="routes\CourseSummary\CourseSummaryView.resx">
+      <DependentUpon>CourseSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\CreateAssignment\CreateAssignment.resx">
+      <DependentUpon>CreateAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\CreateModule\CreateModule.resx">
+      <DependentUpon>CreateModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\CreateCourse\CreateCourse.resx">
+      <DependentUpon>CreateCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="core\view\Create\CreateView.resx">
+      <DependentUpon>CreateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\Start\StartView.resx">
+      <DependentUpon>StartView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

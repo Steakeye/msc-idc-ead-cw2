@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using ViewUtils = CourseGradeEstimator.core.utils.View;
 
 using System.Windows.Forms;
+using CourseGradeEstimator.core.utils;
 
 namespace CourseGradeEstimator.core.view
 {
@@ -14,9 +15,13 @@ namespace CourseGradeEstimator.core.view
     }
 
     //should be `public abstract class View : Form, IView` but VS forms preview fails if this is applied
-    public class View : Form, IView 
+    public partial class View : Form, IView 
     {
         protected View() {
+            InitializeComponent();
+            //InitializeComponent2();
+            setupView();
+            setupLayoutPanel();
         }
 
         public virtual void BindDelegates() { }
@@ -26,7 +31,14 @@ namespace CourseGradeEstimator.core.view
         protected EventHandler makeBinding<A>(A eventKey) {
             VoidDelegate cb = (VoidDelegate)eventBindings[eventKey];
 
-            return new EventHandler((object sender, EventArgs e) => Invoke(cb));
+            EventHandler handler = null;
+
+            if (cb != null)
+            {
+                handler = new EventHandler((object sender, EventArgs e) => Invoke(cb));
+            }
+
+            return handler;
         }
         protected void FindFuncAndCall<A>(A eventKey)
         {
@@ -36,27 +48,34 @@ namespace CourseGradeEstimator.core.view
 
         protected Hashtable eventBindings = new Hashtable();
 
-        protected void InitializeComponent()
+        protected static void setupButton(Button btn)
         {
-            this.SuspendLayout();
-            // 
-            // View
-            // 
-            ClientSize = new System.Drawing.Size(584, 361);
-            MinimumSize = new System.Drawing.Size(600, 400);
-            Name = "View";
-            //MaximizeBox = false;
-            // Set the MinimizeBox to false to remove the minimize box.
-            MinimizeBox = false;
-            // Set the start position of the form to the center of the screen.
-            StartPosition = FormStartPosition.CenterScreen;
-
-            ResumeLayout(false);
-
+            btn.Size = ViewUtils.GetButtonSize();
+        }
+        protected static void setupButton(Button btn, ButtonSize size)
+        {
+            btn.Size = ViewUtils.GetButtonSize(size);
         }
 
-        protected void setupButton(Button btn) {
-            btn.Size = ViewUtils.GetButtonSize();
+        protected void setupView()
+        {
+            /*this.ClientSize = new System.Drawing.Size(920, 425);
+            Size = new System.Drawing.Size(920, 425);*/
+        }
+
+        protected void setupLayoutPanel()
+        {
+            // 
+            // flowPanel
+            // 
+            tablePanel = new TableLayoutPanel();
+            tablePanel.Location = new System.Drawing.Point(0, 0);
+            tablePanel.Name = "tablePanel";
+            tablePanel.Size = new System.Drawing.Size(ClientSize.Width, ClientSize.Height);
+            tablePanel.ClientSize = tablePanel.Size;
+            tablePanel.TabIndex = 0;
+
+            Controls.Add(tablePanel);
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+//using ViewUtils = CourseGradeEstimator.core.utils.View;
+
 namespace CourseGradeEstimator.routes.Start
 {
     public enum StartViewBindings {
@@ -10,18 +12,33 @@ namespace CourseGradeEstimator.routes.Start
 
     public partial class StartView : core.view.View
     {
-        public StartView()
+        public StartView(): base()
         {
-            base.InitializeComponent();
             InitializeComponent();
-            //setupButton(startBtn);
-            //startBtn.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-           // startBtn.Location = new Point(350, 350);
-            //ViewUtils.GetButtonSize(startBtn);
+            customLayout();
         }
 
         public override void BindDelegates() {
             startBtn.Click += makeBinding(StartViewBindings.Create);
+        }
+
+        protected void initViewAdjustment()
+        {
+            SuspendLayout();
+        }
+        protected void endViewAdjustment()
+        {
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        private void customLayout()
+        {
+            initViewAdjustment();
+
+            setupButton(startBtn);
+
+            endViewAdjustment();
         }
     }
 }
