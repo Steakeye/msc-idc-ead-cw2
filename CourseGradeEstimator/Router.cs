@@ -14,7 +14,8 @@ namespace CourseGradeEstimator
         Start,
         CourseCreate,
         CourseSummary,
-        ModuleCreate
+        ModuleCreate,
+        AssignmentCreate
     }
     public class Router : ApplicationContext
     {
@@ -23,6 +24,14 @@ namespace CourseGradeEstimator
         }
 
         public void navTo(Routings route, object data = null, bool forward = true) {
+            Type routeClass;
+
+            if (!routes.TryGetValue(route, out routeClass))
+            {
+                Console.WriteLine("Route not present in Routings!");
+                return;
+            }
+
             core.view.View oldView = null;
             Point? pos = null;
 
@@ -42,7 +51,7 @@ namespace CourseGradeEstimator
 
             args[0] = this;
 
-            core.view.IViewController<core.view.View> nextRoute = (core.view.IViewController<core.view.View>)Activator.CreateInstance(routes[route], args);
+            core.view.IViewController<core.view.View> nextRoute = (core.view.IViewController<core.view.View>)Activator.CreateInstance(routeClass, args);
             core.view.View view = nextRoute.View;
 
             if (currentRoute != null)

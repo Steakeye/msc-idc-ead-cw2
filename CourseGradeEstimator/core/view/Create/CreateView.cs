@@ -42,6 +42,8 @@ namespace CourseGradeEstimator.core.view.Create
             childItems.Anchor = allSides;
             bottomButtonBar.Anchor = allSides;
 
+            addBottomButtons();
+
             fixLayout();
 
             ResumeLayout(true);
@@ -66,6 +68,12 @@ namespace CourseGradeEstimator.core.view.Create
                 }
                 tablePanel.RowStyles.Add(style);
             }
+        }
+
+        protected void addBottomButtons()
+        {
+            bottomButtonBar.AddButton(this.saveButton);
+            bottomButtonBar.AddButton(this.cancelButton);
         }
     }
 }

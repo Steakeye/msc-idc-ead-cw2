@@ -19,7 +19,6 @@ namespace CourseGradeEstimator.routes.CreateCourse
             this.Text = String.Format(Properties.Resources.ViewCreateViewHeader, Properties.Resources.AppTitle, headerTitle);
             this.header.Title = headerTitle;
             this.childItems.Title = Properties.Resources.StringsModules;
-            addBottomButtons();
             header.BackColor = Color.Orange;
             childItems.BackColor = Color.Blue;
 
@@ -27,12 +26,6 @@ namespace CourseGradeEstimator.routes.CreateCourse
             childItems.Width = Width;
             tablePanel.BackColor = Color.LightBlue;
             BackColor = Color.HotPink;
-        }
-
-        protected void addBottomButtons()
-        {
-            bottomButtonBar.AddButton(this.saveButton);
-            bottomButtonBar.AddButton(this.cancelButton);
         }
     }
 }
