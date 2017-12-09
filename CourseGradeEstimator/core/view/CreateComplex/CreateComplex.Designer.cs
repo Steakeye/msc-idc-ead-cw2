@@ -95,7 +95,7 @@ namespace CourseGradeEstimator.core.view.CreateComplex
             tablePanel.Controls.Add(this.header);
             tablePanel.Controls.Add(this.childItems);
             tablePanel.Controls.Add(this.bottomButtonBar);
-            this.Name = "CreateView";
+            this.Name = "CreateSimple";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CourseGradeEstimator.routes.CreateCourse
 {
-    public partial class CreateCourse : core.view.Create.CreateView
+    public partial class CreateCourse : core.view.CreateComplex.CreateComplex
     {
         public CreateCourse(): base()
         {

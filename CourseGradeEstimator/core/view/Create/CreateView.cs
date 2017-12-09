@@ -29,7 +29,6 @@ namespace CourseGradeEstimator.core.view.Create
 
         public override void BindDelegates()
         {
-            childItems.AddButton.Click += makeBinding(CreateViewBindings.Add);
             cancelButton.Click += makeBinding(CreateViewBindings.Cancel);
             saveButton.Click += makeBinding(CreateViewBindings.Save);
         }
@@ -39,7 +38,6 @@ namespace CourseGradeEstimator.core.view.Create
             AnchorStyles sides = AnchorStyles.Left | AnchorStyles.Right;
             AnchorStyles allSides = sides | AnchorStyles.Top | AnchorStyles.Bottom;
             header.Anchor = sides;
-            childItems.Anchor = allSides;
             bottomButtonBar.Anchor = allSides;
 
             addBottomButtons();

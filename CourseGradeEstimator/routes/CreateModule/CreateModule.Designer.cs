@@ -1,6 +1,6 @@
 ﻿namespace CourseGradeEstimator.routes.CreateModule
 {
-    partial class CreateModule : core.view.Create.CreateView
+    partial class CreateModule : core.view.CreateComplex.CreateComplex
     {
         /// <summary>
         /// Required designer variable.
