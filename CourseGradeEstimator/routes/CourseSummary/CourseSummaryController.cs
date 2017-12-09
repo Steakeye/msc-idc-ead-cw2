@@ -37,8 +37,8 @@ namespace CourseGradeEstimator.routes.CourseSummary
         private void deleteDataAndRestart()
         {
             Console.WriteLine("deleteDataAndRestart!!");
-            //populateModel();
-            //dataLayer.SaveCourseData(item);
+            dataLayer.DeleteCourseData();
+            router.restart();
         }
 
         private void navToCreateModule()

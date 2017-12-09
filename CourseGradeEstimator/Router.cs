@@ -80,7 +80,8 @@ namespace CourseGradeEstimator
             }
         }
 
-        public void navBack() {
+        public void navBack()
+        {
             //HistoryItem lastRoute = routeHistory.Pop();
             routeHistory.Pop();
             HistoryItem lastRoute = routeHistory.Peek();
@@ -91,6 +92,11 @@ namespace CourseGradeEstimator
             {
                 navTo(lastRoute.Route, lastRoute.Data, false);
             }
+        }
+        public void restart()
+        {
+            routeHistory.Clear();
+            navTo(Routings.Start);
         }
 
         private void registerRoutes() {
