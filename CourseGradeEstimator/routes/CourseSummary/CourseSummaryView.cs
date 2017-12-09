@@ -13,7 +13,7 @@ namespace CourseGradeEstimator.routes.CourseSummary
 {
     partial class CourseSummaryView : core.view.SummaryComplex.SummaryComplex
     {
-        public CourseSummaryView()
+        public CourseSummaryView(): base()
         {
             InitializeComponent();
             string headerTitle = Properties.Resources.ViewCreateCourseHeader;
@@ -22,6 +22,7 @@ namespace CourseGradeEstimator.routes.CourseSummary
             this.childItems.Title = Properties.Resources.StringsModules;
 
             makeCancelButtonDelete();
+            addBottomButtons();
 
         }
 
@@ -35,6 +36,12 @@ namespace CourseGradeEstimator.routes.CourseSummary
             this.backButton.Text = Properties.Resources.StringsEdit;
             //this.backButton.Click += null;
             //this.backButton.Click = new System.EventHandler();
+        }
+
+        protected void addBottomButtons()
+        {
+            //bottomButtonBar.AddButton(this.saveButton);
+            bottomButtonBar.AddButton(this.deleteButton);
         }
     }
 }

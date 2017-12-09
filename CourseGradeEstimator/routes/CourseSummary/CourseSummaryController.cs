@@ -47,7 +47,6 @@ namespace CourseGradeEstimator.routes.CourseSummary
             router.navTo(Routings.CourseCreate, item);
         }
 
-
         private Course item;
     }
 }

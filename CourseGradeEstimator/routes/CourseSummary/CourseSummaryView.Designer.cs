@@ -39,8 +39,6 @@ namespace CourseGradeEstimator.routes.CourseSummary
             this.deleteButton.TabIndex = 1;
             this.deleteButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsDelete;
             this.deleteButton.UseVisualStyleBackColor = true;
-            // Bottom button bar
-            this.bottomButtonBar.Controls.Add(this.deleteButton);
             // 
             // CourseSummaryView
             // 
