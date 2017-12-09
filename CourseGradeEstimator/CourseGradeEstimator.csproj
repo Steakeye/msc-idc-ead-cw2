@@ -135,6 +135,7 @@
     <Compile Include="models\CourseGrade.cs" />
     <Compile Include="models\Assignment.cs" />
     <Compile Include="models\AssignmentGrade.cs" />
+    <Compile Include="models\DataDTO.cs" />
     <Compile Include="models\GradeItem.cs" />
     <Compile Include="models\DataEntry.cs" />
     <Compile Include="models\ModuleGrade.cs" />

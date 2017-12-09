@@ -49,12 +49,16 @@ namespace CourseGradeEstimator.routes.CreateCourse
             Console.WriteLine("saveData!!");
             populateModel();
             dataLayer.SaveCourseData(item);
+            router.restart(item);
         }
 
         private void navToCreateModule()
         {
             Console.WriteLine("navToCreateModule!!");
-            router.navTo(Routings.ModuleCreate);
+
+            DataDTO<Module, Course, ModuleGrade> dto = new DataDTO<Module, Course, ModuleGrade> { Data = new Module(), Parent = item };
+
+            router.navTo(Routings.ModuleCreate, dto);
         }
 
         private Course item;

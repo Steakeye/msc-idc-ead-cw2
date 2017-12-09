@@ -8,6 +8,7 @@ using CourseGradeEstimator.routes.CreateCourse;
 using CourseGradeEstimator.routes.CourseSummary;
 using CourseGradeEstimator.routes.CreateModule;
 using CourseGradeEstimator.routes.CreateAssignment;
+using CourseGradeEstimator.models;
 
 namespace CourseGradeEstimator
 {
@@ -93,10 +94,13 @@ namespace CourseGradeEstimator
                 navTo(lastRoute.Route, lastRoute.Data, false);
             }
         }
-        public void restart()
+        public void restart(Course data = null)
+        //public void restart()
         {
+            Routings route = data == null ? Routings.Start : Routings.CourseSummary;
+
             routeHistory.Clear();
-            navTo(Routings.Start);
+            navTo(route, data);
         }
 
         private void registerRoutes() {
