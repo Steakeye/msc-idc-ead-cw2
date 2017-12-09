@@ -73,7 +73,7 @@ namespace CourseGradeEstimator.core.view.control
             this.codeTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codeTextfield.Location = new System.Drawing.Point(600, 45);
             this.codeTextfield.Name = "codeTextfield";
-            this.codeTextfield.Size = new System.Drawing.Size(70, 45);
+            this.codeTextfield.Size = new System.Drawing.Size(70, 35);
             this.codeTextfield.TabIndex = 3;
             // 
             // descriptionLabel

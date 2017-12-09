@@ -22,9 +22,20 @@ namespace CourseGradeEstimator.routes.CreateAssignment
             //childItems.BackColor = Color.Blue;
 
             bottomButtonBar.BackColor = Color.Green;
-            //childItems.Width = Width;
+            container.Width = Width;
             tablePanel.BackColor = Color.LightBlue;
             BackColor = Color.HotPink;
+        }
+
+        protected void setupView()
+        {
+            AnchorStyles sides = AnchorStyles.Left | AnchorStyles.Right;
+            AnchorStyles allSides = sides | AnchorStyles.Top | AnchorStyles.Bottom;
+            container.Anchor = allSides;
+
+            //fixLayout();
+
+            //ResumeLayout(true);
         }
     }
 }

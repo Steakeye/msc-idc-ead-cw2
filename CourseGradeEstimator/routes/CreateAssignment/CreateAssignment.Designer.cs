@@ -1,4 +1,7 @@
-﻿namespace CourseGradeEstimator.routes.CreateAssignment
+﻿using System;
+using System.Windows.Forms;
+
+namespace CourseGradeEstimator.routes.CreateAssignment
 {
     partial class CreateAssignment : core.view.CreateSimple.CreateSimple
     {
@@ -28,19 +31,53 @@
         /// </summary>
         protected void InitializeComponent()
         {
+            this.container = new System.Windows.Forms.UserControl();
+            this.weightLabel = new System.Windows.Forms.Label();
+            this.weightTextfield = new System.Windows.Forms.TextBox();
+
             this.SuspendLayout();
             // 
-            // CreateCourse
+            // weightLabel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.weightLabel.AutoSize = true;
+            this.weightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weightLabel.Location = new System.Drawing.Point(10, 15);
+            this.weightLabel.Name = "weightLabel";
+            this.weightLabel.Size = new System.Drawing.Size(0, 29);
+            this.weightLabel.TabIndex = 0;
+            // 
+            // weightTextfield
+            // 
+            this.weightTextfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weightTextfield.Location = new System.Drawing.Point(10, 45);
+            this.weightTextfield.Name = "weightTextfield";
+            this.weightTextfield.Size = new System.Drawing.Size(70, 35);
+            this.weightTextfield.TabIndex = 1;
+            this.weightTextfield.KeyPress += new KeyPressEventHandler(weightTextfield_KeyPress);
+            // 
+            // container
+            // 
+            this.container.Controls.Add(this.weightLabel);
+            this.container.Controls.Add(this.weightTextfield);
+            // 
+            // CreateAssignment
+            // 
+            //flowPanel
+            tablePanel.Controls.Add(this.container, 0, 1);
             this.Name = "CreateAssignment";
-            this.ResumeLayout(false);
-
+            this.ResumeLayout(true);
         }
 
         #endregion
+        private UserControl container;
+        private Label weightLabel;
+        private TextBox weightTextfield;
 
+        private void weightTextfield_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                e.Handled = true;
+        }
     }
 }
 
