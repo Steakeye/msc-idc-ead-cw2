@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CourseGradeEstimator.routes.CourseSummary
 {
-    partial class CourseSummaryView : core.view.View
+    partial class CourseSummaryView : core.view.SummaryComplex.SummaryComplex
     {
         public CourseSummaryView()
         {

@@ -131,51 +131,43 @@ namespace CourseGradeEstimator.Properties {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
-        internal static string StringsAdd
-        {
-            get
-            {
+        internal static string StringsAdd {
+            get {
                 return ResourceManager.GetString("StringsAdd", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Assessments.
         /// </summary>
-        internal static string StringsAssessments
-        {
-            get
-            {
+        internal static string StringsAssessments {
+            get {
                 return ResourceManager.GetString("StringsAssessments", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        internal static string StringsCancel
-        {
-            get
-            {
+        internal static string StringsCancel {
+            get {
                 return ResourceManager.GetString("StringsCancel", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Code.
         /// </summary>
-        internal static string StringsCode
-        {
-            get
-            {
+        internal static string StringsCode {
+            get {
                 return ResourceManager.GetString("StringsCode", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Course.
         /// </summary>
@@ -238,49 +230,52 @@ namespace CourseGradeEstimator.Properties {
                 return ResourceManager.GetString("StringsSave", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
-        internal static string StringsTitle
-        {
-            get
-            {
+        internal static string StringsTitle {
+            get {
                 return ResourceManager.GetString("StringsTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        internal static string StringsView {
+            get {
+                return ResourceManager.GetString("StringsView", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Weighting.
         /// </summary>
-        internal static string StringsWeighting
-        {
-            get
-            {
+        internal static string StringsWeighting {
+            get {
                 return ResourceManager.GetString("StringsWeighting", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Course.
+        ///   Looks up a localized string similar to Assessment.
         /// </summary>
-        internal static string ViewCreateAssignmentHeader
-        {
-            get
-            {
+        internal static string ViewCreateAssignmentHeader {
+            get {
                 return ResourceManager.GetString("ViewCreateAssignmentHeader", resourceCulture);
             }
         }
+        
         /// <summary>
         ///   Looks up a localized string similar to Course.
         /// </summary>
-        internal static string ViewCreateCourseHeader
-        {
-            get
-            {
+        internal static string ViewCreateCourseHeader {
+            get {
                 return ResourceManager.GetString("ViewCreateCourseHeader", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Module.
         /// </summary>

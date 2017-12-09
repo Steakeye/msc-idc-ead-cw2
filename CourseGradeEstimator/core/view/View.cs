@@ -4,7 +4,6 @@ using System.Windows.Forms;
 
 using ViewUtils = CourseGradeEstimator.core.utils.View;
 
-using System.Windows.Forms;
 using CourseGradeEstimator.core.utils;
 
 namespace CourseGradeEstimator.core.view

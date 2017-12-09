@@ -1,6 +1,6 @@
 ﻿namespace CourseGradeEstimator.routes.CourseSummary
 {
-    partial class CourseSummaryView
+    partial class CourseSummaryView : core.view.SummaryComplex.SummaryComplex
     {
         /// <summary>
         /// Required designer variable.

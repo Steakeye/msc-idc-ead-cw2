@@ -177,6 +177,9 @@
   <data name="StringsTitle" xml:space="preserve">
     <value>Title</value>
   </data>
+  <data name="StringsView" xml:space="preserve">
+    <value>View</value>
+  </data>
   <data name="StringsWeighting" xml:space="preserve">
     <value>Weighting</value>
   </data>

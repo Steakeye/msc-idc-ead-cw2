@@ -151,6 +151,11 @@
     <Compile Include="core\view\ViewController.cs" />
     <Compile Include="models\CourseItem.cs" />
     <Compile Include="models\Course.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Router.cs" />
     <Compile Include="CourseGradeEstimatorInit.cs" />
     <Compile Include="routes\CourseSummary\CourseSummaryController.cs" />
@@ -232,12 +237,8 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="routes\CourseSummary\CourseSummaryView.resx">
       <DependentUpon>CourseSummaryView.cs</DependentUpon>
     </EmbeddedResource>
