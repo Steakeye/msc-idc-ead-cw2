@@ -16,12 +16,6 @@ namespace CourseGradeEstimator.routes.CreateCourse
         }
         //public CreateCourseController(Router r, Course course = null) : base(r) {
         public CreateCourseController(Router r, Course course) : base(r) {
-
-            /*if (course == null)
-            {
-                course = new Course();
-            }*/
-
             item = course;
 
             view = new CreateCourse();
@@ -54,7 +48,7 @@ namespace CourseGradeEstimator.routes.CreateCourse
         {
             Console.WriteLine("saveData!!");
             populateModel();
-            data.SaveCourseData(item);
+            dataLayer.SaveCourseData(item);
         }
 
         private void navToCreateModule()

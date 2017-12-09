@@ -210,4 +210,7 @@
   <data name="ViewStartTitle" xml:space="preserve">
     <value>University of Westminster</value>
   </data>
+  <data name="ViewSummaryViewHeader" xml:space="preserve">
+    <value>{0} - {1} Summary</value>
+  </data>
 </root>

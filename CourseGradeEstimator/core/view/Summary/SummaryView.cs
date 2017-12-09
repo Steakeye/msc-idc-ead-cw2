@@ -32,6 +32,10 @@ namespace CourseGradeEstimator.core.view.Summary
             //saveButton.Click += makeBinding(CreateViewBindings.Save);
         }
 
+        public string ItemTitle { set { header.TitleValue = value; } }
+        public string ItemCode { set { header.CodeValue = value; } }
+        public string ItemDescription { set { header.DescriptionValue = value; } }
+
         protected void setupView()
         {
             AnchorStyles sides = AnchorStyles.Left | AnchorStyles.Right;

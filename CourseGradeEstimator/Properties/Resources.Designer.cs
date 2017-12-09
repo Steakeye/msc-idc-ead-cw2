@@ -338,5 +338,14 @@ namespace CourseGradeEstimator.Properties {
                 return ResourceManager.GetString("ViewStartTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} - {1} Summary.
+        /// </summary>
+        internal static string ViewSummaryViewHeader {
+            get {
+                return ResourceManager.GetString("ViewSummaryViewHeader", resourceCulture);
+            }
+        }
     }
 }

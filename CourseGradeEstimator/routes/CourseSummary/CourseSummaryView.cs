@@ -15,6 +15,10 @@ namespace CourseGradeEstimator.routes.CourseSummary
         public CourseSummaryView()
         {
             InitializeComponent();
+            string headerTitle = Properties.Resources.ViewCreateCourseHeader;
+            this.Text = String.Format(Properties.Resources.ViewSummaryViewHeader, Properties.Resources.AppTitle, headerTitle);
+            this.header.Title = headerTitle;
+            this.childItems.Title = Properties.Resources.StringsModules;
         }
     }
 }
