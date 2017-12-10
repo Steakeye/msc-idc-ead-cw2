@@ -1,6 +1,6 @@
 ﻿namespace CourseGradeEstimator.routes.ModuleSummary
 {
-    partial class CreateModule : core.view.SummaryComplex.SummaryComplex
+    partial class ModuleSummaryView : core.view.SummaryComplex.SummaryComplex
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Name = "ModuleSummary";
+            this.Name = "ModuleSummaryView";
             this.ResumeLayout(false);
 
         }

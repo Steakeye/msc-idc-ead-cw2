@@ -7,6 +7,7 @@ using CourseGradeEstimator.routes.Start;
 using CourseGradeEstimator.routes.CreateCourse;
 using CourseGradeEstimator.routes.CourseSummary;
 using CourseGradeEstimator.routes.CreateModule;
+using CourseGradeEstimator.routes.ModuleSummary;
 using CourseGradeEstimator.routes.CreateAssignment;
 using CourseGradeEstimator.models;
 
@@ -17,6 +18,7 @@ namespace CourseGradeEstimator
         CourseCreate,
         CourseSummary,
         ModuleCreate,
+        ModuleSummary,
         AssignmentCreate
     }
     public class Router : ApplicationContext
@@ -83,7 +85,6 @@ namespace CourseGradeEstimator
 
         public void navBack()
         {
-            //HistoryItem lastRoute = routeHistory.Pop();
             routeHistory.Pop();
             HistoryItem lastRoute = routeHistory.Peek();
 
@@ -95,7 +96,6 @@ namespace CourseGradeEstimator
             }
         }
         public void restart(Course data = null)
-        //public void restart()
         {
             Routings route = data == null ? Routings.Start : Routings.CourseSummary;
 
@@ -108,6 +108,7 @@ namespace CourseGradeEstimator
             routes.Add(Routings.CourseCreate, typeof(CreateCourseController));
             routes.Add(Routings.CourseSummary, typeof(CourseSummaryController));
             routes.Add(Routings.ModuleCreate, typeof(CreateModuleController));
+            routes.Add(Routings.ModuleSummary, typeof(ModuleSummaryController));
             routes.Add(Routings.AssignmentCreate, typeof(CreateAssignmentController));
         }
 
