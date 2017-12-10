@@ -58,6 +58,7 @@ namespace CourseGradeEstimator.core.view.control
             this.descriptionColumn,
             this.editColumn,
             this.deleteColumn});
+            this.dataGrid.RowCount = 0;
             this.dataGrid.Location = new System.Drawing.Point(3, 32);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.TabIndex = 2;

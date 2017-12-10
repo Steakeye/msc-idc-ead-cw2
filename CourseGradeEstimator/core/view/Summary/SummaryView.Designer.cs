@@ -79,7 +79,6 @@ namespace CourseGradeEstimator.core.view.Summary
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             //flowPanel
-            //TODO: AK - this is where the components are added!
             tablePanel.Controls.Add(this.header);
             tablePanel.Controls.Add(this.bottomButtonBar);
             this.Name = "SummaryView";

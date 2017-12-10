@@ -80,6 +80,10 @@ namespace CourseGradeEstimator.core.view.control
             //rows
         }
 
+        private void HandleViewButton(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         private void setupAddButton()
         {
             this.addBtn.Size = core.utils.View.GetButtonSize();

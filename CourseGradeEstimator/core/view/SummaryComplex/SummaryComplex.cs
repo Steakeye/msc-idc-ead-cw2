@@ -18,6 +18,12 @@ namespace CourseGradeEstimator.core.view.SummaryComplex
             //childItems.AddButton.Click += makeBinding(SummaryViewBindings.View);
         }
 
+        public void SetChildItems(string[][] data)
+        {
+            //setChildItems.setChildItems()
+            this.childItems.Populate(data);
+        }
+
         protected void setupView()
         {
             AnchorStyles sides = AnchorStyles.Left | AnchorStyles.Right;

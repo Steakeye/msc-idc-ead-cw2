@@ -1,12 +1,10 @@
-﻿using CourseGradeEstimator.core.data;
-using CourseGradeEstimator.core.view.Summary;
+﻿using CourseGradeEstimator.core.view.Summary;
 using CourseGradeEstimator.models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace CourseGradeEstimator.routes.CourseSummary
 {
@@ -29,9 +27,23 @@ namespace CourseGradeEstimator.routes.CourseSummary
 
         private void populateView()
         {
+            List<Module> modules = item.Modules;
+
             view.ItemTitle = item.Title;
             view.ItemCode = item.Code;
             view.ItemDescription = item.Description;
+
+            //TODO: feed in module data here
+            if (modules != null && modules.Count > 0)
+            {
+                string[][] data; 
+
+                data = modules.Select(module => {
+                    return new string[] { module.Title, module.Description };
+                }).ToArray();
+
+                view.SetChildItems(data);
+            }
         }
 
         private void deleteDataAndRestart()

@@ -22,6 +22,17 @@ namespace CourseGradeEstimator.core.view.control
             Load += new EventHandler(EditChildItems_Load);
         }
 
+        public void Populate(string[][] data)
+        {
+            this.dataGrid.Rows.Clear();
+
+            foreach (string [] d in data)
+            {
+                this.dataGrid.Rows.Add(d[0], d[1], Properties.Resources.StringsView);
+            }
+
+        }
+
         public string Title { get { return headerLabel.Text; } set { headerLabel.Text = value; } }
         //public Button AddButton => addBtn;
 
@@ -69,10 +80,31 @@ namespace CourseGradeEstimator.core.view.control
             // 
             this.viewColumn.HeaderText = ResourceStrings.StringsView;
             this.viewColumn.Name = "viewColumn";
+            this.viewColumn.Text = ResourceStrings.StringsView;
             this.viewColumn.UseColumnTextForButtonValue = true;
+            //this.viewColumn.
+            /*this.dataGrid.Text = "MyButton";
+            this.dataGrid.UseColumnTextForButtonValue = true;*/
             //rows
+            dataGrid.CellContentClick += new DataGridViewCellEventHandler(HandleViewButton);
         }
 
+        private void HandleViewButton(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow targetRow = dataGrid.Rows[e.RowIndex];
+            DataGridViewCell cell = targetRow.Cells[e.ColumnIndex];
+            //DataGridView.
+            if (cell is DataGridViewButtonCell)
+            {
+                /*Button btn = e.Control as Button;
+                btn.Click -= new EventHandler(btn_Click);
+                btn.Click += new EventHandler(btn_Click);*/
+                /*if (cell.Value == ResourceStrings.StringsView)
+                {
+
+                }*/
+            }
+        }
         /*private void setupAddButton()
         {
             this.addBtn.Size = core.utils.View.GetButtonSize();
