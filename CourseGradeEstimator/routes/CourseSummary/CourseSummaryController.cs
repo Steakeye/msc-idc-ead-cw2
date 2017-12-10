@@ -19,7 +19,7 @@ namespace CourseGradeEstimator.routes.CourseSummary
 
             Hashtable eventMap = view.EventBindings;
 
-            eventMap.Add(SummaryViewBindings.Edit, new core.view.VoidDelegate(navToCreateModule));
+            eventMap.Add(SummaryViewBindings.Edit, new core.view.VoidDelegate(navToCreateCourse));
             eventMap.Add(SummaryViewBindings.Delete, new core.view.VoidDelegate(deleteDataAndRestart));
             view.ChildItemEventBindings.Add(SummaryViewBindings.View, new core.view.VoidDelegateWithArgs<string>(navToModuleSummary));
 
@@ -53,7 +53,7 @@ namespace CourseGradeEstimator.routes.CourseSummary
             router.restart();
         }
 
-        private void navToCreateModule()
+        private void navToCreateCourse()
         {
             Console.WriteLine("navToCreateCourse!!");
             router.navTo(Routings.CourseCreate, item);

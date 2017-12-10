@@ -173,6 +173,13 @@
       <DependentUpon>CreateAssignment.cs</DependentUpon>
     </Compile>
     <Compile Include="routes\CreateAssignment\CreateAssignmentController.cs" />
+    <Compile Include="routes\ModuleSummary\ModuleSummaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="routes\ModuleSummary\ModuleSummaryView.Designer.cs">
+      <DependentUpon>ModuleSummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\ModuleSummary\ModuleSummaryController.cs" />
     <Compile Include="routes\CreateModule\CreateModule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="routes\CreateAssignment\CreateAssignment.resx">
       <DependentUpon>CreateAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\ModuleSummary\ModuleSummaryView.resx">
+      <DependentUpon>ModuleSummaryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="routes\CreateModule\CreateModule.resx">
       <DependentUpon>CreateModule.cs</DependentUpon>
