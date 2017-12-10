@@ -98,6 +98,7 @@
     <Compile Include="core\view\control\BottomButtonBar.Designer.cs">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="core\view\interfaces\Interfaces.cs" />
     <Compile Include="core\view\SummaryComplex\SummaryComplex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +132,7 @@
     <Compile Include="core\view\View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
+    <Compile Include="core\view\ComplexViewContoller.cs" />
     <Compile Include="models\CourseTest.cs" />
     <Compile Include="models\CourseGrade.cs" />
     <Compile Include="models\Assignment.cs" />

@@ -77,6 +77,7 @@ namespace CourseGradeEstimator.core.view.control
             setupDataGridView();
             //setupAddButton();
         }
+
         private void setupDataGridView()
         {
             //table
