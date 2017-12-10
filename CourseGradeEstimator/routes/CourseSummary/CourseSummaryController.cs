@@ -21,6 +21,7 @@ namespace CourseGradeEstimator.routes.CourseSummary
 
             eventMap.Add(SummaryViewBindings.Edit, new core.view.VoidDelegate(navToCreateModule));
             eventMap.Add(SummaryViewBindings.Delete, new core.view.VoidDelegate(deleteDataAndRestart));
+            view.ChildItemEventBindings.Add(SummaryViewBindings.View, new core.view.VoidDelegateWithArgs<string>(navToModuleSummary));
 
             view.BindDelegates();
         }
@@ -33,13 +34,12 @@ namespace CourseGradeEstimator.routes.CourseSummary
             view.ItemCode = item.Code;
             view.ItemDescription = item.Description;
 
-            //TODO: feed in module data here
             if (modules != null && modules.Count > 0)
             {
                 string[][] data; 
 
                 data = modules.Select(module => {
-                    return new string[] { module.Title, module.Description };
+                    return new string[] { module.Title, module.Description, module.Code };
                 }).ToArray();
 
                 view.SetChildItems(data);
@@ -57,6 +57,21 @@ namespace CourseGradeEstimator.routes.CourseSummary
         {
             Console.WriteLine("navToCreateCourse!!");
             router.navTo(Routings.CourseCreate, item);
+        }
+        private void navToModuleSummary(string code)
+        {
+            Console.WriteLine($"navToModuleSummary: {code}");
+
+            Module module = findModuleByCode(code);
+
+            //router.navTo(Routings.CourseCreate, item);
+        }
+
+        private Module findModuleByCode(string code)
+        {
+            Predicate<Module> moduleFinder = (Module module) => { return module.Code == code; };
+
+            return item.Modules.Find(moduleFinder);
         }
 
         private Course item;

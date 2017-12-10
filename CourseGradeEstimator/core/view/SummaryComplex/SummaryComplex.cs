@@ -1,4 +1,5 @@
 ﻿using CourseGradeEstimator.core.view.Summary;
+using System.Collections;
 using System.Windows.Forms;
 
 namespace CourseGradeEstimator.core.view.SummaryComplex
@@ -23,6 +24,8 @@ namespace CourseGradeEstimator.core.view.SummaryComplex
             //setChildItems.setChildItems()
             this.childItems.Populate(data);
         }
+
+        public Hashtable ChildItemEventBindings => this.childItems.EventBindings;
 
         protected void setupView()
         {

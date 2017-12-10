@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ResourceStrings = CourseGradeEstimator.Properties.Resources;
+using System.Collections;
+using CourseGradeEstimator.core.view.Summary;
 
 namespace CourseGradeEstimator.core.view.control
 {
@@ -24,17 +26,34 @@ namespace CourseGradeEstimator.core.view.control
 
         public void Populate(string[][] data)
         {
-            this.dataGrid.Rows.Clear();
+            DataGridViewRowCollection rows = this.dataGrid.Rows;
+
+            rows.Clear();
 
             foreach (string [] d in data)
             {
-                this.dataGrid.Rows.Add(d[0], d[1], Properties.Resources.StringsView);
+                rows.Add(d[0], d[1]);
+                int idx = rows.GetLastRow(DataGridViewElementStates.None);
+                rows[idx].Cells[2].Tag = d[2];
             }
 
         }
 
+        public virtual void BindDelegates() { }
+
+        public Hashtable EventBindings => eventBindings;
+
         public string Title { get { return headerLabel.Text; } set { headerLabel.Text = value; } }
-        //public Button AddButton => addBtn;
+
+        protected void FindFuncAndCall<A>(A eventKey, string code)
+        {
+            VoidDelegateWithArgs<string> cb = (VoidDelegateWithArgs<string>)eventBindings[eventKey];
+            if (cb != null)
+            {
+                string[] args = new[] { code };
+                Invoke(cb, args);
+            }
+        }
 
         private void itemTablePanel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -82,32 +101,27 @@ namespace CourseGradeEstimator.core.view.control
             this.viewColumn.Name = "viewColumn";
             this.viewColumn.Text = ResourceStrings.StringsView;
             this.viewColumn.UseColumnTextForButtonValue = true;
-            //this.viewColumn.
-            /*this.dataGrid.Text = "MyButton";
-            this.dataGrid.UseColumnTextForButtonValue = true;*/
             //rows
-            dataGrid.CellContentClick += new DataGridViewCellEventHandler(HandleViewButton);
+            dataGrid.CellClick += new DataGridViewCellEventHandler(HandleViewButton);
         }
 
         private void HandleViewButton(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow targetRow = dataGrid.Rows[e.RowIndex];
             DataGridViewCell cell = targetRow.Cells[e.ColumnIndex];
-            //DataGridView.
+
             if (cell is DataGridViewButtonCell)
             {
-                /*Button btn = e.Control as Button;
-                btn.Click -= new EventHandler(btn_Click);
-                btn.Click += new EventHandler(btn_Click);*/
-                /*if (cell.Value == ResourceStrings.StringsView)
-                {
+                Console.WriteLine($"{cell.Value} {cell.Tag}");
 
-                }*/
+                //SummaryViewBindings key = SummaryViewBindings.View;
+                SummaryViewBindings key = (SummaryViewBindings)System.Enum.Parse(typeof(SummaryViewBindings), cell.Value as string);
+
+                FindFuncAndCall(key, cell.Tag as string);
             }
         }
-        /*private void setupAddButton()
-        {
-            this.addBtn.Size = core.utils.View.GetButtonSize();
-        }*/
+
+        protected Hashtable eventBindings = new Hashtable();
+
     }
 }
