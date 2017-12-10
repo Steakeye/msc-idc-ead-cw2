@@ -178,6 +178,15 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm {0}.
+        /// </summary>
+        internal static string StringsConfrimAction {
+            get {
+                return ResourceManager.GetString("StringsConfrimAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Course.
         /// </summary>
         internal static string StringsCourse {
@@ -192,6 +201,15 @@ namespace CourseGradeEstimator.Properties {
         internal static string StringsDelete {
             get {
                 return ResourceManager.GetString("StringsDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you should you want to delete this? It will not be recoverable..
+        /// </summary>
+        internal static string StringsDeleteMessage {
+            get {
+                return ResourceManager.GetString("StringsDeleteMessage", resourceCulture);
             }
         }
         

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CourseGradeEstimator.routes.CreateCourse
 {
@@ -40,18 +41,15 @@ namespace CourseGradeEstimator.routes.CreateCourse
             view.ItemCode = item.Code;
             view.ItemDescription = item.Description;
 
-            List<Module> childItems = item.Modules;
+            buildChildSection();
+        }
 
-            if (childItems != null && childItems.Count > 0)
-            {
-                string[][] data;
+        private void buildChildSection() {
+            string[][] data = getChildItemViewData(item.Modules, mod => {
+                return new string[] { mod.Title, mod.Description, mod.Code };
+            });
 
-                data = childItems.Select(assignment => {
-                    return new string[] { assignment.Title, assignment.Description, assignment.Code };
-                }).ToArray();
-
-                view.SetChildItems(data);
-            }
+            view.SetChildItems(data);
         }
         private void populateModel()
         {
@@ -99,7 +97,19 @@ namespace CourseGradeEstimator.routes.CreateCourse
         private void removeModule(string code)
         {
             Console.WriteLine($"removeModule {code}");
-            //TODO
+            Module foundModule = findItemByCode(item.Modules, code);
+            
+            if (foundModule != null)
+            {
+                bool actuallyDel = confirmDelete();
+
+                if (actuallyDel)
+                {
+                    item.Modules.Remove(foundModule);
+                    buildChildSection();
+                    dataLayer.SaveCourseData(item);
+                }
+            }
         }
 
         private Course item;

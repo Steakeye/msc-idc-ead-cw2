@@ -156,11 +156,17 @@
   <data name="StringsCode" xml:space="preserve">
     <value>Code</value>
   </data>
+  <data name="StringsConfrimAction" xml:space="preserve">
+    <value>Confirm {0}</value>
+  </data>
   <data name="StringsCourse" xml:space="preserve">
     <value>Course</value>
   </data>
   <data name="StringsDelete" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="StringsDeleteMessage" xml:space="preserve">
+    <value>Are you should you want to delete this? It will not be recoverable.</value>
   </data>
   <data name="StringsDescription" xml:space="preserve">
     <value>Description</value>

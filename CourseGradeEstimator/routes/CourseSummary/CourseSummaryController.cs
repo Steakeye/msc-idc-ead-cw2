@@ -67,7 +67,6 @@ namespace CourseGradeEstimator.routes.CourseSummary
             DataDTO<Module, Course, ModuleGrade> dto = new DataDTO<Module, Course, ModuleGrade> { Data = module, Parent = item };
 
             router.navTo(Routings.ModuleSummary, dto);
-            //router.navTo(Routings.CourseCreate, item);
         }
 
         private Module findModuleByCode(string code)

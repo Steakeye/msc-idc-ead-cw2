@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.routes.CreateModule
 {
-    class CreateModuleController : core.view.ViewController<CreateModule>
+    class CreateModuleController : core.view.ComplexViewController<CreateModule>
     {
         public CreateModuleController(Router r, DataDTO<Module, Course, ModuleGrade> d) : base(r) {
             item = d.Data;
