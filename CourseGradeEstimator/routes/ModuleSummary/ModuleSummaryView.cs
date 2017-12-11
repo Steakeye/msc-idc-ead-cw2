@@ -16,7 +16,7 @@ namespace CourseGradeEstimator.routes.ModuleSummary
         {
             InitializeComponent();
             string headerTitle = Properties.Resources.ViewCreateModuleHeader;
-            this.Text = $"{Properties.Resources.AppTitle} - Create {headerTitle}";
+            this.Text = $"{Properties.Resources.AppTitle} {headerTitle} Summary";
             this.header.Title = headerTitle;
             this.childItems.Title = Properties.Resources.StringsAssessments;
             //header.BackColor = Color.Orange;

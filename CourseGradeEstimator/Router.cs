@@ -9,6 +9,7 @@ using CourseGradeEstimator.routes.CourseSummary;
 using CourseGradeEstimator.routes.CreateModule;
 using CourseGradeEstimator.routes.ModuleSummary;
 using CourseGradeEstimator.routes.CreateAssignment;
+using CourseGradeEstimator.routes.AssignmentSummary;
 using CourseGradeEstimator.models;
 
 namespace CourseGradeEstimator
@@ -19,7 +20,8 @@ namespace CourseGradeEstimator
         CourseSummary,
         ModuleCreate,
         ModuleSummary,
-        AssignmentCreate
+        AssignmentCreate,
+        AssignmentSummary
     }
     public class Router : ApplicationContext
     {
@@ -110,6 +112,7 @@ namespace CourseGradeEstimator
             routes.Add(Routings.ModuleCreate, typeof(CreateModuleController));
             routes.Add(Routings.ModuleSummary, typeof(ModuleSummaryController));
             routes.Add(Routings.AssignmentCreate, typeof(CreateAssignmentController));
+            routes.Add(Routings.AssignmentSummary, typeof(AssignmentSummaryController));
         }
 
         private void addToHistory(Routings route, object data, bool forward)
