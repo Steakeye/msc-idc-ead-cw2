@@ -15,8 +15,8 @@ namespace CourseGradeEstimator.routes.CreateCourse
 {
     class CreateCourseController : core.view.ComplexViewController<CreateCourse>
     {
-        /*public CreateCourseController(Router r) : this(r, new Course()) {
-        }*/
+        public CreateCourseController(Router r) : this(r, null) {
+        }
         public CreateCourseController(Router r, DataDTO<Course, Course, CourseGrade> data = null) : base(r) {
         //public CreateCourseController(Router r, Course data = null) : base(r) {
             if (data == null)

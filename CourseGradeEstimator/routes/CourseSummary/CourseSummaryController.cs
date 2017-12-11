@@ -1,4 +1,5 @@
-﻿using CourseGradeEstimator.core.view.Summary;
+﻿using CourseGradeEstimator.core.data;
+using CourseGradeEstimator.core.view.Summary;
 using CourseGradeEstimator.models;
 using System;
 using System.Collections;
@@ -43,6 +44,8 @@ namespace CourseGradeEstimator.routes.CourseSummary
             view.ItemCode = item.Code;
             view.ItemDescription = item.Description;
 
+            setGradeMessage();
+
             if (modules != null && modules.Count > 0)
             {
                 string[][] data; 
@@ -60,6 +63,22 @@ namespace CourseGradeEstimator.routes.CourseSummary
             Console.WriteLine("deleteDataAndRestart!!");
             dataLayer.DeleteCourseData();
             router.restart();
+        }
+
+        private void setGradeMessage()
+        {
+            double? estimate = estimator.CalculateGrade(item, gradeItem);
+            string message;
+
+            if (estimate.HasValue)
+            {
+                message = estimate.ToString();
+            }
+            else
+            {
+                message = "not ready!";
+            }
+            view.AddSummaryMessage(message);
         }
 
         private void navToCreateCourse()
@@ -114,11 +133,11 @@ namespace CourseGradeEstimator.routes.CourseSummary
                 gradeItem.Modules.Add(grade);
             }
         }
-
-
-
+        
         private Course item;
         private CourseGrade gradeItem;
+
+        private GradePredictor estimator = GradePredictor.GetInstance();
     }
 }
 

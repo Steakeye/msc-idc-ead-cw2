@@ -241,6 +241,15 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your predicted grade is {0}.
+        /// </summary>
+        internal static string StringsGradeMessage {
+            get {
+                return ResourceManager.GetString("StringsGradeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grades.
         /// </summary>
         internal static string StringsGrades {
