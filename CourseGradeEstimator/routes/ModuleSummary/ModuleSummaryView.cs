@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CourseGradeEstimator.core.view;
+using CourseGradeEstimator.core.view.Summary;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,11 +54,61 @@ namespace CourseGradeEstimator.routes.ModuleSummary
             {
                 col = (DataGridViewColumn)colEnumer.Current;
                 col.ReadOnly = true;
-                //colEnumer.MoveNext();
             }
 
-            //string columnName, string headerText
             cols.Add(Properties.Resources.StringsGrade, Properties.Resources.StringsGrade);
+
+            grid.CellLeave += new DataGridViewCellEventHandler(HandleGradeUpdate);
+            grid.KeyUp += new KeyEventHandler(HandleGradeUpdateByKey);
         }
+
+        private void HandleGradeUpdateByKey(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine("Enter!");
+            DataGridView grid = this.childItems.Grid;
+            DataGridViewCell currentCell = grid.CurrentCell;
+
+            if (e.KeyCode == Keys.Enter && currentCell.OwningColumn.Name == Properties.Resources.StringsGrade) {
+                Console.WriteLine("Enter and save!!");
+                saveNewGrade(currentCell, currentCell.OwningRow.Cells[currentCell.ColumnIndex -1].Tag);
+            }
+        }
+        private void HandleGradeUpdate(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView grid = this.childItems.Grid;
+            int cIdx = e.ColumnIndex;
+            DataGridViewColumn targetColumn = grid.Columns[cIdx];
+
+            Console.WriteLine("Time to update grade data!");
+
+            if (targetColumn.Name == Properties.Resources.StringsGrade)
+            {
+                DataGridViewRow targetRow = grid.Rows[e.RowIndex];
+                DataGridViewCell cell = targetRow.Cells[cIdx];
+                DataGridViewCell cellWithCode = targetRow.Cells[cIdx -1];
+
+                saveNewGrade(cell, cellWithCode.Tag);
+            }
+        }
+
+        private void saveNewGrade(DataGridViewCell cell, object code)
+        {
+            Console.WriteLine($"value:{cell.EditedFormattedValue}, gradeCode: {code}");
+
+            SummaryViewBindings key = (SummaryViewBindings)System.Enum.Parse(typeof(SummaryViewBindings), cell.OwningColumn.Name as string);
+
+            FindFuncAndCall(key, code as string, cell.Value as string);
+        }
+
+        protected void FindFuncAndCall<A>(A eventKey, string code, string value)
+        {
+            VoidDelegateWithArgs<string[]> cb = (VoidDelegateWithArgs<string[]>)eventBindings[eventKey];
+            if (cb != null)
+            {
+                string[] args = new[] { code, value };
+                Invoke(cb, new[] { args });
+            }
+        }
+
     }
 }

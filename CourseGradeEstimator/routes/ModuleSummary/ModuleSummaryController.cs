@@ -30,6 +30,8 @@ namespace CourseGradeEstimator.routes.ModuleSummary
             eventMap.Add(SummaryViewBindings.Back, new core.view.VoidDelegate(navToBack));
             //eventMap.Add(CreateViewBindings.Save, new core.view.VoidDelegate(saveData));
             view.ChildItemEventBindings.Add(SummaryViewBindings.View, new core.view.VoidDelegateWithArgs<string>(navToAssignmentSummary));
+            //view.ChildItemEventBindings.Add(SummaryViewBindings.Grade, new core.view.VoidDelegateWithArgs<string[]>(updateGrade));
+            eventMap.Add(SummaryViewBindings.Grade, new core.view.VoidDelegateWithArgs<string[]>(updateGrade));
 
 
             view.BindDelegates();
@@ -49,7 +51,9 @@ namespace CourseGradeEstimator.routes.ModuleSummary
                 string[][] data;
 
                 data = assignments.Select(assignment => {
-                    return new string[] { assignment.Title, assignment.Description, assignment.Code };
+                    AssignmentGrade ag = grade.Assignments.Find(agItem => agItem.Code == assignment.Code);
+
+                    return new string[] { assignment.Title, assignment.Description, assignment.Code, ag.Score.ToString() };
                 }).ToArray();
 
                 view.SetChildItems(data);
@@ -62,9 +66,22 @@ namespace CourseGradeEstimator.routes.ModuleSummary
 
             Assignment assignment = findAssignmentByCode(code);
 
-            DataDTO<Assignment, Module, AssignmentGrade> data = new DataDTO<Assignment, Module, AssignmentGrade> { Data = assignment, Parent = item  };
+            DataDTO<Assignment, Module, AssignmentGrade> data = new DataDTO<Assignment, Module, AssignmentGrade> { Data = assignment, Parent = item };
 
             router.navTo(Routings.AssignmentSummary, data);
+        }
+
+        //private void updateGrade(string code, string value)
+        private void updateGrade(string[] data)
+        {
+            //Console.WriteLine($"updateGrade: {code} - val: {value}");
+            Console.WriteLine($"updateGrade: {data[0]} - val: {data[1]}");
+
+            /*Assignment assignment = findAssignmentByCode(code);
+
+            DataDTO<Assignment, Module, AssignmentGrade> data = new DataDTO<Assignment, Module, AssignmentGrade> { Data = assignment, Parent = item };
+
+            router.navTo(Routings.AssignmentSummary, data);*/
         }
 
         private void fillOutAssignmentGrades()

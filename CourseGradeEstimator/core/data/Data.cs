@@ -64,7 +64,10 @@ namespace CourseGradeEstimator.core.data
         {
             gradeIO.SaveData(course);
         }
-
+        public void SaveGradeData()
+        {
+            SaveGradeData(gradeCache);
+        }
         public void DeleteGradeData()
         {
             gradeIO.DeleteData();
