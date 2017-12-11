@@ -28,7 +28,22 @@
         /// </summary>
         protected void InitializeComponent()
         {
+            //this.header = new control.ModuleSummaryHeader();
+            header = new control.ModuleSummaryHeader();
             this.SuspendLayout();
+
+            //
+            //header
+            //
+            this.header.AutoSize = true;
+            this.header.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(0, 0);
+            this.header.TabIndex = 0;
+            //flowPanel
+            tablePanel.Controls.RemoveAt(0);
+            tablePanel.Controls.Add(this.header, 0, 0);
             // 
             // CreateCourse
             // 
@@ -40,6 +55,7 @@
         }
 
         #endregion
+        //protected new control.ModuleSummaryHeader header = new control.ModuleSummaryHeader();
         protected new control.ModuleSummaryHeader header;
 
     }

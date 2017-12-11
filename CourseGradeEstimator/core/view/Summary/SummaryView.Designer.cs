@@ -74,7 +74,7 @@ namespace CourseGradeEstimator.core.view.Summary
             this.backButton.UseVisualStyleBackColor = true;
 
             // 
-            // CreateView
+            // SummaryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

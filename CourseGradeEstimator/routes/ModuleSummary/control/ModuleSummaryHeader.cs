@@ -12,7 +12,7 @@ namespace CourseGradeEstimator.routes.ModuleSummary.control
 {
     public partial class ModuleSummaryHeader : core.view.control.SummaryHeader
     {
-        public ModuleSummaryHeader()
+        public ModuleSummaryHeader() : base()
         {
             InitializeComponent();
         }

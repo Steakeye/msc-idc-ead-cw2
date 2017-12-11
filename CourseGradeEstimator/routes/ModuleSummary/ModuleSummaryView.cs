@@ -27,5 +27,9 @@ namespace CourseGradeEstimator.routes.ModuleSummary
             //tablePanel.BackColor = Color.LightBlue;
             //BackColor = Color.HotPink;
         }
+
+        public string ItemTitle { set { header.TitleValue = value; } }
+        public string ItemCode { set { header.CodeValue = value; } }
+        public string ItemDescription { set { header.DescriptionValue = value; } }
     }
 }
