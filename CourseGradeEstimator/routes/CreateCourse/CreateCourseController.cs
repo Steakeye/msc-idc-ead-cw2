@@ -15,10 +15,11 @@ namespace CourseGradeEstimator.routes.CreateCourse
 {
     class CreateCourseController : core.view.ComplexViewController<CreateCourse>
     {
-        public CreateCourseController(Router r) : this(r, new Course()) {
-        }
-        public CreateCourseController(Router r, Course course) : base(r) {
-            item = course;
+        /*public CreateCourseController(Router r) : this(r, new Course()) {
+        }*/
+        public CreateCourseController(Router r, DataDTO<Course, Course, CourseGrade> course) : base(r) {
+            item = course.Data == null ? dataLayer.CreateCourseData() : course.Data;
+            gradeItem = course.Grade == null ? dataLayer.CreateGradeData() : course.Grade;
 
             view = new CreateCourse();
 
@@ -115,5 +116,6 @@ namespace CourseGradeEstimator.routes.CreateCourse
         }
 
         private Course item;
+        private CourseGrade gradeItem;
     }
 }
