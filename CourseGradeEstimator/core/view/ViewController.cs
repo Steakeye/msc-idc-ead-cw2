@@ -18,7 +18,7 @@ namespace CourseGradeEstimator.core.view
 
         protected ViewController(Router r) {
             router = r;
-            data = Data.GetInstance(); ;
+            dataLayer = Data.GetInstance(); ;
         }
 
         public void tearDown()
@@ -40,7 +40,7 @@ namespace CourseGradeEstimator.core.view
          * Protected Members
          */
         protected Router router;
-        protected Data data;
+        protected Data dataLayer;
         protected V view;
 
     }

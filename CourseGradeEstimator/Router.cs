@@ -7,7 +7,10 @@ using CourseGradeEstimator.routes.Start;
 using CourseGradeEstimator.routes.CreateCourse;
 using CourseGradeEstimator.routes.CourseSummary;
 using CourseGradeEstimator.routes.CreateModule;
+using CourseGradeEstimator.routes.ModuleSummary;
 using CourseGradeEstimator.routes.CreateAssignment;
+using CourseGradeEstimator.routes.AssignmentSummary;
+using CourseGradeEstimator.models;
 
 namespace CourseGradeEstimator
 {
@@ -16,7 +19,9 @@ namespace CourseGradeEstimator
         CourseCreate,
         CourseSummary,
         ModuleCreate,
-        AssignmentCreate
+        ModuleSummary,
+        AssignmentCreate,
+        AssignmentSummary
     }
     public class Router : ApplicationContext
     {
@@ -80,8 +85,8 @@ namespace CourseGradeEstimator
             }
         }
 
-        public void navBack() {
-            //HistoryItem lastRoute = routeHistory.Pop();
+        public void navBack(object data = null)
+        {
             routeHistory.Pop();
             HistoryItem lastRoute = routeHistory.Peek();
 
@@ -89,8 +94,17 @@ namespace CourseGradeEstimator
 
             if (lastRoute != null)
             {
-                navTo(lastRoute.Route, lastRoute.Data, false);
+                data = data == null ? lastRoute.Data : data;
+
+                navTo(lastRoute.Route, data, false);
             }
+        }
+        public void restart(Course data = null)
+        {
+            Routings route = data == null ? Routings.Start : Routings.CourseSummary;
+
+            routeHistory.Clear();
+            navTo(route, data);
         }
 
         private void registerRoutes() {
@@ -98,7 +112,9 @@ namespace CourseGradeEstimator
             routes.Add(Routings.CourseCreate, typeof(CreateCourseController));
             routes.Add(Routings.CourseSummary, typeof(CourseSummaryController));
             routes.Add(Routings.ModuleCreate, typeof(CreateModuleController));
+            routes.Add(Routings.ModuleSummary, typeof(ModuleSummaryController));
             routes.Add(Routings.AssignmentCreate, typeof(CreateAssignmentController));
+            routes.Add(Routings.AssignmentSummary, typeof(AssignmentSummaryController));
         }
 
         private void addToHistory(Routings route, object data, bool forward)

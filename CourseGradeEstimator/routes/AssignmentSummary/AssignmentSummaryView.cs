@@ -8,15 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.routes.CreateAssignment
+namespace CourseGradeEstimator.routes.AssignmentSummary
 {
-    public partial class CreateAssignment : core.view.CreateSimple.CreateSimple
+    public partial class AssignmentSummaryView : core.view.SummarySimple.SummarySimple
     {
-        public CreateAssignment(): base()
+        public AssignmentSummaryView(): base()
         {
             InitializeComponent();
             string headerTitle = Properties.Resources.ViewCreateAssignmentHeader;
-            this.Text = $"{Properties.Resources.AppTitle} - Create {headerTitle}";
+            this.Text = $"{Properties.Resources.AppTitle} {headerTitle} Summary";
             this.header.Title = headerTitle;
             this.weightLabel.Text = Properties.Resources.StringsWeighting;
             //header.BackColor = Color.Orange;

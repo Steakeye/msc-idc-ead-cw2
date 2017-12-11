@@ -18,7 +18,14 @@ namespace CourseGradeEstimator.core.view.control
         }
 
         public string Title { get { return headerLabel.Text; } set { headerLabel.Text = value; } }
-        public string HeaderValue { get { return headerTextfield.Text; } set { headerTextfield.Text = value; } }
+        //public string HeaderValue { get { return headerTextfield.Text; } set { headerTextfield.Text = value; } }
+
+        public string TitleValue { set => headerTextfield.Text = value; }
+
+        public string CodeValue { set => codeTextfield.Text = value; }
+
+        public string DescriptionValue { set => descriptionTextfield.Text = value; }
+
 
         private void label1_Click(object sender, System.EventArgs e)
         {

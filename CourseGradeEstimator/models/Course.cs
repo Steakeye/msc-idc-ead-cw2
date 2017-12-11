@@ -15,6 +15,7 @@ namespace CourseGradeEstimator.models
         public List<Module> Modules;
 
         private int determineCredits() {
+            int totalCredits; //TODO!
             return 42;
         }
     }

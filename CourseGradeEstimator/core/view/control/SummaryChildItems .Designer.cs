@@ -35,8 +35,7 @@ namespace CourseGradeEstimator.core.view.control
             this.layoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.titleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.deleteColumn = new System.Windows.Forms.DataGridViewButtonColumn(); 
+            this.viewColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             //this.addBtn = new Button();
             this.layoutPanel.SuspendLayout();
@@ -56,20 +55,13 @@ namespace CourseGradeEstimator.core.view.control
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleColumn,
             this.descriptionColumn,
-            this.editColumn,
-            this.deleteColumn});
+            this.viewColumn});
             this.dataGrid.Location = new System.Drawing.Point(3, 32);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.TabIndex = 2;
+            this.dataGrid.AllowUserToAddRows = false;
+            this.dataGrid.ReadOnly = true;
             this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTablePanel_CellContentClick);
-            // 
-            // addBtn
-            //
-            /*this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.addBtn.Name = "addBtn";
-            this.addBtn.TabIndex = 3;
-            this.addBtn.Text = global::CourseGradeEstimator.Properties.Resources.StringsAdd;
-            this.addBtn.UseVisualStyleBackColor = true;*/
             // 
             // flowPanel
             // 
@@ -101,8 +93,7 @@ namespace CourseGradeEstimator.core.view.control
         private TableLayoutPanel layoutPanel;
         private DataGridViewTextBoxColumn titleColumn;
         private DataGridViewTextBoxColumn descriptionColumn;
-        private DataGridViewButtonColumn editColumn;
-        private DataGridViewButtonColumn deleteColumn;
+        private DataGridViewButtonColumn viewColumn;
         //private Button addBtn;
 
     }

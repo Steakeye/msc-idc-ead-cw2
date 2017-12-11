@@ -1,6 +1,8 @@
-﻿namespace CourseGradeEstimator.routes.CourseSummary
+﻿using System.Windows.Forms;
+
+namespace CourseGradeEstimator.routes.CourseSummary
 {
-    partial class CourseSummaryView
+    partial class CourseSummaryView : core.view.SummaryComplex.SummaryComplex
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +30,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.deleteButton = new Button();
             this.SuspendLayout();
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.TabIndex = 1;
+            this.deleteButton.Text = global::CourseGradeEstimator.Properties.Resources.StringsDelete;
+            this.deleteButton.UseVisualStyleBackColor = true;
             // 
             // CourseSummaryView
             // 
@@ -42,6 +52,7 @@
         }
 
         #endregion
+        private Button deleteButton;
     }
 }
 

@@ -110,7 +110,7 @@ namespace CourseGradeEstimator.core.view.control
             this.Controls.Add(this.codeTextfield);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.descriptionTextfield);
-            this.Name = "EditHeader";
+            this.Name = "SummaryHeader";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,11 +119,11 @@ namespace CourseGradeEstimator.core.view.control
         #endregion
 
         private Label headerLabel;
-        private TextBox headerTextfield;
+        protected TextBox headerTextfield;
         private Label codeLabel;
-        private TextBox codeTextfield;
+        protected TextBox codeTextfield;
         private Label descriptionLabel;
-        private TextBox descriptionTextfield;
+        protected TextBox descriptionTextfield;
 
     }
 }

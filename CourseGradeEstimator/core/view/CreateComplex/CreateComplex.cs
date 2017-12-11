@@ -1,5 +1,6 @@
 ﻿using CourseGradeEstimator.core.view.Create;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,13 @@ namespace CourseGradeEstimator.core.view.CreateComplex
             InitializeComponent();
             setupView();
         }
+
+        public void SetChildItems(string[][] data)
+        {
+            this.childItems.Populate(data);
+        }
+
+        public Hashtable ChildItemEventBindings => this.childItems.EventBindings;
 
         public override void BindDelegates()
         {
