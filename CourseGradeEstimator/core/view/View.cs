@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 using ViewUtils = CourseGradeEstimator.core.utils.View;
 
-using System.Windows.Forms;
 using CourseGradeEstimator.core.utils;
 
 namespace CourseGradeEstimator.core.view
 {
     public delegate void VoidDelegate();
+    public delegate void VoidDelegateWithArgs<T>(T args);
     public interface IEnumLike : IComparable, IFormattable, IConvertible { }
     public interface IView {
     }
@@ -43,7 +43,10 @@ namespace CourseGradeEstimator.core.view
         protected void FindFuncAndCall<A>(A eventKey)
         {
             VoidDelegate cb = (VoidDelegate)eventBindings[eventKey];
-            Invoke(cb);
+            if (cb != null)
+            {
+                Invoke(cb);
+            }
         }
 
         protected Hashtable eventBindings = new Hashtable();

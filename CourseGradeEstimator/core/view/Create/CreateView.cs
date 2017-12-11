@@ -27,6 +27,10 @@ namespace CourseGradeEstimator.core.view.Create
             setupView();
         }
 
+        public string ItemTitle { get { return header.TitleValue; } set { header.TitleValue = value; } }
+        public string ItemCode { get { return header.CodeValue; } set { header.CodeValue = value; } }
+        public string ItemDescription { get { return header.DescriptionValue; } set { header.DescriptionValue = value; } }
+
         public override void BindDelegates()
         {
             cancelButton.Click += makeBinding(CreateViewBindings.Cancel);

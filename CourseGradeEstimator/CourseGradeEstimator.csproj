@@ -98,6 +98,7 @@
     <Compile Include="core\view\control\BottomButtonBar.Designer.cs">
       <DependentUpon>BottomButtonBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="core\view\interfaces\Interfaces.cs" />
     <Compile Include="core\view\SummaryComplex\SummaryComplex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,10 +132,12 @@
     <Compile Include="core\view\View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
+    <Compile Include="core\view\ComplexViewContoller.cs" />
     <Compile Include="models\CourseTest.cs" />
     <Compile Include="models\CourseGrade.cs" />
     <Compile Include="models\Assignment.cs" />
     <Compile Include="models\AssignmentGrade.cs" />
+    <Compile Include="models\DataDTO.cs" />
     <Compile Include="models\GradeItem.cs" />
     <Compile Include="models\DataEntry.cs" />
     <Compile Include="models\ModuleGrade.cs" />
@@ -151,6 +154,11 @@
     <Compile Include="core\view\ViewController.cs" />
     <Compile Include="models\CourseItem.cs" />
     <Compile Include="models\Course.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Router.cs" />
     <Compile Include="CourseGradeEstimatorInit.cs" />
     <Compile Include="routes\CourseSummary\CourseSummaryController.cs" />
@@ -160,6 +168,13 @@
     <Compile Include="routes\CourseSummary\CourseSummaryView.Designer.cs">
       <DependentUpon>CourseSummaryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="routes\AssignmentSummary\AssignmentSummaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="routes\AssignmentSummary\AssignmentSummaryView.Designer.cs">
+      <DependentUpon>AssignmentSummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\AssignmentSummary\AssignmentSummaryController.cs" />
     <Compile Include="routes\CreateAssignment\CreateAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +182,25 @@
       <DependentUpon>CreateAssignment.cs</DependentUpon>
     </Compile>
     <Compile Include="routes\CreateAssignment\CreateAssignmentController.cs" />
+    <Compile Include="routes\CreateModule\control\CreateModuleHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="routes\CreateModule\control\CreateModuleHeader.Designer.cs">
+      <DependentUpon>CreateModuleHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\ModuleSummary\control\ModuleSummaryHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="routes\ModuleSummary\control\ModuleSummaryHeader.Designer.cs">
+      <DependentUpon>ModuleSummaryHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\ModuleSummary\ModuleSummaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="routes\ModuleSummary\ModuleSummaryView.Designer.cs">
+      <DependentUpon>ModuleSummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="routes\ModuleSummary\ModuleSummaryController.cs" />
     <Compile Include="routes\CreateModule\CreateModule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,17 +266,25 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="routes\CourseSummary\CourseSummaryView.resx">
       <DependentUpon>CourseSummaryView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="routes\AssignmentSummary\AssignmentSummaryView.resx">
+      <DependentUpon>AssignmentSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="routes\CreateAssignment\CreateAssignment.resx">
       <DependentUpon>CreateAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\CreateModule\control\CreateModuleHeader.resx">
+      <DependentUpon>CreateModuleHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\ModuleSummary\control\ModuleSummaryHeader.resx">
+      <DependentUpon>ModuleSummaryHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\ModuleSummary\ModuleSummaryView.resx">
+      <DependentUpon>ModuleSummaryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="routes\CreateModule\CreateModule.resx">
       <DependentUpon>CreateModule.cs</DependentUpon>
