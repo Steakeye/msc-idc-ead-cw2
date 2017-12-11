@@ -4,6 +4,8 @@ namespace CourseGradeEstimator.core.view.control
 {
     partial class SummaryChildItems
     {
+        public DataGridView Grid { get => dataGrid; }
+
         /// <summary> 
         /// Required designer variable.
         /// </summary>
