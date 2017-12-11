@@ -1,6 +1,8 @@
-﻿namespace CourseGradeEstimator.routes.Start
+﻿using CourseGradeEstimator.core;
+
+namespace CourseGradeEstimator.routes.Start
 {
-    partial class StartView
+    partial class StartView: core.view.View
     {
         /// <summary>
         /// Required designer variable.
@@ -26,36 +28,66 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private new void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.startBtn = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
+            this.subtitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // startBtn
             // 
-            this.button1.Location = new System.Drawing.Point(108, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "create";
-            this.button1.UseVisualStyleBackColor = true;
-            //this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startBtn.Location = new System.Drawing.Point(140, 210);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(75, 23);
+            this.startBtn.TabIndex = 0;
+            this.startBtn.Text = global::CourseGradeEstimator.Properties.Resources.ViewStartStartButtonText;
+            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Margin = new System.Windows.Forms.Padding(Config.Dimensions.PaddingLrg);
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Location = new System.Drawing.Point(13, 13);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(378, 37);
+            this.title.TabIndex = 1;
+            this.title.Text = "University of Westminster";
+            this.title.Margin = new System.Windows.Forms.Padding(Config.Dimensions.PaddingLrg);
+
+            // 
+            // subtitle
+            // 
+            this.subtitle.AutoSize = true;
+            this.subtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtitle.Location = new System.Drawing.Point(15, 50);
+            this.subtitle.Name = "subtitle";
+            this.subtitle.Size = new System.Drawing.Size(282, 29);
+            this.subtitle.TabIndex = 2;
+            this.subtitle.Text = Properties.Resources.AppTitle;
+            this.subtitle.Margin = new System.Windows.Forms.Padding(Config.Dimensions.PaddingLrg, 0, Config.Dimensions.PaddingLrg, 0);
             // 
             // StartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
+            tablePanel.Controls.Add(this.title);
+            tablePanel.Controls.Add(this.subtitle);
+            tablePanel.Controls.Add(this.startBtn);
             this.Name = "StartView";
-            this.Text = "Start";
+            this.Text = "Course Grade Estimator";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button startBtn;
+        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Label subtitle;
     }
 }
 

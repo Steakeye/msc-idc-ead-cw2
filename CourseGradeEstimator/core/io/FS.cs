@@ -10,8 +10,6 @@ namespace CourseGradeEstimator.core.io
 {
     public class FS
     {
-        public FS() { }
-
         public string LoadData(string path)
         {
             string data = null;
@@ -30,26 +28,38 @@ namespace CourseGradeEstimator.core.io
                         Console.WriteLine("Reading contents:");
                         data = reader.ReadToEnd();
                     }
+                    isoStream.Close();
                 }
             }
 
             return data;
         }
 
-        public void saveData(string path, char[] data)
+        public void SaveData(string path, string data)
         {
             IsolatedStorageFile isoStore = getStore();
 
             string filePath = getPath(path);
 
-            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream("TestStore.txt", FileMode.CreateNew, isoStore))
+            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(filePath, FileMode.Create, isoStore))
             {
                 using (StreamWriter writer = new StreamWriter(isoStream))
                 {
-                    //writer.Write("");
+                    Console.WriteLine("Saving file to disk");
                     writer.WriteLine(data);
-                    //Console.WriteLine("You have written to the file.");
                 }
+                isoStream.Close();
+            }
+        }
+        public void DeleteData(string path)
+        {
+            IsolatedStorageFile isoStore = getStore();
+
+            string filePath = getPath(path);
+
+            if (isoStore.FileExists(filePath))
+            {
+                isoStore.DeleteFile(filePath);
             }
         }
 
@@ -59,7 +69,7 @@ namespace CourseGradeEstimator.core.io
         }
         private string getPath(string file)
         {
-            return CourseGradeEstimator.Properties.Resources.AppName + "/" + file;
+            return Properties.Resources.AppName + "/" + file;
         }
     }
 }

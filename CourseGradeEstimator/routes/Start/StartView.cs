@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+//using ViewUtils = CourseGradeEstimator.core.utils.View;
 
 namespace CourseGradeEstimator.routes.Start
 {
@@ -14,15 +10,35 @@ namespace CourseGradeEstimator.routes.Start
         Create
     }
 
-    public partial class StartView : core.View
+    public partial class StartView : core.view.View
     {
-        public StartView()
+        public StartView(): base()
         {
             InitializeComponent();
+            customLayout();
         }
 
         public override void BindDelegates() {
-            button1.Click += makeBinding(StartViewBindings.Create);
+            startBtn.Click += makeBinding(StartViewBindings.Create);
+        }
+
+        protected void initViewAdjustment()
+        {
+            SuspendLayout();
+        }
+        protected void endViewAdjustment()
+        {
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        private void customLayout()
+        {
+            initViewAdjustment();
+
+            setupButton(startBtn);
+
+            endViewAdjustment();
         }
     }
 }

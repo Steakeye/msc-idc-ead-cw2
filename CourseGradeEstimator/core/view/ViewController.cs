@@ -1,11 +1,12 @@
-﻿using System;
+﻿using CourseGradeEstimator.core.data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CourseGradeEstimator.core
+namespace CourseGradeEstimator.core.view
 {
     interface IViewController<out V> {
         void tearDown();
@@ -17,6 +18,7 @@ namespace CourseGradeEstimator.core
 
         protected ViewController(Router r) {
             router = r;
+            dataLayer = Data.GetInstance(); ;
         }
 
         public void tearDown()
@@ -28,10 +30,17 @@ namespace CourseGradeEstimator.core
         /*
          * Privates
          */
+
+        protected void navToBack()
+        {
+            System.Console.WriteLine("navToBack!!");
+            router.navBack();
+        }
         /*
-         * Private Members
+         * Protected Members
          */
         protected Router router;
+        protected Data dataLayer;
         protected V view;
 
     }
