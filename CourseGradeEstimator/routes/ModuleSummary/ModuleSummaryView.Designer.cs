@@ -40,6 +40,7 @@
         }
 
         #endregion
+        protected new control.ModuleSummaryHeader header;
 
     }
 }

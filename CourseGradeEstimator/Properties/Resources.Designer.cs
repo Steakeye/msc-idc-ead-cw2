@@ -286,6 +286,15 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Year.
+        /// </summary>
+        internal static string StringsYear {
+            get {
+                return ResourceManager.GetString("StringsYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assessment.
         /// </summary>
         internal static string ViewCreateAssignmentHeader {
