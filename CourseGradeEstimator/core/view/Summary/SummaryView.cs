@@ -15,7 +15,8 @@ namespace CourseGradeEstimator.core.view.Summary
         Edit,
         Delete,
         View,
-        Back
+        Back,
+        Grade
     }
     public partial class SummaryView : View
     {

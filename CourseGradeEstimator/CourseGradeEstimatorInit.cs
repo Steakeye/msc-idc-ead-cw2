@@ -17,10 +17,18 @@ namespace CourseGradeEstimator
             Application.SetCompatibleTextRenderingDefault(false);
 
             Course courseData = dataLayer.LoadCourseData();
+            CourseGrade gradeData = dataLayer.LoadGradeData();
 
             Routings initRoute = courseData != null ? Routings.CourseSummary: Routings.Start;
 
-            router.navTo(initRoute, courseData);
+            DataDTO<Course, Course, CourseGrade > data = null;
+
+            if (courseData != null)
+            {
+                data = new DataDTO<Course, Course, CourseGrade> { Data = courseData, Grade = gradeData };
+            }
+
+            router.navTo(initRoute, data);
 
             Application.Run(router);
         }

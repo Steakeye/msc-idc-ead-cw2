@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\Config.cs" />
+    <Compile Include="core\data\GradePredictor.cs" />
     <Compile Include="core\io\CourseDB .cs" />
     <Compile Include="core\io\GradeFS.cs" />
     <Compile Include="core\io\CourseFS .cs" />

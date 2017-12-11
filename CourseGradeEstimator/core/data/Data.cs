@@ -26,6 +26,11 @@ namespace CourseGradeEstimator.core.data
             courseIO = new CourseIO();
             gradeIO = new GradeIO();
         }
+        public Course CreateCourseData()
+        {
+            courseCache = new Course();
+            return courseCache;
+        }
         public Course LoadCourseData()
         {
             courseCache = courseIO.LoadData();
@@ -45,6 +50,11 @@ namespace CourseGradeEstimator.core.data
             courseIO.DeleteData();
         }
 
+        public CourseGrade CreateGradeData()
+        {
+            gradeCache = new CourseGrade();
+            return gradeCache;
+        }
         public CourseGrade LoadGradeData()
         {
             gradeCache = gradeIO.LoadData();
@@ -54,7 +64,10 @@ namespace CourseGradeEstimator.core.data
         {
             gradeIO.SaveData(course);
         }
-
+        public void SaveGradeData()
+        {
+            SaveGradeData(gradeCache);
+        }
         public void DeleteGradeData()
         {
             gradeIO.DeleteData();
