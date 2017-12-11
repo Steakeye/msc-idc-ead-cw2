@@ -76,10 +76,20 @@ namespace CourseGradeEstimator.routes.ModuleSummary
         {
             //Console.WriteLine($"updateGrade: {code} - val: {value}");
             Console.WriteLine($"updateGrade: {data[0]} - val: {data[1]}");
+            int val = 0;
+            Int32.TryParse(data[1], out val);
+            string code = data[0];
 
-            /*Assignment assignment = findAssignmentByCode(code);
+            AssignmentGrade ag = findAssignmentGradeByCode(code);
 
-            DataDTO<Assignment, Module, AssignmentGrade> data = new DataDTO<Assignment, Module, AssignmentGrade> { Data = assignment, Parent = item };
+            if (ag != null && ag.Score != val)
+            {
+                ag.Score = val;
+
+                dataLayer.SaveGradeData();
+            }
+
+            /*DataDTO<Assignment, Module, AssignmentGrade> data = new DataDTO<Assignment, Module, AssignmentGrade> { Data = assignment, Parent = item };
 
             router.navTo(Routings.AssignmentSummary, data);*/
         }

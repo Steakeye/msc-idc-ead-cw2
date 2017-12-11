@@ -65,7 +65,9 @@ namespace CourseGradeEstimator.routes.CourseSummary
         private void navToCreateCourse()
         {
             Console.WriteLine("navToCreateCourse!!");
-            router.navTo(Routings.CourseCreate, item);
+            DataDTO<Course, Course, CourseGrade> dto = new DataDTO<Course, Course, CourseGrade> { Data = item, Parent = item, Grade = gradeItem};
+
+            router.navTo(Routings.CourseCreate, dto);
         }
         private void navToModuleSummary(string code)
         {

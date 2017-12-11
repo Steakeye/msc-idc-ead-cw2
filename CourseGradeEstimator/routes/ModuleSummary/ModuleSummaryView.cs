@@ -33,6 +33,22 @@ namespace CourseGradeEstimator.routes.ModuleSummary
             //BackColor = Color.HotPink;
         }
 
+        public new void SetChildItems(string[][] data)
+        {
+            this.childItems.Populate(data);
+
+            DataGridView grid = this.childItems.Grid;
+            DataGridViewRowCollection rows = grid.Rows;
+            int rowCount = rows.GetRowCount(DataGridViewElementStates.None);
+
+            while (rowCount > 0)
+            {
+                --rowCount;
+                DataGridViewCellCollection cellsInRow = rows[rowCount].Cells;
+                cellsInRow[cellsInRow.Count - 1].Value = data[rowCount][3];
+            }
+        }
+
         public string ItemTitle { set { header.TitleValue = value; } }
         public string ItemYear { set { header.YearValue = value; } }
         public string ItemCode { set { header.CodeValue = value; } }
@@ -97,7 +113,7 @@ namespace CourseGradeEstimator.routes.ModuleSummary
 
             SummaryViewBindings key = (SummaryViewBindings)System.Enum.Parse(typeof(SummaryViewBindings), cell.OwningColumn.Name as string);
 
-            FindFuncAndCall(key, code as string, cell.Value as string);
+            FindFuncAndCall(key, code as string, cell.EditedFormattedValue as string);
         }
 
         protected void FindFuncAndCall<A>(A eventKey, string code, string value)

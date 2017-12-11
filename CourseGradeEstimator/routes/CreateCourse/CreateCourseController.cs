@@ -18,11 +18,16 @@ namespace CourseGradeEstimator.routes.CreateCourse
         /*public CreateCourseController(Router r) : this(r, new Course()) {
         }*/
         public CreateCourseController(Router r, DataDTO<Course, Course, CourseGrade> data = null) : base(r) {
+        //public CreateCourseController(Router r, Course data = null) : base(r) {
             if (data == null)
             {
                 item = dataLayer.CreateCourseData();
                 gradeItem = dataLayer.CreateGradeData();
             }
+            /*else
+            {
+                item = data;
+            }*/
             else
             {
                 item = data.Data == null ? dataLayer.CreateCourseData() : data.Data;
@@ -72,7 +77,7 @@ namespace CourseGradeEstimator.routes.CreateCourse
             Console.WriteLine("saveData!!");
             populateModel();
             dataLayer.SaveCourseData(item);
-            router.restart(item);
+            router.restart(new DataDTO<Course, Course, CourseGrade>() { Data = item, Grade = gradeItem });
         }
 
         private void navToCreateModule(string code)
