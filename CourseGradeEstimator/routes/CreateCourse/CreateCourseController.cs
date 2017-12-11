@@ -105,6 +105,8 @@ namespace CourseGradeEstimator.routes.CreateCourse
 
                 if (actuallyDel)
                 {
+                    //TODO: Deleting an module deletes the corresponding grade item
+
                     item.Modules.Remove(foundModule);
                     buildChildSection();
                     dataLayer.SaveCourseData(item);

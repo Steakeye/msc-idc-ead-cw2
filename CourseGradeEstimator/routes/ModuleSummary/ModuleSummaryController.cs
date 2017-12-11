@@ -57,9 +57,11 @@ namespace CourseGradeEstimator.routes.ModuleSummary
         {
             Console.WriteLine($"navToAssignmentSummary: {code}");
 
-            Assignment module = findAssignmentByCode(code);
+            Assignment assignment = findAssignmentByCode(code);
 
-            //router.navTo(Routings.CourseCreate, item);
+            DataDTO<Assignment, Module, AssignmentGrade> data = new DataDTO<Assignment, Module, AssignmentGrade> { Data = assignment, Parent = item  };
+
+            router.navTo(Routings.AssignmentCreate, data);
         }
 
         private Assignment findAssignmentByCode(string code)

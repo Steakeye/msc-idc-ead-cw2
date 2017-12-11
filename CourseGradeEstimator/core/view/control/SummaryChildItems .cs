@@ -115,7 +115,6 @@ namespace CourseGradeEstimator.core.view.control
             {
                 Console.WriteLine($"{cell.Value} {cell.Tag}");
 
-                //SummaryViewBindings key = SummaryViewBindings.View;
                 SummaryViewBindings key = (SummaryViewBindings)System.Enum.Parse(typeof(SummaryViewBindings), cell.Value as string);
 
                 FindFuncAndCall(key, cell.Tag as string);

@@ -28,6 +28,8 @@ namespace CourseGradeEstimator.routes.CreateAssignment
             //BackColor = Color.HotPink;
         }
 
+        public string Weighting { get { return weightTextfield.Text; } set { weightTextfield.Text = value; } }
+
         protected void setupView()
         {
             AnchorStyles sides = AnchorStyles.Left | AnchorStyles.Right;
