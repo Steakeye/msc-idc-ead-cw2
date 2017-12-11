@@ -20,6 +20,8 @@ namespace CourseGradeEstimator.routes.ModuleSummary
 
             view = new ModuleSummaryView();
 
+            fillOutAssignmentGrades();
+
             populateView();
 
             Hashtable eventMap = view.EventBindings;
@@ -65,11 +67,57 @@ namespace CourseGradeEstimator.routes.ModuleSummary
             router.navTo(Routings.AssignmentSummary, data);
         }
 
+        private void fillOutAssignmentGrades()
+        {
+            List<Assignment> assignments = item.Assignments;
+
+            if (assignments != null)
+            {
+                if (grade.Assignments == null)
+                {
+                    grade.Assignments = new List<AssignmentGrade>();
+                }
+
+                List<AssignmentGrade> assignmentGrades = grade.Assignments;
+
+                assignments.ForEach((assignment) => {
+                    string code = assignment.Code;
+
+                    if (code != null)
+                    {
+                        bool foundAG = assignmentGrades.Exists(ag => ag.Code == code);
+
+                        if (!foundAG)
+                        {
+                            assignmentGrades.Add(new AssignmentGrade() { Code = code });
+                        }
+
+                    }
+                });
+            }
+        }
+
         private Assignment findAssignmentByCode(string code)
         {
             Predicate<Assignment> assignmentFinder = (Assignment assignment) => { return assignment.Code == code; };
 
             return item.Assignments.Find(assignmentFinder);
+        }
+
+        private AssignmentGrade findAssignmentGradeByCode(string code)
+        {
+            Predicate<AssignmentGrade> assignmentFinder = (AssignmentGrade grade) => { return grade.Code == code; };
+
+            return grade.Assignments.Find(assignmentFinder);
+        }
+
+        private void createAssignmentGradeIfMissing(string code, ref AssignmentGrade grade)
+        {
+            if (grade == null)
+            {
+                grade = new AssignmentGrade() { Code = code };
+                //grade.Assignments.Add(grade);
+            }
         }
 
         private Module item;

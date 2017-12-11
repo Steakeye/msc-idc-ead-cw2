@@ -17,9 +17,17 @@ namespace CourseGradeEstimator.routes.CreateCourse
     {
         /*public CreateCourseController(Router r) : this(r, new Course()) {
         }*/
-        public CreateCourseController(Router r, DataDTO<Course, Course, CourseGrade> course) : base(r) {
-            item = course.Data == null ? dataLayer.CreateCourseData() : course.Data;
-            gradeItem = course.Grade == null ? dataLayer.CreateGradeData() : course.Grade;
+        public CreateCourseController(Router r, DataDTO<Course, Course, CourseGrade> data = null) : base(r) {
+            if (data == null)
+            {
+                item = dataLayer.CreateCourseData();
+                gradeItem = dataLayer.CreateGradeData();
+            }
+            else
+            {
+                item = data.Data == null ? dataLayer.CreateCourseData() : data.Data;
+                gradeItem = data.Grade == null ? dataLayer.CreateGradeData() : data.Grade;
+            }
 
             view = new CreateCourse();
 
