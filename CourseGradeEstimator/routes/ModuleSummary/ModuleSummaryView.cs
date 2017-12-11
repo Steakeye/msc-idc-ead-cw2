@@ -41,13 +41,11 @@ namespace CourseGradeEstimator.routes.ModuleSummary
             DataGridView grid = this.childItems.Grid;
 
             grid.ReadOnly = false;
-            //grid.Columns[0].ReadOnly
-            //ArrayListEnumeratorSimple
-            //IEnumerator< DataGridViewColumn> colEnumer = (IEnumerator<DataGridViewColumn>)grid.Columns.GetEnumerator();
-            IEnumerator colEnumer = grid.Columns.GetEnumerator();
-            //List<DataGridViewColumn>.Enumerator colEnumer = grid.Columns.GetEnumerator();
 
-            //DataGridViewColumn col = (DataGridViewColumn)colEnumer.Current;
+            DataGridViewColumnCollection cols = grid.Columns;
+
+            IEnumerator colEnumer = cols.GetEnumerator();
+
             DataGridViewColumn col;
 
             while (colEnumer.MoveNext())
@@ -56,6 +54,9 @@ namespace CourseGradeEstimator.routes.ModuleSummary
                 col.ReadOnly = true;
                 //colEnumer.MoveNext();
             }
+
+            //string columnName, string headerText
+            cols.Add(Properties.Resources.StringsGrade, Properties.Resources.StringsGrade);
         }
     }
 }

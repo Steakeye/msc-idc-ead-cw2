@@ -232,6 +232,15 @@ namespace CourseGradeEstimator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Grade.
+        /// </summary>
+        internal static string StringsGrade {
+            get {
+                return ResourceManager.GetString("StringsGrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grades.
         /// </summary>
         internal static string StringsGrades {
