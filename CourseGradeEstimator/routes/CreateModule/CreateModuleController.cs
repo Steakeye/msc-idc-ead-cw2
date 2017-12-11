@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CourseGradeEstimator.routes.CreateModule
 {
-    class CreateModuleController : core.view.ViewController<CreateModule>
+    class CreateModuleController : core.view.ComplexViewController<CreateModule>
     {
         public CreateModuleController(Router r, DataDTO<Module, Course, ModuleGrade> d) : base(r) {
             item = d.Data;
@@ -26,6 +26,8 @@ namespace CourseGradeEstimator.routes.CreateModule
             eventMap.Add(CreateViewBindings.Add, new core.view.VoidDelegate(navToCreateAssignment));
             eventMap.Add(CreateViewBindings.Cancel, new core.view.VoidDelegate(navToBack));
             eventMap.Add(CreateViewBindings.Save, new core.view.VoidDelegate(saveData));
+            view.ChildItemEventBindings.Add(CreateViewBindings.Edit, new core.view.VoidDelegateWithArgs<string>(navToCreateAssignment));
+            view.ChildItemEventBindings.Add(CreateViewBindings.Delete, new core.view.VoidDelegateWithArgs<string>(removeAssignment));
 
             view.BindDelegates();
         }
@@ -33,12 +35,28 @@ namespace CourseGradeEstimator.routes.CreateModule
         private void populateView()
         {
             view.ItemTitle = item.Title;
+            view.ItemYear = item.Year.ToString();
             view.ItemCode = item.Code;
             view.ItemDescription = item.Description;
+
+            buildChildSection();
+        }
+
+        private void buildChildSection()
+        {
+            string[][] data = getChildItemViewData(item.Assignments, mod => {
+                return new string[] { mod.Title, mod.Description, mod.Code };
+            });
+
+            view.SetChildItems(data);
         }
         private void populateModel()
         {
-            item.Title = view.ItemTitle;
+            int yearVal;
+            Int32.TryParse(view.ItemYear, out yearVal);
+
+            item.Title = view.ItemTitle; view.ItemYear = item.Year.ToString();
+            item.Year = yearVal;
             item.Code = view.ItemCode;
             item.Description = view.ItemDescription;
         }
@@ -59,13 +77,56 @@ namespace CourseGradeEstimator.routes.CreateModule
             }
 
             dataLayer.SaveCourseData(parent);
-            router.navBack();
+            router.navBack(parent);
         }
 
         private void navToCreateAssignment()
         {
+            Console.WriteLine("navToCreateAssignment!! new!");
+
+            navToCreateAssignment(new Assignment());
+        }
+
+        private void navToCreateAssignment(string code)
+        {
+            Console.WriteLine($"navToCreateModule {code}");
+
+            navToCreateAssignment(findAssigmentByCode(code));
+        }
+        private void navToCreateAssignment(Assignment assignment)
+        {
             Console.WriteLine("navToCreateAssignment!!");
-            router.navTo(Routings.AssignmentCreate);
+
+            DataDTO<Assignment, Module, AssignmentGrade> dto = new DataDTO<Assignment, Module, AssignmentGrade> { Data = assignment, Parent = item };
+            
+            router.navTo(Routings.AssignmentCreate, dto);
+        }
+        
+        private Assignment findAssigmentByCode(string code)
+        {
+            Predicate<Assignment> assignmentFinder = (Assignment assignment) => { return assignment.Code == code; };
+
+            return item.Assignments.Find(assignmentFinder);
+        }
+
+        private void removeAssignment(string code)
+        {
+            Console.WriteLine($"removeModule {code}");
+            Assignment foundAssignment = findItemByCode(item.Assignments, code);
+
+            if (foundAssignment != null)
+            {
+                bool actuallyDel = confirmDelete();
+
+                if (actuallyDel)
+                {
+                    //TODO: Deleting an assignment deletes the corresponding grade item
+
+                    item.Assignments.Remove(foundAssignment);
+                    buildChildSection();
+                    dataLayer.SaveCourseData();
+                }
+            }
         }
 
         private Module item;

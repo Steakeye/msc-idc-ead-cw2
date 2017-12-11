@@ -59,6 +59,8 @@ namespace CourseGradeEstimator.core.view.control
             this.dataGrid.Location = new System.Drawing.Point(3, 32);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.TabIndex = 2;
+            this.dataGrid.AllowUserToAddRows = false;
+            this.dataGrid.ReadOnly = true;
             this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTablePanel_CellContentClick);
             // 
             // flowPanel
