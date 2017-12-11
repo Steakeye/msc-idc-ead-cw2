@@ -85,7 +85,7 @@ namespace CourseGradeEstimator
             }
         }
 
-        public void navBack()
+        public void navBack(object data = null)
         {
             routeHistory.Pop();
             HistoryItem lastRoute = routeHistory.Peek();
@@ -94,7 +94,9 @@ namespace CourseGradeEstimator
 
             if (lastRoute != null)
             {
-                navTo(lastRoute.Route, lastRoute.Data, false);
+                data = data == null ? lastRoute.Data : data;
+
+                navTo(lastRoute.Route, data, false);
             }
         }
         public void restart(Course data = null)

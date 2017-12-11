@@ -77,7 +77,7 @@ namespace CourseGradeEstimator.routes.CreateModule
             }
 
             dataLayer.SaveCourseData(parent);
-            router.navBack();
+            router.navBack(parent);
         }
 
         private void navToCreateAssignment()
