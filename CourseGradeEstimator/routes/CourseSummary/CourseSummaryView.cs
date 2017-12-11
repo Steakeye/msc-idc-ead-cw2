@@ -21,9 +21,16 @@ namespace CourseGradeEstimator.routes.CourseSummary
             this.header.Title = headerTitle;
             this.childItems.Title = Properties.Resources.StringsModules;
 
+            this.childItems.LayoutPanel.Controls.Add(this.messageLabel);
+
             makeCancelButtonDelete();
             addBottomButtons();
 
+        }
+
+        public void AddSummaryMessage(string message)
+        {
+            this.messageLabel.Text = String.Format(Properties.Resources.StringsGradeMessage, message);
         }
 
         public override void BindDelegates()
@@ -43,5 +50,6 @@ namespace CourseGradeEstimator.routes.CourseSummary
             //bottomButtonBar.AddButton(this.saveButton);
             bottomButtonBar.AddButton(this.deleteButton);
         }
+
     }
 }

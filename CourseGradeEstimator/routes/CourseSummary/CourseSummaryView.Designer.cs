@@ -33,6 +33,15 @@ namespace CourseGradeEstimator.routes.CourseSummary
             this.deleteButton = new Button();
             this.SuspendLayout();
             // 
+            // headerLabel
+            // 
+            this.messageLabel.AutoSize = true;
+            this.messageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageLabel.Location = new System.Drawing.Point(3, 0);
+            this.messageLabel.Name = "messageLabel";
+            this.messageLabel.Size = new System.Drawing.Size(0, 29);
+            this.messageLabel.TabIndex = 1;
+            // 
             // deleteButton
             // 
             this.deleteButton.Name = "deleteButton";
@@ -53,6 +62,8 @@ namespace CourseGradeEstimator.routes.CourseSummary
 
         #endregion
         private Button deleteButton;
+        private Label messageLabel = new Label();
+
     }
 }
 

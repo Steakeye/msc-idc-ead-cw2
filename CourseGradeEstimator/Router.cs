@@ -99,7 +99,7 @@ namespace CourseGradeEstimator
                 navTo(lastRoute.Route, data, false);
             }
         }
-        public void restart(Course data = null)
+        public void restart(DataDTO<Course, Course, CourseGrade> data = null)
         {
             Routings route = data == null ? Routings.Start : Routings.CourseSummary;
 

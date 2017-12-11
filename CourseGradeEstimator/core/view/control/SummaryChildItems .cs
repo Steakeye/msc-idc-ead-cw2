@@ -55,6 +55,8 @@ namespace CourseGradeEstimator.core.view.control
             }
         }
 
+        public TableLayoutPanel LayoutPanel { get => layoutPanel; }
+
         private void itemTablePanel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
