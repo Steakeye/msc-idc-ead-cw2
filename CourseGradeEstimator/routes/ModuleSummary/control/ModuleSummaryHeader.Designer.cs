@@ -73,7 +73,7 @@ namespace CourseGradeEstimator.routes.ModuleSummary.control
         #endregion
 
         private Label yearLabel;
-        private TextBox yearTextfield;
+        protected TextBox yearTextfield;
 
     }
 }

@@ -121,9 +121,9 @@ namespace CourseGradeEstimator.core.view.control
         private Label headerLabel;
         protected TextBox headerTextfield;
         private Label codeLabel;
-        private TextBox codeTextfield;
+        protected TextBox codeTextfield;
         private Label descriptionLabel;
-        private TextBox descriptionTextfield;
+        protected TextBox descriptionTextfield;
 
     }
 }

@@ -38,6 +38,7 @@ namespace CourseGradeEstimator.routes.ModuleSummary
             List<Assignment> assignments = item.Assignments;
 
             view.ItemTitle = item.Title;
+            view.ItemYear = item.Year.ToString(); 
             view.ItemCode = item.Code;
             view.ItemDescription = item.Description;
 

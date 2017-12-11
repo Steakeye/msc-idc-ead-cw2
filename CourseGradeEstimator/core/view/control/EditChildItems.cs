@@ -30,6 +30,11 @@ namespace CourseGradeEstimator.core.view.control
 
             rows.Clear();
 
+            if (data == null)
+            {
+                return;
+            }
+
             foreach (string[] d in data)
             {
                 rows.Add(d[0], d[1]);

@@ -182,6 +182,12 @@
       <DependentUpon>CreateAssignment.cs</DependentUpon>
     </Compile>
     <Compile Include="routes\CreateAssignment\CreateAssignmentController.cs" />
+    <Compile Include="routes\CreateModule\control\CreateModuleHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="routes\CreateModule\control\CreateModuleHeader.Designer.cs">
+      <DependentUpon>CreateModuleHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="routes\ModuleSummary\control\ModuleSummaryHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="routes\CreateAssignment\CreateAssignment.resx">
       <DependentUpon>CreateAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routes\CreateModule\control\CreateModuleHeader.resx">
+      <DependentUpon>CreateModuleHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="routes\ModuleSummary\control\ModuleSummaryHeader.resx">
       <DependentUpon>ModuleSummaryHeader.cs</DependentUpon>

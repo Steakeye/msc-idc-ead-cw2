@@ -29,6 +29,7 @@ namespace CourseGradeEstimator.routes.ModuleSummary
         }
 
         public string ItemTitle { set { header.TitleValue = value; } }
+        public string ItemYear { set { header.YearValue = value; } }
         public string ItemCode { set { header.CodeValue = value; } }
         public string ItemDescription { set { header.DescriptionValue = value; } }
     }

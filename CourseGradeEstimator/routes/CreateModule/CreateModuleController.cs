@@ -35,6 +35,7 @@ namespace CourseGradeEstimator.routes.CreateModule
         private void populateView()
         {
             view.ItemTitle = item.Title;
+            view.ItemYear = item.Year.ToString();
             view.ItemCode = item.Code;
             view.ItemDescription = item.Description;
 
@@ -51,7 +52,11 @@ namespace CourseGradeEstimator.routes.CreateModule
         }
         private void populateModel()
         {
-            item.Title = view.ItemTitle;
+            int yearVal;
+            Int32.TryParse(view.ItemYear, out yearVal);
+
+            item.Title = view.ItemTitle; view.ItemYear = item.Year.ToString();
+            item.Year = yearVal;
             item.Code = view.ItemCode;
             item.Description = view.ItemDescription;
         }

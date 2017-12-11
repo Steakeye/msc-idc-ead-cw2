@@ -28,7 +28,6 @@
         /// </summary>
         protected void InitializeComponent()
         {
-            //this.header = new control.ModuleSummaryHeader();
             header = new control.ModuleSummaryHeader();
             this.SuspendLayout();
 
@@ -55,7 +54,6 @@
         }
 
         #endregion
-        //protected new control.ModuleSummaryHeader header = new control.ModuleSummaryHeader();
         protected new control.ModuleSummaryHeader header;
 
     }
